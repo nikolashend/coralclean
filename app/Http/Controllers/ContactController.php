@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Validator;
 
 class ContactController extends Controller
 {
-    public function submit(Request $request)
+    public function submit(Request $request, $locale = 'ru')
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
@@ -19,10 +19,9 @@ class ContactController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'errors' => $validator->errors()
-            ], 422);
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
         }
 
         $contactRequest = ContactRequest::create([
@@ -31,13 +30,17 @@ class ContactController extends Controller
             'email' => $request->email,
             'service' => $request->service,
             'message' => $request->message,
-            'locale' => app()->getLocale(),
+            'locale' => $locale,
             'status' => 'new',
         ]);
 
-        return response()->json([
-            'success' => true,
-            'message' => 'Message sent!'
-        ]);
+        // Определяем сообщение в зависимости от языка
+        $successMessages = [
+            'ru' => 'Спасибо! Мы свяжемся с вами в ближайшее время.',
+            'en' => 'Thank you! We will contact you soon.',
+            'et' => 'Aitäh! Me võtame teiega peagi ühendust.',
+        ];
+
+        return redirect()->back()->with('success', $successMessages[$locale] ?? $successMessages['ru']);
     }
 }
