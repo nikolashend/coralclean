@@ -31,32 +31,40 @@
     "use strict";
 
     var main = function() {
-      $('.hamburger-menu').click(function() {
-        $('.side-widget').animate({
-            left: "0px"}, 200,function() {
-                
-                $(document).on("click.menu",function(event) {
-                    var target = $(event.target);   console.log(target);
-                    if (!target.closest(".side-widget").length || target.closest(".closed").length) {
-                        closeMenu(function() {
-                            $(document).off("click.menu");
-                        });
-                    }           
-                })  
-            
+      $('.hamburger-menu').off('click').on('click', function() {
+        if ($('.side-widget').css('left') === '0px') {
+          closeMenu();
+        } else {
+          $('.side-widget').animate({
+            left: "0px"
+          }, 200, function() {
+            $(document).off("click.menu").on("click.menu", function(event) {
+              var target = $(event.target);
+              if (!target.closest(".side-widget").length || target.closest(".closed").length) {
+                closeMenu(function() {
+                  $(document).off("click.menu");
+                });
+              }           
             });
+          });
+        }
       });
-    
-    
       
-        function closeMenu(callback) {  
-            $('.side-widget').animate({
-              left: "-100%"}, 200);
-              $('.hamburger-menu').show();
-           if ($.isFunction(callback)) callback();
-        }    
+      // Close menu when clicking on mobile menu links
+      $('#mobile-menu a, .show-mobile a[href^="/"]').off('click').on('click', function() {
+        closeMenu(function() {
+          $(document).off("click.menu");
+        });
+      });
       
-            
+      function closeMenu(callback) {  
+        $('.side-widget').animate({
+          left: "-100%"
+        }, 200, function() {
+          $('.hamburger-menu').show();
+          if ($.isFunction(callback)) callback();
+        });
+      }    
     };
     
     $(document).ready(main);

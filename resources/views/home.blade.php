@@ -379,7 +379,27 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
                     </div>
                 </address>
             </div>
-            <div class="show-mobile"><div class="site-menu"><div class="menu"></div></div></div>
+            <div class="show-mobile">
+                <div class="site-menu">
+                    <ul id="mobile-menu" style="list-style: none; padding: 0; margin: 20px 0;">
+                        <li style="margin: 15px 0;"><a href="/" style="color: #333; text-decoration: none; font-size: 18px; display: block;">{{ $locale == 'en' ? 'Home' : ($locale == 'et' ? 'Avaleht' : 'Главная') }}</a></li>
+                        <li style="margin: 15px 0;"><a href="#about" style="color: #333; text-decoration: none; font-size: 18px; display: block;">{{ $locale == 'en' ? 'About' : ($locale == 'et' ? 'Meist' : 'О нас') }}</a></li>
+                        <li style="margin: 15px 0;"><a href="#packages" style="color: #333; text-decoration: none; font-size: 18px; display: block;">{{ $locale == 'en' ? 'Packages' : ($locale == 'et' ? 'Paketid' : 'Пакеты') }}</a></li>
+                        <li style="margin: 15px 0;"><a href="#faq" style="color: #333; text-decoration: none; font-size: 18px; display: block;">{{ __('home.nav_faq') }}</a></li>
+                        <li style="margin: 15px 0;"><a href="#contact" style="color: #333; text-decoration: none; font-size: 18px; display: block;">{{ __('home.nav_contacts') }}</a></li>
+                    </ul>
+                    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
+                        <p style="text-align: center; color: #666; font-size: 14px; margin-bottom: 10px;">{{ $locale == 'en' ? 'Language' : ($locale == 'et' ? 'Keel' : 'Язык') }}</p>
+                        <div style="display: flex; gap: 15px; justify-content: center; align-items: center;">
+                            <a href="{{ url('/ru') }}" style="color: {{ ($locale ?? 'ru') == 'ru' ? '#25aae2' : '#666' }}; font-weight: {{ ($locale ?? 'ru') == 'ru' ? 'bold' : 'normal' }}; text-decoration: none; font-size: 16px;">🇷🇺 RU</a>
+                            <span style="color: #ccc;">|</span>
+                            <a href="{{ url('/en') }}" style="color: {{ ($locale ?? 'ru') == 'en' ? '#25aae2' : '#666' }}; font-weight: {{ ($locale ?? 'ru') == 'en' ? 'bold' : 'normal' }}; text-decoration: none; font-size: 16px;">🇬🇧 EN</a>
+                            <span style="color: #ccc;">|</span>
+                            <a href="{{ url('/et') }}" style="color: {{ ($locale ?? 'ru') == 'et' ? '#25aae2' : '#666' }}; font-weight: {{ ($locale ?? 'ru') == 'et' ? 'bold' : 'normal' }}; text-decoration: none; font-size: 16px;">🇪🇪 ET</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <small>© 2026 CoralClean</small>
         </div>
     </aside>
@@ -410,9 +430,9 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
                             <li class="menu-item menu-item-has-children dropdown nav-item">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link" style="text-transform: uppercase;"><span>{{ strtoupper($locale ?? 'ru') }}</span></a>
                                 <ul class="dropdown-menu">
-                                    <li class="menu-item nav-item"><a href="{{ url('/ru') }}" class="dropdown-item"><span>🇷🇺 Русский</span></a></li>
-                                    <li class="menu-item nav-item"><a href="{{ url('/en') }}" class="dropdown-item"><span>🇬🇧 English</span></a></li>
-                                    <li class="menu-item nav-item"><a href="{{ url('/et') }}" class="dropdown-item"><span>🇪🇪 Eesti</span></a></li>
+                                    <li class="menu-item nav-item"><a href="{{ url('/ru') }}" class="dropdown-item"><span>Русский</span></a></li>
+                                    <li class="menu-item nav-item"><a href="{{ url('/en') }}" class="dropdown-item"><span>English</span></a></li>
+                                    <li class="menu-item nav-item"><a href="{{ url('/et') }}" class="dropdown-item"><span>Eesti</span></a></li>
                                 </ul>
                             </li>
                         </ul>
