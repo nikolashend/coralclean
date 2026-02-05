@@ -169,4 +169,80 @@ return [
     'form_phone' => 'Teie telefon',
     'form_submit' => 'Saada taotlus →',
     'form_success' => 'Aitäh! Me võtame teiega peagi ühendust.',
+    'form_panel_title' => 'Jätke oma number',
+    'form_panel_subtitle' => 'Me helistame teile tagasi ja korraldame kõik',
+
+    // Contact button
+    'btn_contact_us' => 'Võta ühendust',
+    'btn_leave_request' => 'Jätke taotlus',
+    'btn_details' => 'Loe lähemalt →',
+    'btn_order_quick' => 'Telli kohe',
+    'btn_order_deep' => 'Tahan ideaalset',
+    'btn_order_movein' => 'Valmista korter ette',
+    'btn_order_office' => 'Küsi pakkumist',
+
+    // Services Block
+    'services_title' => 'Usaldusväärsed koristusteenused',
+    'services_subtitle' => 'Professionaalne koristus kodudele ja ettevõtetele Tallinnas',
+
+    // Individual Services
+    'service_home_title' => 'Kodukoristus',
+    'service_home_short' => 'Regulaarne ja süvakoristus teie kodus',
+    'service_home_desc' => 'Eluruumide täielik koristus: põrandad, tolm, köök, vannitoad. Töötame kontrollnimekirja järgi, hoolikalt ja teile sobival ajal.',
+    'service_home_image' => 'Hero.png',
+    'service_home_text1' => 'Kodukoristus on töö, mis nõuab palju aega ja energiat, eriti tänapäeva kiires elutempos. Nagu iga teinegi töö, nõuab see professionaalset lähenemist. CoralClean pakub regulaarset ja süvakoristust korteritele ja majadele Tallinnas ja Harjumaal.',
+    'service_home_text2' => 'Teostame detailset koristust kvaliteedi ja usaldusväärsuse garantiiga. Meie koristajad töötavad selge kontrollnimekirja järgi, kasutades professionaalseid vahendeid ja seadmeid.',
+
+    'service_glass_title' => 'Klaasipuhastus',
+    'service_glass_short' => 'Professionaalne akende, vaateakende ja klaaspindade puhastus',
+    'service_glass_desc' => 'Akende, rõduklaasid, vaateakende ja klaasvaheseinte puhastus. Triibuvaba, professionaalsete tööriistadega.',
+    'service_glass_image' => 'Deep-Clean.png',
+    'service_glass_text1' => 'Puhtad aknad loovad värskuse ja valguse tunde igas ruumis. Meie spetsialistid puhastavaad aknaid, vaateaknaid, klaasvaheseinu ja rõdukonstruktsioone professionaalsete seadmetega.',
+    'service_glass_text2' => 'Garanteerime triibuvaba tulemuse. Töötame nii elu- kui ka äriruumidega. Kõik tööd tehakse kiiresti ja hoolikalt — ohutusreegleid järgides.',
+
+    'service_garden_title' => 'Territooriumi koristus',
+    'service_garden_short' => 'Hoovide, teede ja ümbrusala koristus',
+    'service_garden_desc' => 'Ümbritseva ala koristus: hoovid, teed, parkimiskohad. Hooajaline lehtede, lume ja prahi eemaldamine.',
+    'service_garden_image' => 'Move-In-Out.png',
+    'service_garden_text1' => 'Puhas territoorium kodu või kontori ümbruses on esimene mulje, mida teie külalised ja kliendid saavad. CoralClean pakub ümbritseva ala koristust, sealhulgas hoovid, teed ja parkimiskohad.',
+    'service_garden_text2' => 'Teostame hooajalisi töid: lehtede koristust sügisel, lund talvel ja regulaarset ala puhastust prügist. Meie töötajad töötavad efektiivselt ja kasutavad professionaalseid vahendeid.',
+
+    'service_office_title' => 'Kontorikoristus',
+    'service_office_short' => 'Regulaarne ja ühekordne kontoripindade koristus',
+    'service_office_desc' => 'Terviklik kontorite ja äripindade koristus lepingu alusel. Regulaarselt, ajakavas, ilma katkestusteta.',
+    'service_office_image' => 'Office-Care.png',
+    'service_office_text1' => 'Puhas kontor ei ole ainult mugavus, vaid ka töötajate tootlikkus. CoralClean pakub regulaarset kontorikoristust Tallinnas. Töötame lepingu alusel, kindla ajakava ja läbipaistvate tingimustega.',
+    'service_office_text2' => 'Meie spetsialistid koristavad töökohtasid, ühisalasid, koosolekuruume, tualette ja kööke. Kõik tööd tehakse teile sobival ajal — enne või pärast tööpäeva.',
+
+    'service_carpet_title' => 'Vaibapesu',
+    'service_carpet_short' => 'Vaipade ja pehme mööbli süvapuhastus',
+    'service_carpet_desc' => 'Vaipade ja pehme mööbli süvapuhastus. Plekkide, tolmu ja allergeenide eemaldamine.',
+    'service_carpet_image' => 'Quick-Clean.png',
+    'service_carpet_text1' => 'Vaibad ja pehme mööbel koguvad tohutult tolmu, allergeene ja mustust. Regulaarne süvapuhastus mitte ainult ei pikenda esemete eluiga, vaid parandab ka ruumi õhukvaliteeti.',
+    'service_carpet_text2' => 'CoralClean kasutab professionaalset varustust vaipade ja pehme mööbli süvapuhastuseks. Eemaldame efektiivselt plekid, lõhnad ja allergeenid, taastades värske ja hooldatud välimuse.',
+
+    'service_renovation_title' => 'Järelremondikoristus',
+    'service_renovation_short' => 'Täielik koristus pärast ehitus- ja remonditöid',
+    'service_renovation_desc' => 'Koristus pärast remonti: ehitustolmu, materjalijääkide eemaldamine ja sissekolimiseks ettevalmistamine.',
+    'service_renovation_image' => 'Urgent-Clean.png',
+    'service_renovation_text1' => 'Pärast remonti vajavad ruumid alati põhjalikku koristust. Ehitustolm settib kõikidele pindadele ja materjalijäägid nõuavad professionaalset eemaldamist. CoralClean teostab täieliku järelremondikoristuse tsükli.',
+    'service_renovation_text2' => 'Eemaldame ehitustolmu, puhastame aknaid ja aknalauad, peseme põrandaid ja plaate, pühime kõik pinnad. Tulemus — ruumid, mis on täielikult valmis sissekolimiseks.',
+
+    // Reliability / Loyalty
+    'reliability_title' => 'Usaldusväärsus',
+    'reliability_desc' => 'Garanteerime iga koristuse kvaliteedi. Kui tulemus ei rahulda — parandame tasuta.',
+    'loyalty_title' => 'Lojaalsus',
+    'loyalty_desc' => 'Pakume püsiklientidele eritingimusi ja paindlikku soodussüsteemi.',
+
+    // Team
+    'team_title' => 'Meie kogenud meeskond',
+    'team_subtitle' => 'Professionaalsed koristajad tõestatud töökogemusega',
+    'team1_name' => 'Anna Tamm',
+    'team1_role' => 'Vanemkoristaja',
+    'team2_name' => 'Marina Ivanova',
+    'team2_role' => 'Aknapesija',
+    'team3_name' => 'Kristian Saar',
+    'team3_role' => 'Aknapesija',
+    'team4_name' => 'Julia Kuznetsova',
+    'team4_role' => 'Koristaja',
 ];

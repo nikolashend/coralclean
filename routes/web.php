@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ServiceController;
 
 Route::get('/', function () {
     return redirect('/ru');
@@ -11,4 +12,5 @@ Route::get('/', function () {
 Route::prefix('{locale}')->where(['locale' => 'ru|en|et'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+    Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('service.show');
 });

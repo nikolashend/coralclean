@@ -28,188 +28,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('img/ChatGPT-Image-Feb-2-2026-12_00_36-AM.png') }}">
     
-    <style>
-/* CoralClean Brand Design System — #2EC4C6 (Aqua) / #FF6F61 (Coral) / #1F2933 (Dark) */
-.iconsociaf { font-size: 32px !important; }
-.member-box figcaption ul li a { color: #fff; float: left; font-size: 23px !important; margin-top: -15px; }
-.footer .footer-social li a { width: 71px; height: 54px !important; }
-.wpcf7 form.sent .wpcf7-response-output { color: #000000 !important; }
-.swiper-pagination-bullet { margin-left: 5px; }
-.navbar-nav .nav-link:hover { color: #2ec4c6; }
-.navbar .site-menu ul li a:hover { color: #ffffff; }
-.slider .main-slider .swiper-slide .container a { background: #2ec4c6; }
-.slider .main-slider .swiper-slide .container a:hover { background: #ff6f61; }
-.navbar .navbar-button a { background: #2ec4c6; }
-.slider .button-next:hover, .slider .button-prev:hover { background: #2ec4c6; border-color: transparent; }
-.custom-button { background: #2ec4c6; font-family: Satoshi Black; }
-.custom-button:hover { background: #ff6f61; }
-.custom-button12 { background: #2ec4c6; }
-.custom-button12:hover { background: #ff6f61; }
-.preloader figure:after { border-top: 1px solid #2ec4c6; }
-.menueffect a:hover { color: #ff6f61; }
-.menueffect a:before { background-color: #fff; }
-.counter-box h6:after { color: #1f2933; }
-li a:hover { color: #2ec4c6; }
-input#wp-block-search__input-1, input#wp-block-search__input-2, input#wp-block-search__input { border-bottom: 0.3rem solid #2ec4c6; }
-.content-section { background: #2ec4c6; }
-.content-section.bottom-dark-spacing:after { background: #2ec4c6; }
-.section-title h2 { color: #2ec4c6; }
-.image-box .time { color: #2ec4c6; }
-.bg-light { background: #2ec4c6; }
-.side-content form button[type="submit"] { color: #2ec4c6; }
-.side-image .side-timetable li b { color: #2ec4c6; }
-.side-member figcaption { background: #2ec4c6; }
-.custom-progress span { color: #2ec4c6; }
-.custom-progress .progress-bar .progress { background: #2ec4c6; }
-.tab-wrapper .tab-nav li.active a { background: #2ec4c6; }
-.tab-wrapper .tab-nav li.active a:hover { background: #ff6f61; }
-.tab-wrapper .tab-item .tab-inner { background: #2ec4c6; }
-.tab-wrapper .tab-item .tab-inner ul li span { color: #2ec4c6; }
-.service-box { background: #2ec4c6; }
-.service-box:before { background: #2ec4c6; }
-.image-overlap-box figure { background: #2ec4c6; }
-.image-overlap-box .content a:hover { color: #ff6f61; }
-.video { background: #2ec4c6; }
-.video a { color: #2ec4c6; }
-.class-box figure { background: none; }
-.dropdown-menu { background: #2ec4c6; }
-.text-box h5 { color: #2ec4c6; }
-.recent-news figure { background: #2ec4c6; }
-.recent-news .content h3 a { color: #2ec4c6; }
-.recent-news .content small span { background: #2ec4c6; }
-.blog-box figure { background: #2ec4c6; }
-.blog-box .content h3 a { color: #2ec4c6; }
-.blog-box .content blockquote { color: #2ec4c6; }
-.sidebar .widget .widget-title { color: #2ec4c6; }
-.sidebar .widget .widget-title:before { background: #2ec4c6; }
-.sidebar .widget form input[type="submit"] { background: #2ec4c6; }
-.sidebar .widget .categories li a { color: #2ec4c6; }
-.branch-box h6 { color: #2ec4c6; }
-.branch-box a { color: #2ec4c6; }
-.member-box figcaption { background: #2ec4c6; }
-.icon { background: none; color: #2ec4c6; }
-.iconsv { background: #2ec4c6; }
-.iconk { color: #2ec4c6; }
-.iconk:hover { color: #ff6f61; }
-.sidebar-service { background: #2ec4c6; }
-span.menu-service { background: #2ec4c6; color: #2ec4c6; }
-span.menu-service:hover, span.menu-service.menuactive { background: #ff6f61; }
-.iconleft { color: #2ec4c6; }
-.iconleft:hover { color: #ff6f61; }
-a.menucolor { color: #2ec4c6; }
-a.menucolor:hover { color: #ff6f61; }
-.pagination .page-item .page-link { color: #2ec4c6; }
-.footer { background: #2ec4c6; background-image: linear-gradient(to right bottom, #2ec4c6, #ff6f61); }
-.footer .footer-info a { color: #2ec4c6; }
-.footer .copyright { background: #2ec4c6; }
-.footer .footer-social li a:hover { background: #ff6f61; border: 1px solid rgba(255, 255, 255, 0.3); }
-textarea#comment, input#author, input#email, input#url { border-bottom: 0.3rem solid #2ec4c6; }
-.paketler2__on--arkayazi-1 { background: linear-gradient(to right bottom, #2ec4c6, #ff6f61d7); }
-.form__input { border-bottom: 0.3rem solid #2ec4c6; }
-.form__input:focus, .form__input:focus:invalid { border-bottom: 0.3rem solid #2ec4c6; }
-.form__radio-buton { border: 0.5rem solid #2ec4c6; }
-.form__radio-buton::after { background-color: #2ec4c6; }
-.form-popup__input { border-bottom: 0.3rem solid #2ec4c6; }
-.form-popup__input:focus, .form-popup__input:focus:invalid { border-bottom: 0.3rem solid #2ec4c6; }
-.hizmetler-kutu--icon, .ozellik-kutu--icon, .post-kutu--icon, .yorum-kutu--icon, .ozellik-kutu-iletisim--icon, .baslik-4--icon { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); }
-.yukaricik { background-image: linear-gradient(to right bottom, #2ec4c6, #ff6f61); }
-.footer-404 { background-image: linear-gradient(to right bottom, #2ec4c6, #ff6f61); }
-.paketler-alani { background-color: #2ec4c6; }
-.form-alani { background-image: linear-gradient(to right bottom, #2ec4c6, #ff6f61); }
-.markalar { background: #2ec4c6; }
-.h2-baslik-hizmetler { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); }
-.h2-baslik-hizmetler__paragraf { color: #2ec4c6; }
-.h2-baslik-hizmetler-2 { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); font-family: Satoshi Black; font-size: 30px; font-weight: 700; }
-.side-widget small { color: #2ec4c6; }
-.swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active { background: #2ec4c6; }
-::-webkit-scrollbar-thumb { background: #ff6f61; }
-.custom-buttonw1 { border-bottom: 0.3rem solid #2ec4c6; }
-.iconsocia { color: #2ec4c6; }
-.iconsocia:hover { color: #ff6f61; }
-.paketler3__gorsel--1, .paketler3__on--arkayazi-1 { background-image: linear-gradient(to right bottom, #2ec4c6, #ff6f61); }
-.paketler2__gorsel--1 { background: linear-gradient(#2ec4c6, #ff6f61), transparent center center/cover no-repeat scroll; }
-p.countb { background: #2ec4c6; }
-.icontops { background: #2ec4c6; }
-input#submit { background: #2ec4c6; }
-.custom-buttonw:hover { background: #2ec4c6; }
-.comment-meta.commentmetadata a:hover, a.comment-edit-link:hover, p.logged-in-as a:hover, .menu-item a:hover { color: #ff6f61; }
-li a { color: #000000; }
-.tag-cloud-link { color: #2ec4c6; }
-.tagcloud a:hover { color: #ff6f61; }
-li#recent-posts-5 a:hover { color: #ff6f61; }
-input#s { border-bottom: 0.3rem solid #ff6f61; }
-.telh { background: #2ec4c6; border: 2px solid; }
-.iconsociai { color: #2ec4c6; }
-.iconsociai:hover { color: #ff6f61; }
-::selection { background-color: #2ec4c6; }
-.ozellik-kutu-yorumlar--icon, .services-kutu1--icon, .services-kutu2--icon, .services-kutu3--icon { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); }
-b.fn a:hover, li a:hover { color: #ff6f61; }
-.wp-block-latest-posts__list a:hover { color: #2ec4c6; }
-.wp-post-image { height: 100%; }
-.paketler__on--arkayazi-1 { background-image: linear-gradient(to right bottom, #2ec4c6, #ff6f61); }
-.paketler3__icerik { padding: 0rem; }
-.services-kutu2--yazi1 { width: 100%; }
-/* Typography */
-.person { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18px; font-weight: 400; }
-.ozellik-kutu-iletisim--yazi { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18px; font-weight: 400; }
-.footer-info p, p, .h2-baslik-hizmetler-21__paragraf, .paketler3__icerik ul li { font-family: Satoshi Regular; font-size: 18px; font-weight: 400; }
-body, .paragraf, .paragraf-info { color: #1f2933; font-family: Satoshi Regular; font-size: 18px; font-weight: 400; }
-span.date, span.category, span.tt, .paragraf-info a, .paragraf-sol-beyaz a, .paragraf-sol-beyaz-orta a, .paragraf-ahp a, .paragraf-pdetay a, .paragraf-404 a { color: #1f2933; font-family: Satoshi Regular; font-size: 18px; }
-.h2-baslik-hizmetler-yorum__yorum, .testimon-text, .post-kutu p, .services-kutu2--yazi1, .h2-baslik-hizmetler-2__paragraf, .paragraf-popup { color: #1f2933; font-family: Satoshi Regular; font-size: 18px; font-weight: 400; }
-ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18px; }
-.services-kutu2--yazi { font-family: Satoshi Regular; font-size: 18px; }
-/* Headings */
-.h2-baslik-anasayfa, .h2-baslik-anasayfa-ozel, .h2-baslik-anasayfa-blog, .h2-baslik-ahb, .h2-baslik-bottom, .h2-baslik-404, .h2-baslik-footer, .h2-baslik-iletisim-ozel, .h2-baslik-popup { background-image: linear-gradient(to right, #1f2933, #ff6f61); font-family: Satoshi Black; font-size: 30px; font-weight: 700; }
-.h2-baslik-anasayfa { border-bottom: .1rem solid #2ec4c6; }
-.baslik-3-h, .baslik-33, .baslik-star { color: #1f2933; font-family: Satoshi Black; font-size: 30px; font-weight: 700; }
-.h2-baslik-hizmetler-yorum { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); font-family: Satoshi Black; font-size: 30px; font-weight: 700; }
-.baslik-3s, .baslik-3white { font-family: Satoshi Black; }
-.baslik-3s { color: #1f2933; }
-.counter-box .odometer, .baslik-orta, .baslik-4, .counter-box h6 { color: #1f2933; font-family: Satoshi Black; }
-.baslik-orta, .baslik-3 { font-size: 23px; font-weight: 700; }
-.baslik-3 { color: #1f2933; font-family: Satoshi Black; }
-.slider .main-slider .swiper-slide .container h1, .slider .main-slider .swiper-slide .container p { color: #2ec4c6; font-family: Satoshi Black; }
-.slider .main-slider .swiper-slide .container a, .custom-buttonw, .baslik-sol, .member-box figcaption h6, .member-box figcaption p { font-family: Satoshi Black; }
-.h2-baslik-hizmetler-21, .h2-baslik-hizmetler-2111 { font-family: Satoshi Black; font-size: 30px; font-weight: 700; }
-.baslik-3-service, .paketler3__pr-yazi { font-family: Satoshi Black; }
-.paketler3__pr-degeri { font-family: Satoshi Black; font-size: 30px; font-weight: 700; }
-.footer .widget-title, .page-header .container h2 { font-family: Satoshi Black; }
-/* Secondary text */
-.reply a:hover, cite.fn a:hover, time:hover { color: #1f2933; }
-.counter-box h6:after { color: #1f2933; display: none; }
-/* Service background */
-.services1 { background: transparent url('/img/service-bg.jpg') center center/cover no-repeat scroll; }
-/* FAQ Styles */
-.faq-item { border-bottom: 1px solid #e0e0e0; padding: 20px 0; }
-.faq-question { cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: Satoshi Black; font-size: 18px; color: #1f2933; }
-.faq-question:hover { color: #2ec4c6; }
-.faq-answer { display: none; padding-top: 15px; color: #1f2933; font-family: Satoshi Regular; }
-.faq-item.active .faq-answer { display: block; }
-.faq-icon { transition: transform 0.3s; }
-.faq-item.active .faq-icon { transform: rotate(180deg); }
-/* Trust cards */
-.trust-card { text-align: center; padding: 30px 20px; background: #fff; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px; }
-.trust-card .icon { font-size: 48px; margin-bottom: 15px; }
-.trust-card h4 { font-family: Satoshi Black; font-size: 20px; color: #1f2933; margin-bottom: 10px; }
-.trust-card p { font-family: Satoshi Regular; font-size: 16px; color: #666; }
-/* How it works */
-.step-box { text-align: center; padding: 20px; }
-.step-number { width: 60px; height: 60px; background: #2ec4c6; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: Satoshi Black; font-size: 24px; margin: 0 auto 20px; }
-.step-box h4 { font-family: Satoshi Black; font-size: 20px; color: #1f2933; margin-bottom: 10px; }
-.step-box p { font-family: Satoshi Regular; font-size: 16px; color: #666; }
-/* CTA Section */
-.cta-section { background: linear-gradient(to right, #2ec4c6, #ff6f61); padding: 60px 0; text-align: center; }
-.cta-section h2 { color: #fff; font-family: Satoshi Black; font-size: 36px; margin-bottom: 15px; }
-.cta-section p { color: rgba(255,255,255,0.9); font-family: Satoshi Regular; font-size: 18px; margin-bottom: 30px; }
-.cta-btn { display: inline-block; padding: 15px 40px; background: #fff; color: #2ec4c6; font-family: Satoshi Black; font-size: 18px; border-radius: 5px; margin: 0 10px; text-decoration: none; transition: all 0.3s; }
-.cta-btn:hover { background: #1f2933; color: #fff; }
-.cta-btn.secondary { background: transparent; border: 2px solid #fff; color: #fff; }
-.cta-btn.secondary:hover { background: #fff; color: #2ec4c6; }
-/* Alert Styles */
-.alert { padding: 15px 20px; border-radius: 5px; margin-top: 15px; font-family: Satoshi Regular; font-size: 16px; }
-.alert-success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
-.alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
-    </style>
+    @include('partials.styles')
 
     <!-- Schema.org LocalBusiness -->
     <script type="application/ld+json">
@@ -404,47 +223,47 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
         </div>
     </aside>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <div class="container">
-            <div class="logo"><a href="/"><img src="{{ asset('img/ChatGPT-Image-Feb-1-2026-02_13_45-PM.png') }}" alt="CoralClean"></a></div>
-            <div class="site-menu">
-                <div class="menueffect">
-                    <div id="bs-example-navbar-collapse-2" class="collapse navbar-collapse">
-                        <ul id="menu-main-menu" class="nav navbar-nav">
-                            <li class="menu-item nav-item active"><a href="/" class="nav-link"><span>{{ $locale == 'en' ? 'Home' : ($locale == 'et' ? 'Avaleht' : 'Главная') }}</span></a></li>
-                            <li class="menu-item nav-item"><a href="#about" class="nav-link"><span>{{ $locale == 'en' ? 'About' : ($locale == 'et' ? 'Meist' : 'О нас') }}</span></a></li>
-                            <li class="menu-item menu-item-has-children dropdown nav-item">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link"><span>{{ __('home.nav_services') }}</span></a>
-                                <ul class="dropdown-menu">
-                                    <li class="menu-item nav-item"><a href="#quick-clean" class="dropdown-item"><span>Quick Clean</span></a></li>
-                                    <li class="menu-item nav-item"><a href="#deep-clean" class="dropdown-item"><span>Deep Clean</span></a></li>
-                                    <li class="menu-item nav-item"><a href="#move-in-out" class="dropdown-item"><span>Move-In/Out</span></a></li>
-                                    <li class="menu-item nav-item"><a href="#office-care" class="dropdown-item"><span>Office Care</span></a></li>
-                                    <li class="menu-item nav-item"><a href="#urgent-clean" class="dropdown-item"><span>Urgent Clean</span></a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item nav-item"><a href="#packages" class="nav-link"><span>{{ $locale == 'en' ? 'Packages' : ($locale == 'et' ? 'Paketid' : 'Пакеты') }}</span></a></li>
-                            <li class="menu-item nav-item"><a href="#faq" class="nav-link"><span>{{ __('home.nav_faq') }}</span></a></li>
-                            <li class="menu-item nav-item"><a href="#contact" class="nav-link"><span>{{ __('home.nav_contacts') }}</span></a></li>
-                            <li class="menu-item menu-item-has-children dropdown nav-item">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link" style="text-transform: uppercase;"><span>{{ strtoupper($locale ?? 'ru') }}</span></a>
-                                <ul class="dropdown-menu">
-                                    <li class="menu-item nav-item"><a href="{{ url('/ru') }}" class="dropdown-item"><span>Русский</span></a></li>
-                                    <li class="menu-item nav-item"><a href="{{ url('/en') }}" class="dropdown-item"><span>English</span></a></li>
-                                    <li class="menu-item nav-item"><a href="{{ url('/et') }}" class="dropdown-item"><span>Eesti</span></a></li>
-                                </ul>
-                            </li>
-                        </ul>
+    @include('partials.header')
+
+    <!-- SLIDE-IN CONTACT FORM PANEL (Right Side) -->
+    <aside class="contact-panel" id="contactPanel">
+        <div class="contact-panel-inner">
+            <div class="contact-panel-close" onclick="closeContactPanel()">&times;</div>
+            <div class="callbackform wow fadeInUp" data-wow-delay="0.3s">
+                <h2 class="h2-baslik-popup h-yazi-margin-kucuk">{{ __('home.form_panel_title') }}</h2>
+                <p class="paragraf-popup">{{ __('home.form_panel_subtitle') }}</p>
+                <div class="bosluk1"></div>
+                <form action="{{ url('/' . ($locale ?? 'ru') . '/contact') }}" method="POST" class="form-popup">
+                    @csrf
+                    <div class="form-popup__grup">
+                        <input type="text" name="name" class="form-popup__input" placeholder="{{ __('home.form_name') }}" required>
                     </div>
-                </div>
-            </div>
-            <div class="hamburger-menu"><span></span><span></span><span></span></div>
-            <div class="navbar-button">
-                <a href="tel:+37258301348" class="telh"><i class="flaticon-call iconp"></i>&nbsp;&nbsp;&nbsp;+372 5830 1348</a>
+                    <div class="form-popup__grup">
+                        <input type="email" name="email" class="form-popup__input" placeholder="{{ __('home.form_email') }}">
+                    </div>
+                    <div class="form-popup__grup">
+                        <input type="tel" name="phone" class="form-popup__input" placeholder="{{ __('home.form_phone') }}" required>
+                    </div>
+                    <div class="form-popup__grup">
+                        <div class="or">
+                            <input type="submit" class="custom-button12" value="{{ __('home.form_submit') }}">
+                        </div>
+                    </div>
+                </form>
+                @if(session('success'))
+                    <div class="alert alert-success mt-3">{{ session('success') }}</div>
+                @endif
+                @if($errors->any())
+                    <div class="alert alert-danger mt-3">
+                        @foreach($errors->all() as $error)
+                            <p>{{ $error }}</p>
+                        @endforeach
+                    </div>
+                @endif
             </div>
         </div>
-    </nav>
+    </aside>
+    <div class="contact-panel-overlay" id="contactOverlay" onclick="closeContactPanel()"></div>
 
     <!-- HERO SECTION -->
     <header class="slider">
@@ -458,7 +277,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
                         <div class="bosluk1"></div>
                         <p style="font-size: 16px; opacity: 0.9;">{{ $locale == 'en' ? 'Working: Tallinn • Harjumaa' : ($locale == 'et' ? 'Töötame: Tallinn • Harjumaa' : 'Работаем: Tallinn • Harjumaa') }}</p>
                         <div class="bosluk1"></div>
-                        <a href="#contact">{{ __('home.btn_order') }}</a>
+                        <a href="javascript:void(0)" onclick="openContactPanel()">{{ __('home.btn_order') }}</a>
                         <a href="https://wa.me/37258301348" style="background: transparent; border: 2px solid #2ec4c6; margin-left: 15px;">{{ __('home.btn_whatsapp') }} →</a>
                     </div>
                 </div>
@@ -575,6 +394,163 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
         </div>
     </section>
 
+    <!-- SERVICES BLOCK (Reliable Cleaning Services) -->
+    <section class="services1 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="h-yazi-ortalama h-yazi-margin-orta-3">
+                        <div class="icon"><i class="flaticon-clean-1"></i></div>
+                        <h2 class="h2-baslik-hizmetler-2 wow fadeInUp" data-wow-delay="0.4s">{{ __('home.services_title') }}</h2>
+                    </div>
+                    <p class="h2-baslik-hizmetler-2__paragraf wow fadeInUp" data-wow-delay="0.5s">{{ __('home.services_subtitle') }}</p>
+                </div>
+            </div>
+            <div class="ortabutton">
+                <div class="bosluk1"></div>
+                <a href="#packages" class="custom-button wow fadeInUp" data-wow-delay="0.6s">{{ __('home.btn_all_services') }}</a>
+                <div class="bosluk3"></div>
+            </div>
+        </div>
+        <div class="bosluk3"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="paketler2 wow rotateIn" data-wow-delay="0.6s" data-tilt>
+                        <div class="paketler2__on paketler2__on--onyazi">
+                            <div class="paketler2__gorsel paketler2__gorsel--1">
+                                <div class="paketler2__icerik">
+                                    <div class="iconw"><i class="flaticon-clean-2"></i></div>
+                                    <h3 class="baslik-3white h-yazi-margin-kucuk">{{ __('home.service_glass_title') }}</h3>
+                                    <p class="services-kutu2--yazi wow fade">{{ __('home.service_glass_short') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paketler2__on paketler2__on--arkayazi paketler2__on--arkayazi-1">
+                            <div class="paketler2__pr">
+                                <div class="paketler2__pr-kutu">
+                                    <h3 class="baslik-sol h-yazi-margin-kucuk">{{ __('home.service_glass_title') }}</h3>
+                                    <p class="services-kutu2--yazi wow fade">{{ __('home.service_glass_desc') }}</p>
+                                </div>
+                                <a href="{{ url('/' . $locale . '/services/glass-cleaning') }}" class="custom-button">{{ __('home.btn_details') }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="paketler2 wow rotateIn" data-wow-delay="0.7s" data-tilt>
+                        <div class="paketler2__on paketler2__on--onyazi">
+                            <div class="paketler2__gorsel paketler2__gorsel--1">
+                                <div class="paketler2__icerik">
+                                    <div class="iconw"><i class="flaticon-mop"></i></div>
+                                    <h3 class="baslik-3white h-yazi-margin-kucuk">{{ __('home.service_garden_title') }}</h3>
+                                    <p class="services-kutu2--yazi wow fade">{{ __('home.service_garden_short') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paketler2__on paketler2__on--arkayazi paketler2__on--arkayazi-1">
+                            <div class="paketler2__pr">
+                                <div class="paketler2__pr-kutu">
+                                    <h3 class="baslik-sol h-yazi-margin-kucuk">{{ __('home.service_garden_title') }}</h3>
+                                    <p class="services-kutu2--yazi wow fade">{{ __('home.service_garden_desc') }}</p>
+                                </div>
+                                <a href="{{ url('/' . $locale . '/services/garden-cleaning') }}" class="custom-button">{{ __('home.btn_details') }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="paketler2 wow rotateIn" data-wow-delay="0.8s" data-tilt>
+                        <div class="paketler2__on paketler2__on--onyazi">
+                            <div class="paketler2__gorsel paketler2__gorsel--1">
+                                <div class="paketler2__icerik">
+                                    <div class="iconw"><i class="flaticon-clean-1"></i></div>
+                                    <h3 class="baslik-3white h-yazi-margin-kucuk">{{ __('home.service_renovation_title') }}</h3>
+                                    <p class="services-kutu2--yazi wow fade">{{ __('home.service_renovation_short') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paketler2__on paketler2__on--arkayazi paketler2__on--arkayazi-1">
+                            <div class="paketler2__pr">
+                                <div class="paketler2__pr-kutu">
+                                    <h3 class="baslik-sol h-yazi-margin-kucuk">{{ __('home.service_renovation_title') }}</h3>
+                                    <p class="services-kutu2--yazi wow fade">{{ __('home.service_renovation_desc') }}</p>
+                                </div>
+                                <a href="{{ url('/' . $locale . '/services/renovation-cleaning') }}" class="custom-button">{{ __('home.btn_details') }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="paketler2 wow rotateIn" data-wow-delay="0.9s" data-tilt>
+                        <div class="paketler2__on paketler2__on--onyazi">
+                            <div class="paketler2__gorsel paketler2__gorsel--1">
+                                <div class="paketler2__icerik">
+                                    <div class="iconw"><i class="flaticon-clean"></i></div>
+                                    <h3 class="baslik-3white h-yazi-margin-kucuk">{{ __('home.service_office_title') }}</h3>
+                                    <p class="services-kutu2--yazi wow fade">{{ __('home.service_office_short') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paketler2__on paketler2__on--arkayazi paketler2__on--arkayazi-1">
+                            <div class="paketler2__pr">
+                                <div class="paketler2__pr-kutu">
+                                    <h3 class="baslik-sol h-yazi-margin-kucuk">{{ __('home.service_office_title') }}</h3>
+                                    <p class="services-kutu2--yazi wow fade">{{ __('home.service_office_desc') }}</p>
+                                </div>
+                                <a href="{{ url('/' . $locale . '/services/office-cleaning') }}" class="custom-button">{{ __('home.btn_details') }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="paketler2 wow rotateIn" data-wow-delay="1s" data-tilt>
+                        <div class="paketler2__on paketler2__on--onyazi">
+                            <div class="paketler2__gorsel paketler2__gorsel--1">
+                                <div class="paketler2__icerik">
+                                    <div class="iconw"><i class="flaticon-brush"></i></div>
+                                    <h3 class="baslik-3white h-yazi-margin-kucuk">{{ __('home.service_carpet_title') }}</h3>
+                                    <p class="services-kutu2--yazi wow fade">{{ __('home.service_carpet_short') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paketler2__on paketler2__on--arkayazi paketler2__on--arkayazi-1">
+                            <div class="paketler2__pr">
+                                <div class="paketler2__pr-kutu">
+                                    <h3 class="baslik-sol h-yazi-margin-kucuk">{{ __('home.service_carpet_title') }}</h3>
+                                    <p class="services-kutu2--yazi wow fade">{{ __('home.service_carpet_desc') }}</p>
+                                </div>
+                                <a href="{{ url('/' . $locale . '/services/carpet-cleaning') }}" class="custom-button">{{ __('home.btn_details') }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="paketler2 wow rotateIn" data-wow-delay="1.1s" data-tilt>
+                        <div class="paketler2__on paketler2__on--onyazi">
+                            <div class="paketler2__gorsel paketler2__gorsel--1">
+                                <div class="paketler2__icerik">
+                                    <div class="iconw"><i class="flaticon-vacuum"></i></div>
+                                    <h3 class="baslik-3white h-yazi-margin-kucuk">{{ __('home.service_home_title') }}</h3>
+                                    <p class="services-kutu2--yazi wow fade">{{ __('home.service_home_short') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paketler2__on paketler2__on--arkayazi paketler2__on--arkayazi-1">
+                            <div class="paketler2__pr">
+                                <div class="paketler2__pr-kutu">
+                                    <h3 class="baslik-sol h-yazi-margin-kucuk">{{ __('home.service_home_title') }}</h3>
+                                    <p class="services-kutu2--yazi wow fade">{{ __('home.service_home_desc') }}</p>
+                                </div>
+                                <a href="{{ url('/' . $locale . '/services/home-cleaning') }}" class="custom-button">{{ __('home.btn_details') }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- PACKAGES SECTION -->
     <div class="bosluk8"></div>
     <section class="special-paket-alani" id="packages">
@@ -611,7 +587,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
                                     <p class="paketler3__pr-yazi">Quick Clean</p>
                                     <p class="paketler3__pr-degeri">от 45 €</p>
                                 </div>
-                                <a href="#contact" class="custom-button">Заказать быстро →</a>
+                                <a href="javascript:void(0)" onclick="openContactPanel()" class="custom-button">{{ __('home.btn_order_quick') }} →</a>
                             </div>
                         </div>
                     </div>
@@ -641,7 +617,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
                                     <p class="paketler3__pr-yazi">Deep Clean</p>
                                     <p class="paketler3__pr-degeri">от 2 € / м²</p>
                                 </div>
-                                <a href="#contact" class="custom-button">Хочу идеально →</a>
+                                <a href="javascript:void(0)" onclick="openContactPanel()" class="custom-button">{{ __('home.btn_order_deep') }} →</a>
                             </div>
                         </div>
                     </div>
@@ -671,7 +647,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
                                     <p class="paketler3__pr-yazi">Move-In / Out</p>
                                     <p class="paketler3__pr-degeri">от 60 €</p>
                                 </div>
-                                <a href="#contact" class="custom-button">Подготовить квартиру →</a>
+                                <a href="javascript:void(0)" onclick="openContactPanel()" class="custom-button">{{ __('home.btn_order_movein') }} →</a>
                             </div>
                         </div>
                     </div>
@@ -703,7 +679,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
                                     <p class="paketler3__pr-yazi">Office Care</p>
                                     <p class="paketler3__pr-degeri">от 0.07 € / м²</p>
                                 </div>
-                                <a href="#contact" class="custom-button">Получить предложение →</a>
+                                <a href="javascript:void(0)" onclick="openContactPanel()" class="custom-button">{{ __('home.btn_order_office') }} →</a>
                             </div>
                         </div>
                     </div>
@@ -733,7 +709,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
                                     <p class="paketler3__pr-yazi">Urgent Clean</p>
                                     <p class="paketler3__pr-degeri">уточняйте</p>
                                 </div>
-                                <a href="tel:+37258301348" class="custom-button">Нужно срочно →</a>
+                                <a href="javascript:void(0)" onclick="openContactPanel()" class="custom-button">{{ __('home.btn_urgent_package') }} →</a>
                             </div>
                         </div>
                     </div>
@@ -789,7 +765,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
                     </div>
                 </div>
                 <div class="bosluk1"></div>
-                <a href="#contact" class="custom-button wow fadeInUp" data-wow-delay="1.3s">Связаться с нами →</a>
+                <a href="javascript:void(0)" onclick="openContactPanel()" class="custom-button wow fadeInUp" data-wow-delay="1.3s">{{ __('home.btn_contact') }}</a>
                 <div class="bosluk3rh"></div>
             </div>
         </div>
@@ -842,6 +818,115 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
             </div>
         </div>
         <div class="boslukalt"></div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="ozellika" data-background="#f3f3f3">
+        <div class="container">
+            <div class="row align-items-center no-gutters">
+                <div class="col-lg-12">
+                    <div class="wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="boslukalt"></div>
+                        <div class="icon"><i class="flaticon-protest"></i></div>
+                        <h2 class="h2-baslik-hizmetler-2 wow fadeInRight" data-wow-delay="0.4s">{{ __('home.team_title') }}</h2>
+                        <p class="h2-baslik-hizmetler-2__paragraf wow fadeInUp" data-wow-delay="0.4s">{{ __('home.team_subtitle') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="team-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="carousel-classes">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="class-box">
+                                    <div class="services-kutu2 wow fadeInLeft" data-wow-delay="0.5s" style="cursor:pointer;">
+                                        <div class="member-box wow reveal-effect">
+                                            <figure>
+                                                <img src="{{ asset('img/teams1.png') }}" alt="{{ __('home.team1_name') }}">
+                                                <figcaption>
+                                                    <h6>{{ __('home.team1_name') }}</h6>
+                                                    <p class="paragraf-sol-beyaz-orta">{{ __('home.team1_role') }}</p>
+                                                    <ul class="social">
+                                                        <li><a href="#" class="icon-social-facebook"></a></li>
+                                                        <li><a href="#" class="icon-social-instagram"></a></li>
+                                                        <li><a href="#" class="icon-social-twitter"></a></li>
+                                                    </ul>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="class-box">
+                                    <div class="services-kutu2 wow fadeInLeft" data-wow-delay="0.6s" style="cursor:pointer;">
+                                        <div class="member-box wow reveal-effect">
+                                            <figure>
+                                                <img src="{{ asset('img/teams2.png') }}" alt="{{ __('home.team2_name') }}">
+                                                <figcaption>
+                                                    <h6>{{ __('home.team2_name') }}</h6>
+                                                    <p class="paragraf-sol-beyaz-orta">{{ __('home.team2_role') }}</p>
+                                                    <ul class="social">
+                                                        <li><a href="#" class="icon-social-facebook"></a></li>
+                                                        <li><a href="#" class="icon-social-instagram"></a></li>
+                                                        <li><a href="#" class="icon-social-twitter"></a></li>
+                                                    </ul>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="class-box">
+                                    <div class="services-kutu2 wow fadeInLeft" data-wow-delay="0.7s" style="cursor:pointer;">
+                                        <div class="member-box wow reveal-effect">
+                                            <figure>
+                                                <img src="{{ asset('img/teams3.png') }}" alt="{{ __('home.team3_name') }}">
+                                                <figcaption>
+                                                    <h6>{{ __('home.team3_name') }}</h6>
+                                                    <p class="paragraf-sol-beyaz-orta">{{ __('home.team3_role') }}</p>
+                                                    <ul class="social">
+                                                        <li><a href="#" class="icon-social-facebook"></a></li>
+                                                        <li><a href="#" class="icon-social-instagram"></a></li>
+                                                        <li><a href="#" class="icon-social-twitter"></a></li>
+                                                    </ul>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="class-box">
+                                    <div class="services-kutu2 wow fadeInRight" data-wow-delay="0.8s" style="cursor:pointer;">
+                                        <div class="member-box wow reveal-effect">
+                                            <figure>
+                                                <img src="{{ asset('img/teams4.png') }}" alt="{{ __('home.team4_name') }}">
+                                                <figcaption>
+                                                    <h6>{{ __('home.team4_name') }}</h6>
+                                                    <p class="paragraf-sol-beyaz-orta">{{ __('home.team4_role') }}</p>
+                                                    <ul class="social">
+                                                        <li><a href="#" class="icon-social-facebook"></a></li>
+                                                        <li><a href="#" class="icon-social-instagram"></a></li>
+                                                        <li><a href="#" class="icon-social-twitter"></a></li>
+                                                    </ul>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- TRUST STACK SECTION -->
@@ -993,7 +1078,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
             <h2 class="wow fadeInUp" data-wow-delay="0.3s">Готовы к чистоте без стресса?</h2>
             <p class="wow fadeInUp" data-wow-delay="0.4s">Оставьте заявку — мы всё организуем за вас</p>
             <div class="wow fadeInUp" data-wow-delay="0.5s">
-                <a href="tel:+37258301348" class="cta-btn">Позвонить</a>
+                <a href="javascript:void(0)" onclick="openContactPanel()" class="cta-btn">{{ __('home.btn_leave_request') }}</a>
                 <a href="https://wa.me/37258301348" class="cta-btn secondary">WhatsApp</a>
             </div>
         </div>
@@ -1079,23 +1164,24 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
                     <h6 class="widget-title">Услуги</h6>
                     <div class="footer-menu">
                         <ul class="menu">
-                            <li><a href="#packages">Quick Clean</a></li>
-                            <li><a href="#packages">Deep Clean</a></li>
-                            <li><a href="#packages">Move-In / Out</a></li>
-                            <li><a href="#packages">Office Care</a></li>
-                            <li><a href="#packages">Urgent Clean</a></li>
+                            <li><a href="{{ url('/' . $locale . '/services/home-cleaning') }}">{{ __('home.service_home_title') }}</a></li>
+                            <li><a href="{{ url('/' . $locale . '/services/glass-cleaning') }}">{{ __('home.service_glass_title') }}</a></li>
+                            <li><a href="{{ url('/' . $locale . '/services/garden-cleaning') }}">{{ __('home.service_garden_title') }}</a></li>
+                            <li><a href="{{ url('/' . $locale . '/services/office-cleaning') }}">{{ __('home.service_office_title') }}</a></li>
+                            <li><a href="{{ url('/' . $locale . '/services/carpet-cleaning') }}">{{ __('home.service_carpet_title') }}</a></li>
+                            <li><a href="{{ url('/' . $locale . '/services/renovation-cleaning') }}">{{ __('home.service_renovation_title') }}</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2 col-sm-6 wow animated fadeInUp" data-wow-delay="0.5s">
-                    <h6 class="widget-title">Быстрые ссылки</h6>
+                    <h6 class="widget-title">{{ $locale == 'en' ? 'Quick Links' : ($locale == 'et' ? 'Kiirlingid' : 'Быстрые ссылки') }}</h6>
                     <div class="footer-menu">
                         <ul class="menu">
-                            <li><a href="#about">О нас</a></li>
-                            <li><a href="#packages">Пакеты</a></li>
-                            <li><a href="#how-it-works">Как мы работаем</a></li>
+                            <li><a href="#about">{{ $locale == 'en' ? 'About Us' : ($locale == 'et' ? 'Meist' : 'О нас') }}</a></li>
+                            <li><a href="#packages">{{ $locale == 'en' ? 'Packages' : ($locale == 'et' ? 'Paketid' : 'Пакеты') }}</a></li>
+                            <li><a href="#how-it-works">{{ $locale == 'en' ? 'How We Work' : ($locale == 'et' ? 'Kuidas töötame' : 'Как мы работаем') }}</a></li>
                             <li><a href="#faq">FAQ</a></li>
-                            <li><a href="#contact">Контакты</a></li>
+                            <li><a href="javascript:void(0)" onclick="openContactPanel()">{{ __('home.nav_contacts') }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1136,6 +1222,22 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
         });
         
         if (typeof init_pointer === 'function') { init_pointer({}); }
+        
+        // Contact Panel Functions
+        function openContactPanel() {
+            document.getElementById('contactPanel').classList.add('open');
+            document.getElementById('contactOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeContactPanel() {
+            document.getElementById('contactPanel').classList.remove('open');
+            document.getElementById('contactOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeContactPanel();
+        });
     </script>
 </body>
 </html>

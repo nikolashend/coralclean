@@ -169,4 +169,80 @@ return [
     'form_phone' => 'Your Phone',
     'form_submit' => 'Submit Request →',
     'form_success' => 'Thank you! We will contact you soon.',
+    'form_panel_title' => 'Leave Your Number',
+    'form_panel_subtitle' => 'We\'ll call you back and arrange everything',
+
+    // Contact button
+    'btn_contact_us' => 'Contact Us',
+    'btn_leave_request' => 'Leave a Request',
+    'btn_details' => 'Details →',
+    'btn_order_quick' => 'Order Now',
+    'btn_order_deep' => 'I Want Perfect',
+    'btn_order_movein' => 'Prepare My Place',
+    'btn_order_office' => 'Get a Quote',
+
+    // Services Block
+    'services_title' => 'Reliable Cleaning Services',
+    'services_subtitle' => 'Professional cleaning for homes and businesses in Tallinn',
+
+    // Individual Services
+    'service_home_title' => 'Home Cleaning',
+    'service_home_short' => 'Regular and deep cleaning of your home',
+    'service_home_desc' => 'Complete cleaning of residential premises: floors, dust, kitchen, bathrooms. We work according to a checklist, carefully and at a convenient time for you.',
+    'service_home_image' => 'Hero.png',
+    'service_home_text1' => 'House cleaning is a job that takes a lot of time and energy, especially in today\'s fast pace of life. Like any other work, it requires a professional approach. CoralClean offers regular and deep cleaning services for apartments and homes in Tallinn and Harjumaa.',
+    'service_home_text2' => 'We perform detailed cleaning with a quality and reliability guarantee. Our cleaners work according to a clear checklist, using professional products and equipment. You can get detailed information about pricing and service composition on our website or by phone.',
+
+    'service_glass_title' => 'Glass Cleaning',
+    'service_glass_short' => 'Professional cleaning of windows, storefronts and glass surfaces',
+    'service_glass_desc' => 'Cleaning of windows, balcony glass, storefronts and glass partitions. Streak-free, using professional tools.',
+    'service_glass_image' => 'Deep-Clean.png',
+    'service_glass_text1' => 'Clean windows create a sense of freshness and light in any room. Our specialists clean windows, storefronts, glass partitions and balcony structures using professional equipment.',
+    'service_glass_text2' => 'We guarantee streak-free results. We work with both residential and commercial premises. All work is done quickly and carefully — following safety guidelines.',
+
+    'service_garden_title' => 'Garden & Area Cleaning',
+    'service_garden_short' => 'Cleaning of yards, driveways and surrounding areas',
+    'service_garden_desc' => 'Cleaning of surrounding areas: yards, pathways, parking lots. Seasonal leaf, snow and debris removal.',
+    'service_garden_image' => 'Move-In-Out.png',
+    'service_garden_text1' => 'A clean area around your home or office is the first impression your guests and clients form. CoralClean offers cleaning services for surrounding areas, including yards, pathways and parking lots.',
+    'service_garden_text2' => 'We perform seasonal work: leaf removal in autumn, snow in winter, and regular area cleaning from debris. Our staff work efficiently and use professional equipment.',
+
+    'service_office_title' => 'Office Cleaning',
+    'service_office_short' => 'Regular and one-time office space cleaning',
+    'service_office_desc' => 'Comprehensive cleaning of offices and commercial premises by contract. Regular, on schedule, without interruptions.',
+    'service_office_image' => 'Office-Care.png',
+    'service_office_text1' => 'A clean office is not just comfort, but also employee productivity. CoralClean offers regular office cleaning services in Tallinn. We work by contract, with a fixed schedule and transparent terms.',
+    'service_office_text2' => 'Our specialists clean workstations, common areas, meeting rooms, bathrooms and kitchens. All work is done at a convenient time for you — before or after working hours.',
+
+    'service_carpet_title' => 'Carpet Cleaning',
+    'service_carpet_short' => 'Deep cleaning of carpets and upholstered furniture',
+    'service_carpet_desc' => 'Deep cleaning of carpets and upholstered furniture. Removal of stains, dust and allergens.',
+    'service_carpet_image' => 'Quick-Clean.png',
+    'service_carpet_text1' => 'Carpets and upholstered furniture collect a huge amount of dust, allergens and dirt. Regular deep cleaning not only extends the life of the items but also improves air quality in the room.',
+    'service_carpet_text2' => 'CoralClean uses professional equipment for deep cleaning of carpets and upholstered furniture. We effectively remove stains, odors and allergens, restoring a fresh and well-maintained appearance.',
+
+    'service_renovation_title' => 'Post-Renovation Cleaning',
+    'service_renovation_short' => 'Complete cleaning after construction and renovation work',
+    'service_renovation_desc' => 'Post-renovation cleaning: removal of construction dust, material residues and preparation for move-in.',
+    'service_renovation_image' => 'Urgent-Clean.png',
+    'service_renovation_text1' => 'After renovation, premises always need thorough cleaning. Construction dust settles on all surfaces, and material residues require professional removal. CoralClean performs a full cycle of post-renovation cleaning.',
+    'service_renovation_text2' => 'We remove construction dust, clean windows and sills, wash floors and tiles, wipe all surfaces. The result — premises fully ready for move-in or starting work.',
+
+    // Reliability / Loyalty
+    'reliability_title' => 'Reliability',
+    'reliability_desc' => 'We guarantee the quality of every cleaning. If you are not satisfied with the result — we will fix it for free.',
+    'loyalty_title' => 'Loyalty',
+    'loyalty_desc' => 'We offer special conditions and a flexible discount system for regular clients.',
+
+    // Team
+    'team_title' => 'Our Experienced Team',
+    'team_subtitle' => 'Professional cleaners with proven work experience',
+    'team1_name' => 'Anna Tamm',
+    'team1_role' => 'Senior Cleaner',
+    'team2_name' => 'Marina Ivanova',
+    'team2_role' => 'Window Cleaner',
+    'team3_name' => 'Kristian Saar',
+    'team3_role' => 'Window Cleaner',
+    'team4_name' => 'Julia Kuznetsova',
+    'team4_role' => 'Cleaner',
 ];
