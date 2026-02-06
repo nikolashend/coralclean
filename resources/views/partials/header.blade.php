@@ -1,27 +1,27 @@
 ﻿<!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container">
-        <div class="logo"><a href="{{ url('/' . $locale) }}"><img src="{{ asset('img/ChatGPT-Image-Feb-1-2026-02_13_45-PM.png') }}" alt="CoralClean"></a></div>
+        <div class="logo"><a href="{{ url('/' . $locale) }}"><img src="{{ asset('img/coralclean/logo1.png') }}?v={{ filemtime(public_path('img/coralclean/logo1.png')) }}" alt="CoralClean"></a></div>
         <div class="site-menu">
             <div class="menueffect">
                 <div id="bs-example-navbar-collapse-2" class="collapse navbar-collapse">
                     <ul id="menu-main-menu" class="nav navbar-nav">
-                        <li class="menu-item nav-item {{ Request::is($locale) || Request::is('/') ? 'active' : '' }}"><a href="{{ url('/' . $locale) }}" class="nav-link"><span>{{ $locale == 'en' ? 'Home' : ($locale == 'et' ? 'Avaleht' : 'Главная') }}</span></a></li>
-                        <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/#about') }}" class="nav-link"><span>{{ $locale == 'en' ? 'About' : ($locale == 'et' ? 'Meist' : 'О нас') }}</span></a></li>
-                        <li class="menu-item menu-item-has-children dropdown nav-item {{ Request::is($locale . '/services/*') ? 'active' : '' }}">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link"><span>{{ __('home.nav_services') }}</span></a>
+                        <li class="menu-item nav-item {{ Request::is($locale) || Request::is('/') ? 'active' : '' }}"><a href="{{ url('/' . $locale) }}" class="nav-link"><span>{{ __('home.nav_home') }}</span></a></li>
+                        <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/#about') }}" class="nav-link"><span>{{ __('home.nav_about') }}</span></a></li>
+                        <li class="menu-item menu-item-has-children dropdown nav-item">
+                            <a href="{{ url('/' . $locale . '/#services') }}" data-toggle="dropdown" class="dropdown-toggle nav-link"><span>{{ __('home.nav_services') }}</span></a>
                             <ul class="dropdown-menu">
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/home-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_home_title') }}</span></a></li>
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/glass-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_glass_title') }}</span></a></li>
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/garden-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_garden_title') }}</span></a></li>
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/office-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_office_title') }}</span></a></li>
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/carpet-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_carpet_title') }}</span></a></li>
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/renovation-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_renovation_title') }}</span></a></li>
+                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/general-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_general') }}</span></a></li>
+                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/deep-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_deep') }}</span></a></li>
+                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/move-in-out') }}" class="dropdown-item"><span>{{ __('home.service_move') }}</span></a></li>
+                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/office-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_office') }}</span></a></li>
+                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/window-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_window') }}</span></a></li>
+                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/carpet-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_carpet') }}</span></a></li>
                             </ul>
                         </li>
-                        <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/#packages') }}" class="nav-link"><span>{{ $locale == 'en' ? 'Packages' : ($locale == 'et' ? 'Paketid' : 'Пакеты') }}</span></a></li>
+                        <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/#packages') }}" class="nav-link"><span>{{ __('home.nav_packages') }}</span></a></li>
                         <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/#faq') }}" class="nav-link"><span>{{ __('home.nav_faq') }}</span></a></li>
-                        <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/#contact') }}" class="nav-link"><span>{{ __('home.nav_contacts') }}</span></a></li>
+                        <li class="menu-item nav-item"><a href="javascript:void(0)" onclick="openContactPanel()" class="nav-link"><span>{{ __('home.nav_contacts') }}</span></a></li>
                         <li class="menu-item menu-item-has-children dropdown nav-item">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link" style="text-transform: uppercase;"><span>{{ strtoupper($locale ?? 'ru') }}</span></a>
                             <ul class="dropdown-menu">

@@ -1,62 +1,99 @@
-﻿<!-- Footer -->
-<footer class="cc-footer">
+<!-- FOOTER -->
+<footer class="footer" id="contact">
     <div class="container">
         <div class="row">
-            <!-- Brand Column -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="cc-footer-brand">
-                    <img src="{{ asset('img/logo-white.png') }}" alt="CoralClean" class="cc-footer-brand__logo">
-                    <p class="cc-footer-brand__text">{{ __('home.footer_about') }}</p>
-                    <p class="cc-footer-legal">PUHASTUS KORAL OÜ<br>Reg. nr: 16882289</p>
-                    
-                    <!-- Social Links -->
-                    <ul class="footer-social">
-                        <li><a href="https://wa.me/3725830148" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
-                        <li><a href="https://instagram.com/coralclean.ee" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="https://facebook.com/coralclean.ee" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                    </ul>
+            <!-- Company Info -->
+            <div class="col-xl-3 col-lg-4">
+                <div class="logo wow animated fadeInUp" data-wow-delay="0.5s">
+                    <img src="{{ asset('img/coralclean/logo1.png') }}?v={{ filemtime(public_path('img/coralclean/logo1.png')) }}" alt="CoralClean" style="max-width: 180px;">
                 </div>
-            </div>
-            
-            <!-- Quick Links -->
-            <div class="col-lg-2 col-md-6 mb-4">
-                <h6>{{ __('home.footer_links') }}</h6>
-                <ul class="footer-menu">
-                    <li><a href="#packages">{{ __('home.nav_services') }}</a></li>
-                    <li><a href="#process">{{ __('home.nav_how') }}</a></li>
-                    <li><a href="#faq">{{ __('home.nav_faq') }}</a></li>
-                    <li><a href="#contacts">{{ __('home.nav_contacts') }}</a></li>
+                <div class="footer-info wow animated fadeInUp" data-wow-delay="0.5s">
+                    <p>{{ __('home.footer_description') }}</p>
+                    <br>
+                    <p><i class="flaticon-pin iconpfooter1"></i>&nbsp;&nbsp;{{ __('home.footer_location') }}</p>
+                    <p style="font-size: 14px; opacity: 0.8; margin-left: 28px;">{{ __('home.footer_no_walkin') }}</p>
+                    <p class="fic"><i class="flaticon-call iconpfooter2"></i>&nbsp;&nbsp;&nbsp;<a href="tel:+37258301348">+372 5830 1348</a></p><br>
+                    <p><i class="flaticon-email iconpfooter3"></i>&nbsp;&nbsp;&nbsp;<a href="mailto:info@coralclean.ee">info@coralclean.ee</a></p><br>
+                    <p><i class="flaticon-time iconpfooter3"></i>&nbsp;&nbsp;&nbsp;{{ __('home.footer_hours') }}</p>
+                </div>
+                <ul class="footer-social wow animated fadeInUp" data-wow-delay="0.5s">
+                    <li><a href="#"><i class="icon-social-facebook iconsociaf"></i></a></li>
+                    <li><a href="#"><i class="icon-social-instagram iconsociaf"></i></a></li>
                 </ul>
             </div>
-            
-            <!-- Contact Info -->
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h6>{{ __('home.contacts_title') }}</h6>
-                <ul class="footer-menu">
-                    <li><i class="fas fa-phone me-2"></i> +372 5830 1348</li>
-                    <li><i class="fas fa-clock me-2"></i> 08:00 - 20:00</li>
-                    <li><i class="fas fa-map-marker-alt me-2"></i> {{ __('home.area_value') }}</li>
-                </ul>
-            </div>
-            
-            <!-- Language Switcher -->
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h6>{{ __('home.footer_language') }}</h6>
-                <div class="cc-lang-switcher">
-                    <ul>
-                        @foreach(['ru' => 'Русский', 'en' => 'English', 'et' => 'Eesti'] as $code => $name)
-                            <li class="{{ app()->getLocale() === $code ? 'current-lang' : '' }}">
-                                <a href="{{ route('home', ['locale' => $code]) }}">{{ $name }}</a>
-                            </li>
+
+            <!-- Contact Form -->
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                <h6 class="widget-title">{{ __('home.footer_contact_title') }}</h6>
+                <p class="footerp">{{ __('home.footer_contact_text') }}</p>
+                <div class="bosluk333"></div>
+                <form action="{{ url('/' . ($locale ?? 'ru') . '/contact') }}" method="POST">
+                    @csrf
+                    <div class="form__grup wow fadeInLeft" data-wow-delay="0.7s">
+                        <input type="text" name="name" class="form-popup__input" placeholder="{{ __('home.form_name') }}" required>
+                    </div>
+                    <div class="form__grup wow fadeInLeft" data-wow-delay="0.8s">
+                        <input type="tel" name="phone" class="form-popup__input" placeholder="{{ __('home.form_phone') }}" required>
+                    </div>
+                    <div class="form__grup wow fadeInLeft" data-wow-delay="0.85s">
+                        <input type="email" name="email" class="form-popup__input" placeholder="{{ __('home.form_email') }}">
+                    </div>
+                    <div class="form__grup wow fadeInUp" data-wow-delay="0.9s">
+                        <input type="submit" class="custom-buttonw1" value="{{ __('home.form_submit') }}">
+                    </div>
+                </form>
+                @if(session('success'))
+                    <div class="alert alert-success mt-3">{{ session('success') }}</div>
+                @endif
+                @if($errors->any())
+                    <div class="alert alert-danger mt-3">
+                        @foreach($errors->all() as $error)
+                            <p>{{ $error }}</p>
                         @endforeach
+                    </div>
+                @endif
+            </div>
+
+            <!-- Services Links -->
+            <div class="col-lg-2 offset-xl-1 col-sm-6 wow animated fadeInUp" data-wow-delay="0.5s">
+                <h6 class="widget-title">{{ __('home.footer_services_title') }}</h6>
+                <div class="footer-menu">
+                    <ul class="menu">
+                        <li><a href="{{ url('/' . ($locale ?? 'ru') . '/services/home-cleaning') }}">{{ __('home.service_home_title') }}</a></li>
+                        <li><a href="{{ url('/' . ($locale ?? 'ru') . '/services/glass-cleaning') }}">{{ __('home.service_glass_title') }}</a></li>
+                        <li><a href="{{ url('/' . ($locale ?? 'ru') . '/services/garden-cleaning') }}">{{ __('home.service_garden_title') }}</a></li>
+                        <li><a href="{{ url('/' . ($locale ?? 'ru') . '/services/office-cleaning') }}">{{ __('home.service_office_title') }}</a></li>
+                        <li><a href="{{ url('/' . ($locale ?? 'ru') . '/services/carpet-cleaning') }}">{{ __('home.service_carpet_title') }}</a></li>
+                        <li><a href="{{ url('/' . ($locale ?? 'ru') . '/services/renovation-cleaning') }}">{{ __('home.service_renovation_title') }}</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
-        
-        <!-- Bottom Bar -->
-        <div class="cc-footer-bottom">
-            <p>&copy; {{ date('Y') }} CoralClean. {{ __('home.footer_rights') }}</p>
+
+            <!-- Quick Links -->
+            <div class="col-lg-2 col-sm-6 wow animated fadeInUp" data-wow-delay="0.5s">
+                <h6 class="widget-title">{{ __('home.footer_quick_links') }}</h6>
+                <div class="footer-menu">
+                    <ul class="menu">
+                        <li><a href="#about">{{ __('home.nav_about') }}</a></li>
+                        <li><a href="#packages">{{ __('home.nav_packages') }}</a></li>
+                        <li><a href="#how-it-works">{{ __('home.nav_how') }}</a></li>
+                        <li><a href="#reviews">{{ __('home.nav_reviews') }}</a></li>
+                        <li><a href="#faq">{{ __('home.nav_faq') }}</a></li>
+                        <li><a href="javascript:void(0)" onclick="openContactPanel()">{{ __('home.nav_contacts') }}</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p class="copyright">
+                    © 2026 {{ __('home.footer_copyright') }}<br>
+                    <small>{{ __('home.footer_legal') }} • {{ __('home.footer_reg') }} • Tallinn, Harjumaa, Estonia</small>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="top" style="cursor: pointer;"><i class="flaticon-chevron icontops"></i><div class="bosluk3"></div></div>
 </footer>

@@ -458,3 +458,4 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
     .cta-btn { display: block; margin: 10px auto; width: 80%; text-align: center; }
 }
 </style>
+<?php /**PATH C:\Users\nikol\coralclean-laravel\resources\views/partials/styles.blade.php ENDPATH**/ ?>
