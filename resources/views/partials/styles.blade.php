@@ -14,8 +14,6 @@
 .swiper-pagination-bullet { margin-left: 5px; }
 .navbar-nav .nav-link:hover { color: #2ec4c6; }
 .navbar .site-menu ul li a:hover { color: #ffffff; }
-.slider .main-slider .swiper-slide .container a { background: #2ec4c6; }
-.slider .main-slider .swiper-slide .container a:hover { background: #ff6f61; }
 .navbar .navbar-button a { background: #2ec4c6; }
 .slider .button-next:hover, .slider .button-prev:hover { background: #2ec4c6; border-color: transparent; }
 .custom-button { background: #2ec4c6; font-family: Satoshi Black; }
@@ -149,8 +147,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
 .counter-box .odometer, .baslik-orta, .baslik-4, .counter-box h6 { color: #1f2933; font-family: Satoshi Black; }
 .baslik-orta, .baslik-3 { font-size: 23px; font-weight: 700; }
 .baslik-3 { color: #1f2933; font-family: Satoshi Black; }
-.slider .main-slider .swiper-slide .container h1, .slider .main-slider .swiper-slide .container p { color: #fff; font-family: Satoshi Black; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
-.slider .main-slider .swiper-slide .container a, .custom-buttonw, .baslik-sol, .member-box figcaption h6, .member-box figcaption p { font-family: Satoshi Black; }
+.custom-buttonw, .baslik-sol, .member-box figcaption h6, .member-box figcaption p { font-family: Satoshi Black; }
 .h2-baslik-hizmetler-21, .h2-baslik-hizmetler-2111 { font-family: Satoshi Black; font-size: 30px; font-weight: 700; }
 .baslik-3-service, .paketler3__pr-yazi { font-family: Satoshi Black; }
 .paketler3__pr-degeri { font-family: Satoshi Black; font-size: 30px; font-weight: 700; }
@@ -162,31 +159,83 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
 
 /* === Logo sizing === */
 .navbar .logo img { max-width: 180px; height: auto; }
+.navbar .logo { padding: 20px 0 !important; }
 
 /* === Service background === */
 .services1 { background: transparent url('/img/service-bg.jpg') center center/cover no-repeat scroll; }
 
 /* ============================================================
-   NEW: Hero Overlay for text readability
+   NEW: Hero Overlay for text readability (Premium)
    ============================================================ */
 .hero-overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to right, rgba(31,41,51,0.75) 0%, rgba(31,41,51,0.35) 60%, transparent 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.15) 100%);
     z-index: 1;
     pointer-events: none;
 }
-.slider .main-slider .swiper-slide { position: relative; }
+.slider .main-slider .swiper-slide {
+    position: relative;
+    background-size: cover !important;
+    background-position: center !important;
+    background-color: transparent !important;
+}
+
+/* Fix fade effect: hide inactive slides completely */
+.swiper-container-fade .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+}
+.swiper-container-fade .swiper-slide-active {
+    opacity: 1 !important;
+    z-index: 1 !important;
+}
+
+/* Hero content container */
+.slider .main-slider .swiper-slide .container {
+    position: relative; z-index: 2;
+}
+.slider .main-slider .swiper-slide .container h1 {
+    color: #ffffff !important;
+    font-family: Satoshi Black;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    margin-left: 0 !important;
+    max-width: 640px;
+}
+.slider .main-slider .swiper-slide .container p {
+    color: rgba(255,255,255,0.85) !important;
+    font-family: Satoshi Regular;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+    margin-left: 0 !important;
+    max-width: 640px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Hero badge */
 .hero-badge {
     display: inline-block; background: rgba(46,196,198,0.9); color: #fff;
     padding: 8px 20px; border-radius: 20px; font-family: Satoshi Black;
     font-size: 14px; margin-bottom: 15px; letter-spacing: 0.5px;
 }
+
+/* Hero CTA buttons */
 .slider .main-slider .swiper-slide .container a {
     margin-left: 0 !important;
+    background: #FF6B5A !important;
+    color: #fff !important;
+    font-family: Satoshi Black;
+    font-size: 16px;
+    padding: 14px 32px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
 }
-.slider .main-slider .swiper-slide .container h1,
-.slider .main-slider .swiper-slide .container p {
-    margin-left: 0 !important;
+.slider .main-slider .swiper-slide .container a:hover {
+    background: #ff6f61 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,107,90,0.4);
 }
 .hero-btn-secondary {
     background: transparent !important; border: 2px solid #fff !important;
@@ -194,6 +243,30 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
 }
 .hero-btn-secondary:hover {
     background: #fff !important; color: #2ec4c6 !important;
+    border-color: #fff !important;
+}
+
+/* Mobile hero: stronger overlay + centered text + full-width button */
+@media (max-width: 991px) {
+    .hero-overlay {
+        background: rgba(0,0,0,0.6) !important;
+    }
+    .slider .main-slider .swiper-slide .container h1 {
+        max-width: 100%; text-align: center; font-size: 28px;
+    }
+    .slider .main-slider .swiper-slide .container p {
+        max-width: 100%; text-align: center; font-size: 16px;
+    }
+    .slider .main-slider .swiper-slide .container {
+        text-align: center;
+    }
+    .slider .main-slider .swiper-slide .container a {
+        width: 100%; text-align: center; display: block; margin-bottom: 10px;
+    }
+    .hero-btn-secondary {
+        margin-left: 0 !important; width: 100%; display: block;
+    }
+    .hero-badge { margin: 0 auto 15px; display: table; }
 }
 
 /* ============================================================
@@ -451,7 +524,6 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
     .floating-buttons { bottom: 16px; right: 16px; }
     .floating-btn { width: 48px; height: 48px; }
     .package-card__footer { flex-direction: column; align-items: stretch; text-align: center; }
-    .hero-btn-secondary { margin-left: 0 !important; margin-top: 10px; display: inline-block; }
 }
 @media (max-width: 576px) {
     .cta-section h2 { font-size: 26px; }

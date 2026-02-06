@@ -107,17 +107,12 @@
   var pageSection = $("*");
   pageSection.each(function (indx) {
     if ($(this).attr("data-background")) {
-      $(this).css("background", "url(" + $(this).data("background") + ")");
-    }
-  });
-
-
-
-  // DATA BACKGROUND COLOR
-  var pageSection = $("*");
-  pageSection.each(function (indx) {
-    if ($(this).attr("data-background")) {
-      $(this).css("background", $(this).data("background"));
+      var bg = $(this).data("background");
+      if (bg.indexOf('/') !== -1 || bg.indexOf('.') !== -1) {
+        $(this).css("background", "url(" + bg + ")");
+      } else {
+        $(this).css("background", bg);
+      }
     }
   });
 

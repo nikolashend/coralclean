@@ -44,7 +44,8 @@
     <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}" media="all" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="{{ asset('img/ChatGPT-Image-Feb-2-2026-12_00_36-AM.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/coralclean/favicon.png') }}?v={{ filemtime(public_path('img/coralclean/favicon.png')) }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('img/coralclean/favicon.png') }}?v={{ filemtime(public_path('img/coralclean/favicon.png')) }}">
 
     @include('partials.styles')
 
@@ -60,7 +61,7 @@
         'name' => 'CoralClean',
         'legalName' => 'PUHASTUS KORAL OÜ',
         'url' => 'https://coralclean.ee',
-        'logo' => 'https://coralclean.ee/img/ChatGPT-Image-Feb-1-2026-02_13_45-PM.png',
+        'logo' => 'https://coralclean.ee/img/coralclean/logo.png',
         'image' => 'https://coralclean.ee/img/coralclean/services/home clean.png',
         'description' => __('home.meta_description'),
         'telephone' => '+37258301348',
@@ -189,14 +190,14 @@
 <body>
     <!-- Preloader -->
     <div class="preloader">
-        <figure><img src="{{ asset('img/ChatGPT-Image-Feb-2-2026-12_00_36-AM.png') }}" alt="CoralClean"></figure>
+        <figure><img src="{{ asset('img/coralclean/favicon.png') }}" alt="CoralClean"></figure>
     </div>
     <div class="page-transition"></div>
 
     <!-- Side Widget -->
     <aside class="side-widget">
         <div class="inner">
-            <div class="logo"><a href="{{ url('/' . $locale) }}"><img src="{{ asset('img/ChatGPT-Image-Feb-1-2026-02_13_45-PM.png') }}" alt="CoralClean"></a></div>
+            <div class="logo"><a href="{{ url('/' . $locale) }}"><img src="{{ asset('img/coralclean/logo1.png') }}?v={{ filemtime(public_path('img/coralclean/logo1.png')) }}" alt="CoralClean"></a></div>
             <div class="hide-mobile">
                 <div class="or"><h2 class="h2-baslik-hizmetler-2">{{ __('home.nav_contacts') }}</h2></div>
                 <div class="bosluksv"></div>
@@ -305,10 +306,9 @@
         <div class="main-slider">
             <div class="swiper-wrapper">
                 <!-- Slide 1: Main -->
-                <div class="swiper-slide">
-                    <div class="slide-image" data-background="{{ asset('img/Hero.png') }}"></div>
+                <div class="swiper-slide" data-background="{{ asset('img/Hero.png') }}">
                     <div class="hero-overlay"></div>
-                    <div class="container" style="position: relative; z-index: 2;">
+                    <div class="container">
                         <div class="hero-badge">{{ __('home.hero_badge') }}</div>
                         <h1>{{ __('home.hero_title') }}</h1>
                         <p>{{ __('home.hero_subtitle') }}</p>
@@ -318,10 +318,9 @@
                     </div>
                 </div>
                 <!-- Slide 2: Deep Clean -->
-                <div class="swiper-slide">
-                    <div class="slide-image" data-background="{{ asset('img/Deep-Clean.png') }}"></div>
+                <div class="swiper-slide" data-background="{{ asset('img/Deep-Clean.png') }}">
                     <div class="hero-overlay"></div>
-                    <div class="container" style="position: relative; z-index: 2;">
+                    <div class="container">
                         <h1>{{ __('home.hero_slide2_title') }}</h1>
                         <p>{{ __('home.hero_slide2_text') }}</p>
                         <div class="bosluk1"></div>
@@ -329,10 +328,9 @@
                     </div>
                 </div>
                 <!-- Slide 3: Move-In -->
-                <div class="swiper-slide">
-                    <div class="slide-image" data-background="{{ asset('img/Move-In-Out.png') }}"></div>
+                <div class="swiper-slide" data-background="{{ asset('img/Move-In-Out.png') }}">
                     <div class="hero-overlay"></div>
-                    <div class="container" style="position: relative; z-index: 2;">
+                    <div class="container">
                         <h1>{{ __('home.hero_slide3_title') }}</h1>
                         <p>{{ __('home.hero_slide3_text') }}</p>
                         <div class="bosluk1"></div>
@@ -340,10 +338,9 @@
                     </div>
                 </div>
                 <!-- Slide 4: Office -->
-                <div class="swiper-slide">
-                    <div class="slide-image" data-background="{{ asset('img/Office-Care.png') }}"></div>
+                <div class="swiper-slide" data-background="{{ asset('img/Office-Care.png') }}">
                     <div class="hero-overlay"></div>
-                    <div class="container" style="position: relative; z-index: 2;">
+                    <div class="container">
                         <h1>{{ __('home.hero_slide4_title') }}</h1>
                         <p>{{ __('home.hero_slide4_text') }}</p>
                         <div class="bosluk1"></div>
@@ -365,7 +362,7 @@
                 ['icon' => 'flaticon-stopwatch', 'key' => 'value1'],
                 ['icon' => 'flaticon-badge', 'key' => 'value2'],
                 ['icon' => 'flaticon-team-1', 'key' => 'value3'],
-                ['icon' => 'flaticon-tools', 'key' => 'value4'],
+                ['icon' => 'flaticon-settings', 'key' => 'value4'],
             ]; @endphp
             @foreach($values as $i => $val)
             <div class="tablo--1-ve-4">

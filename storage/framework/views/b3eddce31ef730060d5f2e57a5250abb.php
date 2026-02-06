@@ -44,7 +44,8 @@
     <link rel="stylesheet" href="<?php echo e(asset('css/flaticon.css')); ?>" media="all" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="<?php echo e(asset('img/ChatGPT-Image-Feb-2-2026-12_00_36-AM.png')); ?>">
+    <link rel="icon" type="image/png" href="<?php echo e(asset('img/coralclean/favicon.png')); ?>?v=<?php echo e(filemtime(public_path('img/coralclean/favicon.png'))); ?>">
+    <link rel="shortcut icon" type="image/png" href="<?php echo e(asset('img/coralclean/favicon.png')); ?>?v=<?php echo e(filemtime(public_path('img/coralclean/favicon.png'))); ?>">
 
     <?php echo $__env->make('partials.styles', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
@@ -60,7 +61,7 @@
         'name' => 'CoralClean',
         'legalName' => 'PUHASTUS KORAL OÜ',
         'url' => 'https://coralclean.ee',
-        'logo' => 'https://coralclean.ee/img/ChatGPT-Image-Feb-1-2026-02_13_45-PM.png',
+        'logo' => 'https://coralclean.ee/img/coralclean/logo.png',
         'image' => 'https://coralclean.ee/img/coralclean/services/home clean.png',
         'description' => __('home.meta_description'),
         'telephone' => '+37258301348',
@@ -189,14 +190,14 @@
 <body>
     <!-- Preloader -->
     <div class="preloader">
-        <figure><img src="<?php echo e(asset('img/ChatGPT-Image-Feb-2-2026-12_00_36-AM.png')); ?>" alt="CoralClean"></figure>
+        <figure><img src="<?php echo e(asset('img/coralclean/favicon.png')); ?>" alt="CoralClean"></figure>
     </div>
     <div class="page-transition"></div>
 
     <!-- Side Widget -->
     <aside class="side-widget">
         <div class="inner">
-            <div class="logo"><a href="<?php echo e(url('/' . $locale)); ?>"><img src="<?php echo e(asset('img/ChatGPT-Image-Feb-1-2026-02_13_45-PM.png')); ?>" alt="CoralClean"></a></div>
+            <div class="logo"><a href="<?php echo e(url('/' . $locale)); ?>"><img src="<?php echo e(asset('img/coralclean/logo1.png')); ?>?v=<?php echo e(filemtime(public_path('img/coralclean/logo1.png'))); ?>" alt="CoralClean"></a></div>
             <div class="hide-mobile">
                 <div class="or"><h2 class="h2-baslik-hizmetler-2"><?php echo e(__('home.nav_contacts')); ?></h2></div>
                 <div class="bosluksv"></div>
@@ -306,10 +307,9 @@
         <div class="main-slider">
             <div class="swiper-wrapper">
                 <!-- Slide 1: Main -->
-                <div class="swiper-slide">
-                    <div class="slide-image" data-background="<?php echo e(asset('img/Hero.png')); ?>"></div>
+                <div class="swiper-slide" data-background="<?php echo e(asset('img/Hero.png')); ?>">
                     <div class="hero-overlay"></div>
-                    <div class="container" style="position: relative; z-index: 2;">
+                    <div class="container">
                         <div class="hero-badge"><?php echo e(__('home.hero_badge')); ?></div>
                         <h1><?php echo e(__('home.hero_title')); ?></h1>
                         <p><?php echo e(__('home.hero_subtitle')); ?></p>
@@ -319,10 +319,9 @@
                     </div>
                 </div>
                 <!-- Slide 2: Deep Clean -->
-                <div class="swiper-slide">
-                    <div class="slide-image" data-background="<?php echo e(asset('img/Deep-Clean.png')); ?>"></div>
+                <div class="swiper-slide" data-background="<?php echo e(asset('img/Deep-Clean.png')); ?>">
                     <div class="hero-overlay"></div>
-                    <div class="container" style="position: relative; z-index: 2;">
+                    <div class="container">
                         <h1><?php echo e(__('home.hero_slide2_title')); ?></h1>
                         <p><?php echo e(__('home.hero_slide2_text')); ?></p>
                         <div class="bosluk1"></div>
@@ -330,10 +329,9 @@
                     </div>
                 </div>
                 <!-- Slide 3: Move-In -->
-                <div class="swiper-slide">
-                    <div class="slide-image" data-background="<?php echo e(asset('img/Move-In-Out.png')); ?>"></div>
+                <div class="swiper-slide" data-background="<?php echo e(asset('img/Move-In-Out.png')); ?>">
                     <div class="hero-overlay"></div>
-                    <div class="container" style="position: relative; z-index: 2;">
+                    <div class="container">
                         <h1><?php echo e(__('home.hero_slide3_title')); ?></h1>
                         <p><?php echo e(__('home.hero_slide3_text')); ?></p>
                         <div class="bosluk1"></div>
@@ -341,10 +339,9 @@
                     </div>
                 </div>
                 <!-- Slide 4: Office -->
-                <div class="swiper-slide">
-                    <div class="slide-image" data-background="<?php echo e(asset('img/Office-Care.png')); ?>"></div>
+                <div class="swiper-slide" data-background="<?php echo e(asset('img/Office-Care.png')); ?>">
                     <div class="hero-overlay"></div>
-                    <div class="container" style="position: relative; z-index: 2;">
+                    <div class="container">
                         <h1><?php echo e(__('home.hero_slide4_title')); ?></h1>
                         <p><?php echo e(__('home.hero_slide4_text')); ?></p>
                         <div class="bosluk1"></div>
@@ -366,7 +363,7 @@
                 ['icon' => 'flaticon-stopwatch', 'key' => 'value1'],
                 ['icon' => 'flaticon-badge', 'key' => 'value2'],
                 ['icon' => 'flaticon-team-1', 'key' => 'value3'],
-                ['icon' => 'flaticon-tools', 'key' => 'value4'],
+                ['icon' => 'flaticon-settings', 'key' => 'value4'],
             ]; ?>
             <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $values; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $val): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="tablo--1-ve-4">

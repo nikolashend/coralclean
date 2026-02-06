@@ -11,12 +11,12 @@
                         <li class="menu-item menu-item-has-children dropdown nav-item">
                             <a href="{{ url('/' . $locale . '/#services') }}" data-toggle="dropdown" class="dropdown-toggle nav-link"><span>{{ __('home.nav_services') }}</span></a>
                             <ul class="dropdown-menu">
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/general-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_general') }}</span></a></li>
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/deep-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_deep') }}</span></a></li>
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/move-in-out') }}" class="dropdown-item"><span>{{ __('home.service_move') }}</span></a></li>
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/office-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_office') }}</span></a></li>
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/window-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_window') }}</span></a></li>
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/carpet-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_carpet') }}</span></a></li>
+                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/home-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_home_title') }}</span></a></li>
+                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/renovation-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_renovation_title') }}</span></a></li>
+                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/office-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_office_title') }}</span></a></li>
+                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/glass-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_glass_title') }}</span></a></li>
+                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/carpet-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_carpet_title') }}</span></a></li>
+                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/garden-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_garden_title') }}</span></a></li>
                             </ul>
                         </li>
                         <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/#packages') }}" class="nav-link"><span>{{ __('home.nav_packages') }}</span></a></li>
