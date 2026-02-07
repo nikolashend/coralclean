@@ -1,5 +1,5 @@
 ﻿<!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-light bg-light">
+<nav class="navbar navbar-expand-xl navbar-light bg-light">
     <div class="container">
         <div class="logo"><a href="<?php echo e(url('/' . $locale)); ?>"><img src="<?php echo e(asset('img/coralclean/logo1.png')); ?>?v=<?php echo e(filemtime(public_path('img/coralclean/logo1.png'))); ?>" alt="CoralClean"></a></div>
         <div class="site-menu">

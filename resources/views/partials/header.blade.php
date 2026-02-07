@@ -1,5 +1,5 @@
 ﻿<!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-light bg-light">
+<nav class="navbar navbar-expand-xl navbar-light bg-light">
     <div class="container">
         <div class="logo"><a href="{{ url('/' . $locale) }}"><img src="{{ asset('img/coralclean/logo1.png') }}?v={{ filemtime(public_path('img/coralclean/logo1.png')) }}" alt="CoralClean"></a></div>
         <div class="site-menu">

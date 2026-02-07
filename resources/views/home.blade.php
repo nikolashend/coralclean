@@ -404,10 +404,10 @@
             <div class="row">
                 @php $serviceCards = [
                     ['slug' => 'glass-cleaning', 'key' => 'glass', 'icon' => 'flaticon-clean-1'],
-                    ['slug' => 'garden-cleaning', 'key' => 'garden', 'icon' => 'flaticon-plant'],
-                    ['slug' => 'renovation-cleaning', 'key' => 'renovation', 'icon' => 'flaticon-paint-roller'],
+                    ['slug' => 'garden-cleaning', 'key' => 'garden', 'icon' => 'flaticon-agriculture'],
+                    ['slug' => 'renovation-cleaning', 'key' => 'renovation', 'icon' => 'flaticon-brush'],
                     ['slug' => 'office-cleaning', 'key' => 'office', 'icon' => 'flaticon-clean'],
-                    ['slug' => 'carpet-cleaning', 'key' => 'carpet', 'icon' => 'flaticon-vacuum-cleaner'],
+                    ['slug' => 'carpet-cleaning', 'key' => 'carpet', 'icon' => 'flaticon-vacuum'],
                     ['slug' => 'home-cleaning', 'key' => 'home', 'icon' => 'flaticon-house'],
                 ]; @endphp
                 @foreach($serviceCards as $i => $svc)

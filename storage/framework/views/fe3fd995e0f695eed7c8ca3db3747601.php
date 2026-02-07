@@ -219,21 +219,26 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
     font-size: 14px; margin-bottom: 15px; letter-spacing: 0.5px;
 }
 
-/* Hero CTA buttons */
+/* Hero CTA buttons — matches navbar .btn-contact-header style */
 .slider .main-slider .swiper-slide .container a {
     margin-left: 0 !important;
-    background: #FF6B5A !important;
+    background: #ff6f61 !important;
     color: #fff !important;
     font-family: Satoshi Black;
-    font-size: 16px;
+    font-size: 14px;
     padding: 14px 32px;
     border-radius: 5px;
     text-decoration: none;
     transition: all 0.3s;
     display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid #ff6f61;
 }
 .slider .main-slider .swiper-slide .container a:hover {
-    background: #ff6f61 !important;
+    background: #fff !important;
+    color: #ff6f61 !important;
+    border-color: #ff6f61;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255,107,90,0.4);
 }
@@ -246,7 +251,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
     border-color: #fff !important;
 }
 
-/* Mobile hero: stronger overlay + centered text + full-width button */
+/* Mobile hero: stronger overlay + centered text + compact CTA buttons */
 @media (max-width: 991px) {
     .hero-overlay {
         background: rgba(0,0,0,0.6) !important;
@@ -261,12 +266,16 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
         text-align: center;
     }
     .slider .main-slider .swiper-slide .container a {
-        width: 100%; text-align: center; display: block; margin-bottom: 10px;
+        display: inline-block; text-align: center; margin-bottom: 10px;
+        max-width: 280px; width: auto; padding: 12px 28px;
+        font-size: 14px;
     }
     .hero-btn-secondary {
-        margin-left: 0 !important; width: 100%; display: block;
+        margin-left: 0 !important; display: inline-block; width: auto;
     }
     .hero-badge { margin: 0 auto 15px; display: table; }
+    /* Hide phone number on mobile */
+    .telh { display: none !important; }
 }
 
 /* ============================================================
@@ -511,19 +520,36 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
 .service-card-link .paketler2 { margin-bottom: 30px; }
 
 /* ============================================================
-   Responsive
+   Responsive — custom 1300px navbar breakpoint
    ============================================================ */
-@media (min-width: 992px) {
+
+/* >= 1300px: full desktop menu visible, hamburger hidden */
+@media (min-width: 1300px) {
     .navbar-contact-btn { display: inline-block; }
     .hamburger-menu { display: none !important; }
+    .navbar .site-menu { display: block !important; }
 }
-@media (max-width: 991px) {
+
+/* Between 1200px and 1299px: Bootstrap thinks it's desktop (navbar-expand-xl)
+   but menu doesn't fit — override to mobile mode */
+@media (min-width: 1200px) and (max-width: 1299px) {
+    .navbar .site-menu { display: none !important; }
+    .hamburger-menu { display: block !important; }
+    .navbar-contact-btn { display: inline-block; }
+    .telh { display: none !important; }
+}
+
+/* < 1200px: Bootstrap mobile mode — hide contact btn, show hamburger */
+@media (max-width: 1199px) {
+    .navbar .site-menu { display: none !important; }
     .navbar-contact-btn { display: none; }
     .hamburger-menu { display: block !important; }
     .contact-panel { width: 100%; right: -100%; }
     .floating-buttons { bottom: 16px; right: 16px; }
     .floating-btn { width: 48px; height: 48px; }
     .package-card__footer { flex-direction: column; align-items: stretch; text-align: center; }
+    /* Hide phone number on tablet/mobile */
+    .telh { display: none !important; }
 }
 @media (max-width: 576px) {
     .cta-section h2 { font-size: 26px; }

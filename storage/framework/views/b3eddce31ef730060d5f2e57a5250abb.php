@@ -405,10 +405,10 @@
             <div class="row">
                 <?php $serviceCards = [
                     ['slug' => 'glass-cleaning', 'key' => 'glass', 'icon' => 'flaticon-clean-1'],
-                    ['slug' => 'garden-cleaning', 'key' => 'garden', 'icon' => 'flaticon-plant'],
-                    ['slug' => 'renovation-cleaning', 'key' => 'renovation', 'icon' => 'flaticon-paint-roller'],
+                    ['slug' => 'garden-cleaning', 'key' => 'garden', 'icon' => 'flaticon-agriculture'],
+                    ['slug' => 'renovation-cleaning', 'key' => 'renovation', 'icon' => 'flaticon-brush'],
                     ['slug' => 'office-cleaning', 'key' => 'office', 'icon' => 'flaticon-clean'],
-                    ['slug' => 'carpet-cleaning', 'key' => 'carpet', 'icon' => 'flaticon-vacuum-cleaner'],
+                    ['slug' => 'carpet-cleaning', 'key' => 'carpet', 'icon' => 'flaticon-vacuum'],
                     ['slug' => 'home-cleaning', 'key' => 'home', 'icon' => 'flaticon-house'],
                 ]; ?>
                 <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $serviceCards; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $svc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
