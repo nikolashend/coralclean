@@ -1,10 +1,16 @@
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&subset=cyrillic,cyrillic-ext,latin,latin-ext&display=swap');
 
 /* ============================================================
    CoralClean Brand Design System
    #2EC4C6 (Aqua) / #FF6F61 (Coral) / #1F2933 (Dark)
    ============================================================ */
+
+/* === Container padding fix === */
+.container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
 
 /* === Base brand color overrides === */
 .iconsociaf { font-size: 32px !important; }
@@ -16,7 +22,7 @@
 .navbar .site-menu ul li a:hover { color: #ffffff; }
 .navbar .navbar-button a { background: #2ec4c6; }
 .slider .button-next:hover, .slider .button-prev:hover { background: #2ec4c6; border-color: transparent; }
-.custom-button { background: #2ec4c6; font-family: Satoshi Black; }
+.custom-button { background: #2ec4c6; font-family: 'Inter', sans-serif; font-weight: 900; }
 .custom-button:hover { background: #ff6f61; }
 .custom-button12 { background: #2ec4c6; }
 .custom-button12:hover { background: #ff6f61; }
@@ -77,7 +83,10 @@ a.menucolor { color: #2ec4c6; }
 a.menucolor:hover { color: #ff6f61; }
 .pagination .page-item .page-link { color: #2ec4c6; }
 .footer { background: #2ec4c6; background-image: linear-gradient(to right bottom, #2ec4c6, #ff6f61); }
-.footer .footer-info a { color: #2ec4c6; }
+.footer .footer-info a { color: #fff !important; text-decoration: underline; }
+.footer .footer-info a:hover { color: #1f2933 !important; }
+.footer .footer-info p, .footer p, .footer .footer-menu ul li a { color: #fff; }
+.footer .footer-menu ul li a:hover { color: #1f2933; }
 .footer .copyright { background: #2ec4c6; }
 .footer .footer-social li a:hover { background: #ff6f61; border: 1px solid rgba(255, 255, 255, 0.3); }
 textarea#comment, input#author, input#email, input#url { border-bottom: 0.3rem solid #2ec4c6; }
@@ -90,13 +99,15 @@ textarea#comment, input#author, input#email, input#url { border-bottom: 0.3rem s
 .form-popup__input:focus, .form-popup__input:focus:invalid { border-bottom: 0.3rem solid #2ec4c6; }
 .hizmetler-kutu--icon, .ozellik-kutu--icon, .post-kutu--icon, .yorum-kutu--icon, .ozellik-kutu-iletisim--icon, .baslik-4--icon { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); }
 .yukaricik { background-image: linear-gradient(to right bottom, #2ec4c6, #ff6f61); }
+/* Scroll-to-top: move to left side to avoid overlap with floating buttons on right */
+#top { right: auto !important; left: 20px; }
 .footer-404 { background-image: linear-gradient(to right bottom, #2ec4c6, #ff6f61); }
 .paketler-alani { background-color: #2ec4c6; }
 .form-alani { background-image: linear-gradient(to right bottom, #2ec4c6, #ff6f61); }
 .markalar { background: #2ec4c6; }
 .h2-baslik-hizmetler { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); }
 .h2-baslik-hizmetler__paragraf { color: #2ec4c6; }
-.h2-baslik-hizmetler-2 { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); font-family: Satoshi Black; font-size: 30px; font-weight: 700; }
+.h2-baslik-hizmetler-2 { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); font-family: 'Inter', sans-serif; font-weight: 900; font-size: 30px; }
 .side-widget small { color: #2ec4c6; }
 .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active { background: #2ec4c6; }
 ::-webkit-scrollbar-thumb { background: #ff6f61; }
@@ -128,30 +139,34 @@ b.fn a:hover, li a:hover { color: #ff6f61; }
 .services-kutu2--yazi1 { width: 100%; }
 
 /* === Typography === */
-.person { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18px; font-weight: 400; }
-.ozellik-kutu-iletisim--yazi { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18px; font-weight: 400; }
-.footer-info p, p, .h2-baslik-hizmetler-21__paragraf, .paketler3__icerik ul li { font-family: Satoshi Regular; font-size: 18px; font-weight: 400; }
-body, .paragraf, .paragraf-info { color: #1f2933; font-family: Satoshi Regular; font-size: 18px; font-weight: 400; }
-span.date, span.category, span.tt, .paragraf-info a, .paragraf-sol-beyaz a, .paragraf-sol-beyaz-orta a, .paragraf-ahp a, .paragraf-pdetay a, .paragraf-404 a { color: #1f2933; font-family: Satoshi Regular; font-size: 18px; }
-.h2-baslik-hizmetler-yorum__yorum, .testimon-text, .post-kutu p, .services-kutu2--yazi1, .h2-baslik-hizmetler-2__paragraf, .paragraf-popup { color: #1f2933; font-family: Satoshi Regular; font-size: 18px; font-weight: 400; }
-ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18px; }
-.services-kutu2--yazi { font-family: Satoshi Regular; font-size: 18px; }
+.person { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 18px; }
+.ozellik-kutu-iletisim--yazi { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 18px; }
+.footer-info p, p, .h2-baslik-hizmetler-21__paragraf, .paketler3__icerik ul li { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 18px; }
+body, .paragraf, .paragraf-info { color: #1f2933; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 18px; }
+span.date, span.category, span.tt, .paragraf-info a, .paragraf-sol-beyaz a, .paragraf-sol-beyaz-orta a, .paragraf-ahp a, .paragraf-pdetay a, .paragraf-404 a { color: #1f2933; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 18px; }
+.h2-baslik-hizmetler-yorum__yorum, .testimon-text, .post-kutu p, .services-kutu2--yazi1, .h2-baslik-hizmetler-2__paragraf, .paragraf-popup { color: #1f2933; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 18px; }
+ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 18px; }
+.services-kutu2--yazi { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 18px; }
 
 /* === Headings === */
-.h2-baslik-anasayfa, .h2-baslik-anasayfa-ozel, .h2-baslik-anasayfa-blog, .h2-baslik-ahb, .h2-baslik-bottom, .h2-baslik-404, .h2-baslik-footer, .h2-baslik-iletisim-ozel, .h2-baslik-popup { background-image: linear-gradient(to right, #1f2933, #ff6f61); font-family: Satoshi Black; font-size: 30px; font-weight: 700; }
+.h2-baslik-anasayfa, .h2-baslik-anasayfa-ozel, .h2-baslik-anasayfa-blog, .h2-baslik-ahb, .h2-baslik-bottom, .h2-baslik-404, .h2-baslik-footer, .h2-baslik-iletisim-ozel, .h2-baslik-popup { background-image: linear-gradient(to right, #1f2933, #ff6f61); font-family: 'Inter', sans-serif; font-weight: 900; font-size: 30px; }
 .h2-baslik-anasayfa { border-bottom: .1rem solid #2ec4c6; }
-.baslik-3-h, .baslik-33, .baslik-star { color: #1f2933; font-family: Satoshi Black; font-size: 30px; font-weight: 700; }
-.h2-baslik-hizmetler-yorum { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); font-family: Satoshi Black; font-size: 30px; font-weight: 700; }
-.baslik-3s, .baslik-3white { font-family: Satoshi Black; }
+.baslik-3-h, .baslik-33, .baslik-star { color: #1f2933; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 30px; }
+.h2-baslik-hizmetler-yorum { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); font-family: 'Inter', sans-serif; font-weight: 900; font-size: 30px; }
+.baslik-3s, .baslik-3white { font-family: 'Inter', sans-serif; font-weight: 900; }
 .baslik-3s { color: #1f2933; }
-.counter-box .odometer, .baslik-orta, .baslik-4, .counter-box h6 { color: #1f2933; font-family: Satoshi Black; }
+.counter-box .odometer, .baslik-orta, .baslik-4, .counter-box h6 { color: #1f2933; font-family: 'Inter', sans-serif; font-weight: 900; }
 .baslik-orta, .baslik-3 { font-size: 23px; font-weight: 700; }
-.baslik-3 { color: #1f2933; font-family: Satoshi Black; }
-.custom-buttonw, .baslik-sol, .member-box figcaption h6, .member-box figcaption p { font-family: Satoshi Black; }
-.h2-baslik-hizmetler-21, .h2-baslik-hizmetler-2111 { font-family: Satoshi Black; font-size: 30px; font-weight: 700; }
-.baslik-3-service, .paketler3__pr-yazi { font-family: Satoshi Black; }
-.paketler3__pr-degeri { font-family: Satoshi Black; font-size: 30px; font-weight: 700; }
-.footer .widget-title, .page-header .container h2 { font-family: Satoshi Black; }
+.baslik-3 { color: #1f2933; font-family: 'Inter', sans-serif; font-weight: 900; }
+.custom-buttonw, .baslik-sol, .member-box figcaption h6, .member-box figcaption p { font-family: 'Inter', sans-serif; font-weight: 900; }
+.h2-baslik-hizmetler-21, .h2-baslik-hizmetler-2111 { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 30px; }
+.baslik-3-service, .paketler3__pr-yazi { font-family: 'Inter', sans-serif; font-weight: 900; }
+.paketler3__pr-degeri { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 30px; }
+.footer .widget-title, .page-header .container h2 { font-family: 'Inter', sans-serif; font-weight: 900; }
+/* Dark overlay on page-header for text readability over service images */
+.page-header:after {
+    background: rgba(0, 0, 0, 0.45);
+}
 
 /* === Secondary text === */
 .reply a:hover, cite.fn a:hover, time:hover { color: #1f2933; }
@@ -197,14 +212,14 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
 }
 .slider .main-slider .swiper-slide .container h1 {
     color: #ffffff !important;
-    font-family: Satoshi Black;
+    font-family: 'Inter', sans-serif; font-weight: 900;
     text-shadow: 0 2px 12px rgba(0,0,0,0.5);
     margin-left: 0 !important;
     max-width: 640px;
 }
 .slider .main-slider .swiper-slide .container p {
     color: rgba(255,255,255,0.85) !important;
-    font-family: Satoshi Regular;
+    font-family: 'Inter', sans-serif; font-weight: 400;
     text-shadow: 0 1px 6px rgba(0,0,0,0.4);
     margin-left: 0 !important;
     max-width: 640px;
@@ -215,40 +230,19 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
 /* Hero badge */
 .hero-badge {
     display: inline-block; background: rgba(46,196,198,0.9); color: #fff;
-    padding: 8px 20px; border-radius: 20px; font-family: Satoshi Black;
+    padding: 8px 20px; border-radius: 20px; font-family: 'Inter', sans-serif; font-weight: 900;
     font-size: 14px; margin-bottom: 15px; letter-spacing: 0.5px;
 }
 
-/* Hero CTA buttons — matches navbar .btn-contact-header style */
+/* Hero CTA buttons — original template style, brand color only */
 .slider .main-slider .swiper-slide .container a {
     margin-left: 0 !important;
-    background: #ff6f61 !important;
-    color: #fff !important;
-    font-family: Satoshi Black;
-    font-size: 14px;
-    padding: 14px 32px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: all 0.3s;
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 2px solid #ff6f61;
+    background: #2ec4c6;
+    color: #fff;
 }
 .slider .main-slider .swiper-slide .container a:hover {
-    background: #fff !important;
-    color: #ff6f61 !important;
-    border-color: #ff6f61;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255,107,90,0.4);
-}
-.hero-btn-secondary {
-    background: transparent !important; border: 2px solid #fff !important;
-    color: #fff !important; margin-left: 15px !important;
-}
-.hero-btn-secondary:hover {
-    background: #fff !important; color: #2ec4c6 !important;
-    border-color: #fff !important;
+    background: #26aba9 !important; /* Slightly darker aqua on hover, not blue */
+    color: #fff !important;
 }
 
 /* Mobile hero: stronger overlay + centered text + compact CTA buttons */
@@ -267,15 +261,15 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
     }
     .slider .main-slider .swiper-slide .container a {
         display: inline-block; text-align: center; margin-bottom: 10px;
-        max-width: 280px; width: auto; padding: 12px 28px;
-        font-size: 14px;
-    }
-    .hero-btn-secondary {
-        margin-left: 0 !important; display: inline-block; width: auto;
+        margin-left: 0 !important;
     }
     .hero-badge { margin: 0 auto 15px; display: table; }
     /* Hide phone number on mobile */
     .telh { display: none !important; }
+    /* Task 4: Fix service card duplication on mobile ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â hide back face so only front shows */
+    .paketler2__on--arkayazi { display: none !important; }
+    .paketler2 { height: auto !important; }
+    .paketler2__on--onyazi { position: relative !important; transform: none !important; }
 }
 
 /* ============================================================
@@ -305,16 +299,16 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
     display: flex; flex-direction: column;
 }
 .package-card__title {
-    font-family: Satoshi Black; font-size: 24px;
+    font-family: 'Inter', sans-serif; font-weight: 900; font-size: 24px;
     color: #1f2933; margin-bottom: 4px;
 }
 .package-card__subtitle {
-    font-family: Satoshi Regular; font-size: 14px;
+    font-family: 'Inter', sans-serif; font-weight: 400; font-size: 14px;
     color: #2ec4c6; text-transform: uppercase;
     letter-spacing: 1px; margin-bottom: 10px;
 }
 .package-card__desc {
-    font-family: Satoshi Regular; font-size: 16px;
+    font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px;
     color: #666; margin-bottom: 16px;
 }
 .package-card__features {
@@ -322,7 +316,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
     flex: 1;
 }
 .package-card__features li {
-    font-family: Satoshi Regular; font-size: 15px;
+    font-family: 'Inter', sans-serif; font-weight: 400; font-size: 15px;
     color: #1f2933; padding: 6px 0;
     border-bottom: 1px solid #f0f0f0;
 }
@@ -333,7 +327,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
     padding-top: 16px; border-top: 2px solid #f0f0f0;
 }
 .package-card__price {
-    font-family: Satoshi Black; font-size: 22px;
+    font-family: 'Inter', sans-serif; font-weight: 900; font-size: 22px;
     color: #2ec4c6;
 }
 
@@ -354,7 +348,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
     margin-bottom: 12px; letter-spacing: 2px;
 }
 .review-card__text {
-    font-family: Satoshi Regular; font-size: 16px;
+    font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px;
     color: #1f2933; font-style: italic;
     line-height: 1.6; margin-bottom: 16px;
 }
@@ -363,10 +357,10 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
     justify-content: space-between;
 }
 .review-card__author strong {
-    font-family: Satoshi Black; font-size: 16px; color: #1f2933;
+    font-family: 'Inter', sans-serif; font-weight: 900; font-size: 16px; color: #1f2933;
 }
 .review-card__service {
-    font-family: Satoshi Regular; font-size: 13px;
+    font-family: 'Inter', sans-serif; font-weight: 400; font-size: 13px;
     color: #fff; background: #2ec4c6;
     padding: 4px 12px; border-radius: 12px;
 }
@@ -382,10 +376,10 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
     transition: transform 0.3s;
 }
 .we-work-card:hover { transform: translateY(-3px); }
-.we-work-card .icon { font-size: 36px; margin-bottom: 10px; }
+.we-work-card .icon { font-size: 52px; margin-bottom: 16px; line-height: 1; }
 .we-work-card p {
-    font-family: Satoshi Black; font-size: 16px;
-    color: #1f2933; margin: 0;
+    font-family: 'Inter', sans-serif; font-weight: 900; font-size: 16px;
+    color: #1f2933; margin: 0; text-align: center;
 }
 
 /* ============================================================
@@ -415,9 +409,9 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
    FAQ Styles
    ============================================================ */
 .faq-item { border-bottom: 1px solid #e0e0e0; padding: 20px 0; }
-.faq-question { cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: Satoshi Black; font-size: 18px; color: #1f2933; }
+.faq-question { cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 18px; color: #1f2933; }
 .faq-question:hover { color: #2ec4c6; }
-.faq-answer { display: none; padding-top: 15px; color: #1f2933; font-family: Satoshi Regular; }
+.faq-answer { display: none; padding-top: 15px; color: #1f2933; font-family: 'Inter', sans-serif; font-weight: 400; }
 .faq-item.active .faq-answer { display: block; }
 .faq-icon { transition: transform 0.3s; }
 .faq-item.active .faq-icon { transform: rotate(180deg); }
@@ -427,24 +421,24 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
    ============================================================ */
 .trust-card { text-align: center; padding: 30px 20px; background: #fff; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px; }
 .trust-card .icon { font-size: 48px; margin-bottom: 15px; }
-.trust-card h4 { font-family: Satoshi Black; font-size: 20px; color: #1f2933; margin-bottom: 10px; }
-.trust-card p { font-family: Satoshi Regular; font-size: 16px; color: #666; }
+.trust-card h4 { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 20px; color: #1f2933; margin-bottom: 10px; }
+.trust-card p { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; color: #666; }
 
 /* ============================================================
    How it works
    ============================================================ */
 .step-box { text-align: center; padding: 20px; }
-.step-number { width: 60px; height: 60px; background: #2ec4c6; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: Satoshi Black; font-size: 24px; margin: 0 auto 20px; }
-.step-box h4 { font-family: Satoshi Black; font-size: 20px; color: #1f2933; margin-bottom: 10px; }
-.step-box p { font-family: Satoshi Regular; font-size: 16px; color: #666; }
+.step-number { width: 60px; height: 60px; background: #2ec4c6; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 24px; margin: 0 auto 20px; }
+.step-box h4 { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 20px; color: #1f2933; margin-bottom: 10px; }
+.step-box p { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; color: #666; }
 
 /* ============================================================
    CTA Section
    ============================================================ */
 .cta-section { background: linear-gradient(to right, #2ec4c6, #ff6f61); padding: 60px 0; text-align: center; }
-.cta-section h2 { color: #fff; font-family: Satoshi Black; font-size: 36px; margin-bottom: 15px; }
-.cta-section p { color: rgba(255,255,255,0.9); font-family: Satoshi Regular; font-size: 18px; margin-bottom: 30px; }
-.cta-btn { display: inline-block; padding: 15px 40px; background: #fff; color: #2ec4c6; font-family: Satoshi Black; font-size: 18px; border-radius: 5px; margin: 0 10px; text-decoration: none; transition: all 0.3s; }
+.cta-section h2 { color: #fff; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 36px; margin-bottom: 15px; }
+.cta-section p { color: rgba(255,255,255,0.9); font-family: 'Inter', sans-serif; font-weight: 400; font-size: 18px; margin-bottom: 30px; }
+.cta-btn { display: inline-block; padding: 15px 40px; background: #fff; color: #2ec4c6; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 18px; border-radius: 5px; margin: 0 10px; text-decoration: none; transition: all 0.3s; }
 .cta-btn:hover { background: #1f2933; color: #fff; }
 .cta-btn.secondary { background: transparent; border: 2px solid #fff; color: #fff; }
 .cta-btn.secondary:hover { background: #fff; color: #2ec4c6; }
@@ -452,7 +446,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
 /* ============================================================
    Alerts
    ============================================================ */
-.alert { padding: 15px 20px; border-radius: 5px; margin-top: 15px; font-family: Satoshi Regular; font-size: 16px; }
+.alert { padding: 15px 20px; border-radius: 5px; margin-top: 15px; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; }
 .alert-success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
 .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
 
@@ -503,7 +497,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
     display: inline-block;
     height: 62px !important; line-height: 62px !important;
     background: #ff6f61 !important; color: #fff !important;
-    font-family: Satoshi Black; font-size: 14px;
+    font-family: 'Inter', sans-serif; font-weight: 900; font-size: 14px;
     border-radius: 5px; text-decoration: none;
     transition: all 0.3s; text-transform: uppercase;
     letter-spacing: 1px; border: 2px solid #ff6f61;
@@ -520,7 +514,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
 .service-card-link .paketler2 { margin-bottom: 30px; }
 
 /* ============================================================
-   Responsive — custom 1300px navbar breakpoint
+   Responsive ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â custom 1300px navbar breakpoint
    ============================================================ */
 
 /* >= 1300px: full desktop menu visible, hamburger hidden */
@@ -531,7 +525,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
 }
 
 /* Between 1200px and 1299px: Bootstrap thinks it's desktop (navbar-expand-xl)
-   but menu doesn't fit — override to mobile mode */
+   but menu doesn't fit ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â override to mobile mode */
 @media (min-width: 1200px) and (max-width: 1299px) {
     .navbar .site-menu { display: none !important; }
     .hamburger-menu { display: block !important; }
@@ -539,7 +533,7 @@ ul.post-categories { color: #2ec4c6; font-family: Satoshi Regular; font-size: 18
     .telh { display: none !important; }
 }
 
-/* < 1200px: Bootstrap mobile mode — hide contact btn, show hamburger */
+/* < 1200px: Bootstrap mobile mode ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â hide contact btn, show hamburger */
 @media (max-width: 1199px) {
     .navbar .site-menu { display: none !important; }
     .navbar-contact-btn { display: none; }

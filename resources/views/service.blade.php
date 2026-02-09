@@ -32,7 +32,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" media="all" />
@@ -190,7 +190,7 @@
     <div class="contact-panel-overlay" id="contactOverlay" onclick="closeContactPanel()"></div>
 
     <!-- PAGE HEADER / BREADCRUMBS -->
-    <header class="page-header wow fadeInUp" data-wow-delay="0.5s" data-background="{{ asset('img/page-header-cleaningo.jpg') }}">
+    <header class="page-header wow fadeInUp" data-wow-delay="0.5s" style="background-image: url('{{ asset('img/' . __('home.service_' . $serviceKey . '_image')) }}'); background-size: cover; background-position: center;">
         <div class="container">
             <h2>{{ __('home.service_' . $serviceKey . '_title') }}</h2>
             <div class="bosluk3"></div>
@@ -273,10 +273,6 @@
                     <!-- RIGHT CONTENT -->
                     <div class="col-lg-8">
                         <div class="bosluk333"></div>
-                        <!-- Service Hero Image -->
-                        <div class="galeri wow fadeInRight" data-wow-delay="0.7s">
-                            <img src="{{ asset('img/' . __('home.service_' . $serviceKey . '_image')) }}" class="galeri__gorsel galeri__gorsel--3" alt="{{ __('home.service_' . $serviceKey . '_title') }}" loading="lazy">
-                        </div>
 
                         <div class="bosluk3"></div>
 

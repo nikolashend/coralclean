@@ -109,7 +109,7 @@
     if ($(this).attr("data-background")) {
       var bg = $(this).data("background");
       if (bg.indexOf('/') !== -1 || bg.indexOf('.') !== -1) {
-        $(this).css("background", "url(" + bg + ")");
+        $(this).css("background-image", "url('" + bg + "')");
       } else {
         $(this).css("background", bg);
       }

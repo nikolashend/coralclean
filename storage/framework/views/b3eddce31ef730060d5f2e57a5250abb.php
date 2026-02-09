@@ -33,7 +33,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="<?php echo e(asset('css/bootstrap.min.css')); ?>" media="all" />
@@ -315,7 +315,6 @@
                         <p><?php echo e(__('home.hero_subtitle')); ?></p>
                         <div class="bosluk1"></div>
                         <a href="javascript:void(0)" onclick="openContactPanel()"><?php echo e(__('home.btn_order')); ?> →</a>
-                        <a href="https://wa.me/37258301348" class="hero-btn-secondary">WhatsApp →</a>
                     </div>
                 </div>
                 <!-- Slide 2: Deep Clean -->
@@ -463,26 +462,30 @@
                     ['key' => 'movein', 'icon' => 'flaticon-clean-1', 'image' => 'coralclean/packages/MOVE-IN  MOVE-OUT.png'],
                 ]; ?>
                 <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $pkg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="col-lg-4" id="<?php echo e($pkg['key']); ?>-clean">
-                    <div class="package-card wow fadeInUp" data-wow-delay="<?php echo e(0.5 + $i * 0.15); ?>s">
-                        <div class="package-card__image">
-                            <img src="<?php echo e(asset('img/' . $pkg['image'])); ?>" alt="<?php echo e(__('home.package_' . $pkg['key'] . '_title')); ?>" loading="lazy">
-                        </div>
-                        <div class="package-card__body">
-                            <h3 class="package-card__title"><?php echo e(__('home.package_' . $pkg['key'] . '_title')); ?></h3>
-                            <p class="package-card__subtitle"><?php echo e(__('home.package_' . $pkg['key'] . '_subtitle')); ?></p>
-                            <p class="package-card__desc"><?php echo e(__('home.package_' . $pkg['key'] . '_desc')); ?></p>
-                            <ul class="package-card__features">
-                                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = __('home.package_' . $pkg['key'] . '_features'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $feat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <li>✓ <?php echo e($feat); ?></li>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
-                            </ul>
-                            <div class="package-card__footer">
-                                <span class="package-card__price"><?php echo e(__('home.package_' . $pkg['key'] . '_price')); ?></span>
-                                <a href="javascript:void(0)" onclick="openContactPanel()" class="custom-button"><?php echo e(__('home.btn_order_' . $pkg['key'])); ?> →</a>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="<?php echo e(0.5 + $i * 0.15); ?>s" id="<?php echo e($pkg['key']); ?>-clean">
+                    <a href="javascript:void(0)" onclick="openContactPanel()" class="service-card-link" style="text-decoration: none; color: inherit;">
+                        <div class="paketler2" data-tilt>
+                            <div class="paketler2__on paketler2__on--onyazi">
+                                <div class="paketler2__gorsel paketler2__gorsel--1" style="background-image: url('<?php echo e(asset('img/' . $pkg['image'])); ?>'); background-size: cover; background-position: center;">
+                                    <div class="paketler2__icerik">
+                                        <div class="iconw"><i class="<?php echo e($pkg['icon']); ?>"></i></div>
+                                        <h3 class="baslik-3white h-yazi-margin-kucuk"><?php echo e(__('home.package_' . $pkg['key'] . '_title')); ?></h3>
+                                        <p class="services-kutu2--yazi wow fade"><?php echo e(__('home.package_' . $pkg['key'] . '_subtitle')); ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="paketler2__on paketler2__on--arkayazi paketler2__on--arkayazi-1">
+                                <div class="paketler2__pr">
+                                    <div class="paketler2__pr-kutu">
+                                        <h3 class="baslik-sol h-yazi-margin-kucuk"><?php echo e(__('home.package_' . $pkg['key'] . '_title')); ?></h3>
+                                        <p class="services-kutu2--yazi wow fade"><?php echo e(__('home.package_' . $pkg['key'] . '_desc')); ?></p>
+                                        <span class="package-card__price"><?php echo e(__('home.package_' . $pkg['key'] . '_price')); ?></span>
+                                    </div>
+                                    <span class="custom-button"><?php echo e(__('home.btn_order_' . $pkg['key'])); ?> →</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
             </div>
@@ -493,26 +496,30 @@
                     ['key' => 'urgent', 'icon' => 'flaticon-stopwatch', 'image' => 'coralclean/packages/URGENT CLEAN (1).png'],
                 ]; ?>
                 <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $packages2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $pkg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="col-lg-6" id="<?php echo e($pkg['key']); ?>-clean">
-                    <div class="package-card wow fadeInUp" data-wow-delay="<?php echo e(0.5 + $i * 0.15); ?>s">
-                        <div class="package-card__image">
-                            <img src="<?php echo e(asset('img/' . $pkg['image'])); ?>" alt="<?php echo e(__('home.package_' . $pkg['key'] . '_title')); ?>" loading="lazy">
-                        </div>
-                        <div class="package-card__body">
-                            <h3 class="package-card__title"><?php echo e(__('home.package_' . $pkg['key'] . '_title')); ?></h3>
-                            <p class="package-card__subtitle"><?php echo e(__('home.package_' . $pkg['key'] . '_subtitle')); ?></p>
-                            <p class="package-card__desc"><?php echo e(__('home.package_' . $pkg['key'] . '_desc')); ?></p>
-                            <ul class="package-card__features">
-                                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = __('home.package_' . $pkg['key'] . '_features'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $feat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <li>✓ <?php echo e($feat); ?></li>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
-                            </ul>
-                            <div class="package-card__footer">
-                                <span class="package-card__price"><?php echo e(__('home.package_' . $pkg['key'] . '_price')); ?></span>
-                                <a href="javascript:void(0)" onclick="openContactPanel()" class="custom-button"><?php echo e(__('home.btn_' . ($pkg['key'] == 'urgent' ? 'urgent_package' : 'order_' . $pkg['key']))); ?> →</a>
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="<?php echo e(0.5 + $i * 0.15); ?>s" id="<?php echo e($pkg['key']); ?>-clean">
+                    <a href="javascript:void(0)" onclick="openContactPanel()" class="service-card-link" style="text-decoration: none; color: inherit;">
+                        <div class="paketler2" data-tilt>
+                            <div class="paketler2__on paketler2__on--onyazi">
+                                <div class="paketler2__gorsel paketler2__gorsel--1" style="background-image: url('<?php echo e(asset('img/' . $pkg['image'])); ?>'); background-size: cover; background-position: center;">
+                                    <div class="paketler2__icerik">
+                                        <div class="iconw"><i class="<?php echo e($pkg['icon']); ?>"></i></div>
+                                        <h3 class="baslik-3white h-yazi-margin-kucuk"><?php echo e(__('home.package_' . $pkg['key'] . '_title')); ?></h3>
+                                        <p class="services-kutu2--yazi wow fade"><?php echo e(__('home.package_' . $pkg['key'] . '_subtitle')); ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="paketler2__on paketler2__on--arkayazi paketler2__on--arkayazi-1">
+                                <div class="paketler2__pr">
+                                    <div class="paketler2__pr-kutu">
+                                        <h3 class="baslik-sol h-yazi-margin-kucuk"><?php echo e(__('home.package_' . $pkg['key'] . '_title')); ?></h3>
+                                        <p class="services-kutu2--yazi wow fade"><?php echo e(__('home.package_' . $pkg['key'] . '_desc')); ?></p>
+                                        <span class="package-card__price"><?php echo e(__('home.package_' . $pkg['key'] . '_price')); ?></span>
+                                    </div>
+                                    <span class="custom-button"><?php echo e(__('home.btn_' . ($pkg['key'] == 'urgent' ? 'urgent_package' : 'order_' . $pkg['key']))); ?> →</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
             </div>
@@ -642,7 +649,7 @@
             </div>
             <div class="bosluk3"></div>
             <div class="row">
-                <?php $workIcons = ['flaticon-house', 'flaticon-clean', 'flaticon-calendar', 'flaticon-paint-roller', 'flaticon-team-1', 'flaticon-shield']; ?>
+                <?php $workIcons = ['flaticon-house', 'flaticon-clean', 'flaticon-calendar', 'flaticon-brush', 'flaticon-team-1', 'flaticon-shield']; ?>
                 <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php for($i = 1; $i <= 6; $i++): ?>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="<?php echo e(0.4 + $i * 0.1); ?>s">
                     <div class="we-work-card">
@@ -719,7 +726,7 @@
     <section class="cta-section">
         <div class="container">
             <h2 class="wow fadeInUp" data-wow-delay="0.3s"><?php echo e(__('home.cta_title')); ?></h2>
-            <p class="wow fadeInUp" data-wow-delay="0.4s"><?php echo e(__('home.cta_subtitle')); ?></p>
+            <p class="wow fadeInUp text-center" data-wow-delay="0.4s"><?php echo e(__('home.cta_subtitle')); ?></p>
             <div class="wow fadeInUp" data-wow-delay="0.5s">
                 <a href="javascript:void(0)" onclick="openContactPanel()" class="cta-btn"><?php echo e(__('home.btn_leave_request')); ?> →</a>
                 <a href="https://wa.me/37258301348" class="cta-btn secondary">WhatsApp →</a>
