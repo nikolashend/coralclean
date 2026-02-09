@@ -401,32 +401,25 @@
             </div>
             <div class="bosluk3"></div>
             <div class="row">
-                @php $serviceCards = [
-                    ['slug' => 'glass-cleaning', 'key' => 'glass', 'icon' => 'flaticon-clean-1'],
-                    ['slug' => 'garden-cleaning', 'key' => 'garden', 'icon' => 'flaticon-agriculture'],
-                    ['slug' => 'renovation-cleaning', 'key' => 'renovation', 'icon' => 'flaticon-brush'],
-                    ['slug' => 'office-cleaning', 'key' => 'office', 'icon' => 'flaticon-clean'],
-                    ['slug' => 'carpet-cleaning', 'key' => 'carpet', 'icon' => 'flaticon-vacuum'],
-                    ['slug' => 'home-cleaning', 'key' => 'home', 'icon' => 'flaticon-house'],
-                ]; @endphp
-                @foreach($serviceCards as $i => $svc)
+                @foreach($services as $i => $svc)
+                @php $trans = $svc->translations->first(); @endphp
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.5 + $i * 0.1 }}s">
-                    <a href="{{ url('/' . $locale . '/services/' . $svc['slug']) }}" class="service-card-link" style="text-decoration: none; color: inherit;">
+                    <a href="{{ url('/' . $locale . '/services/' . $svc->slug) }}" class="service-card-link" style="text-decoration: none; color: inherit;">
                         <div class="paketler2" data-tilt>
                             <div class="paketler2__on paketler2__on--onyazi">
                                 <div class="paketler2__gorsel paketler2__gorsel--1">
                                     <div class="paketler2__icerik">
-                                        <div class="iconw"><i class="{{ $svc['icon'] }}"></i></div>
-                                        <h3 class="baslik-3white h-yazi-margin-kucuk">{{ __('home.service_' . $svc['key'] . '_title') }}</h3>
-                                        <p class="services-kutu2--yazi wow fade">{{ __('home.service_' . $svc['key'] . '_short') }}</p>
+                                        <div class="iconw"><i class="{{ $svc->icon }}"></i></div>
+                                        <h3 class="baslik-3white h-yazi-margin-kucuk">{{ $trans->title ?? '' }}</h3>
+                                        <p class="services-kutu2--yazi wow fade">{{ $trans->short_desc ?? '' }}</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="paketler2__on paketler2__on--arkayazi paketler2__on--arkayazi-1">
                                 <div class="paketler2__pr">
                                     <div class="paketler2__pr-kutu">
-                                        <h3 class="baslik-sol h-yazi-margin-kucuk">{{ __('home.service_' . $svc['key'] . '_title') }}</h3>
-                                        <p class="services-kutu2--yazi wow fade">{{ __('home.service_' . $svc['key'] . '_desc') }}</p>
+                                        <h3 class="baslik-sol h-yazi-margin-kucuk">{{ $trans->title ?? '' }}</h3>
+                                        <p class="services-kutu2--yazi wow fade">{{ $trans->description ?? '' }}</p>
                                     </div>
                                     <span class="custom-button">{{ __('home.btn_details') }}</span>
                                 </div>
@@ -455,32 +448,29 @@
             <div class="bosluk3"></div>
 
             <div class="row">
-                @php $packages = [
-                    ['key' => 'quick', 'icon' => 'flaticon-mop', 'image' => 'coralclean/packages/quick clean (1).png'],
-                    ['key' => 'deep', 'icon' => 'flaticon-vacuum', 'image' => 'coralclean/packages/DEEP CLEAN (1).png'],
-                    ['key' => 'movein', 'icon' => 'flaticon-clean-1', 'image' => 'coralclean/packages/MOVE-IN  MOVE-OUT.png'],
-                ]; @endphp
-                @foreach($packages as $i => $pkg)
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.5 + $i * 0.15 }}s" id="{{ $pkg['key'] }}-clean">
-                    <a href="javascript:void(0)" onclick="openContactPanel('{{ $pkg['key'] }}-clean')" class="service-card-link" style="text-decoration: none; color: inherit;">
+                @php $packagesRow1 = $packages->where('column_span', 4); @endphp
+                @foreach($packagesRow1 as $i => $pkg)
+                @php $trans = $pkg->translations->first(); @endphp
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.5 + $i * 0.15 }}s" id="{{ $pkg->slug }}-clean">
+                    <a href="javascript:void(0)" onclick="openContactPanel('{{ $pkg->slug }}-clean')" class="service-card-link" style="text-decoration: none; color: inherit;">
                         <div class="paketler2" data-tilt>
                             <div class="paketler2__on paketler2__on--onyazi">
-                                <div class="paketler2__gorsel paketler2__gorsel--1" style="background-image: url('{{ asset('img/' . $pkg['image']) }}'); background-size: cover; background-position: center;">
+                                <div class="paketler2__gorsel paketler2__gorsel--1" style="background-image: url('{{ asset('img/' . $pkg->image) }}'); background-size: cover; background-position: center;">
                                     <div class="paketler2__icerik">
-                                        <div class="iconw"><i class="{{ $pkg['icon'] }}"></i></div>
-                                        <h3 class="baslik-3white h-yazi-margin-kucuk">{{ __('home.package_' . $pkg['key'] . '_title') }}</h3>
-                                        <p class="services-kutu2--yazi wow fade">{{ __('home.package_' . $pkg['key'] . '_subtitle') }}</p>
+                                        <div class="iconw"><i class="{{ $pkg->icon }}"></i></div>
+                                        <h3 class="baslik-3white h-yazi-margin-kucuk">{{ $trans->title ?? '' }}</h3>
+                                        <p class="services-kutu2--yazi wow fade">{{ $trans->subtitle ?? '' }}</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="paketler2__on paketler2__on--arkayazi paketler2__on--arkayazi-1">
                                 <div class="paketler2__pr">
                                     <div class="paketler2__pr-kutu">
-                                        <h3 class="baslik-sol h-yazi-margin-kucuk">{{ __('home.package_' . $pkg['key'] . '_title') }}</h3>
-                                        <p class="services-kutu2--yazi wow fade">{{ __('home.package_' . $pkg['key'] . '_desc') }}</p>
-                                        <span class="package-card__price">{{ __('home.package_' . $pkg['key'] . '_price') }}</span>
+                                        <h3 class="baslik-sol h-yazi-margin-kucuk">{{ $trans->title ?? '' }}</h3>
+                                        <p class="services-kutu2--yazi wow fade">{{ $trans->description ?? '' }}</p>
+                                        <span class="package-card__price">{{ $trans->price ?? '' }}</span>
                                     </div>
-                                    <span class="custom-button">{{ __('home.btn_order_' . $pkg['key']) }} →</span>
+                                    <span class="custom-button">{{ $trans->btn_text ?? __('home.btn_order_package') }} →</span>
                                 </div>
                             </div>
                         </div>
@@ -490,31 +480,29 @@
             </div>
 
             <div class="row mt-4">
-                @php $packages2 = [
-                    ['key' => 'office', 'icon' => 'flaticon-clean', 'image' => 'coralclean/packages/OFFICE CARE (1).png'],
-                    ['key' => 'urgent', 'icon' => 'flaticon-stopwatch', 'image' => 'coralclean/packages/URGENT CLEAN (1).png'],
-                ]; @endphp
-                @foreach($packages2 as $i => $pkg)
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.5 + $i * 0.15 }}s" id="{{ $pkg['key'] }}-clean">
-                    <a href="javascript:void(0)" onclick="openContactPanel('{{ $pkg['key'] }}-clean')" class="service-card-link" style="text-decoration: none; color: inherit;">
+                @php $packagesRow2 = $packages->where('column_span', 6); @endphp
+                @foreach($packagesRow2 as $i => $pkg)
+                @php $trans = $pkg->translations->first(); @endphp
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.5 + $i * 0.15 }}s" id="{{ $pkg->slug }}-clean">
+                    <a href="javascript:void(0)" onclick="openContactPanel('{{ $pkg->slug }}-clean')" class="service-card-link" style="text-decoration: none; color: inherit;">
                         <div class="paketler2" data-tilt>
                             <div class="paketler2__on paketler2__on--onyazi">
-                                <div class="paketler2__gorsel paketler2__gorsel--1" style="background-image: url('{{ asset('img/' . $pkg['image']) }}'); background-size: cover; background-position: center;">
+                                <div class="paketler2__gorsel paketler2__gorsel--1" style="background-image: url('{{ asset('img/' . $pkg->image) }}'); background-size: cover; background-position: center;">
                                     <div class="paketler2__icerik">
-                                        <div class="iconw"><i class="{{ $pkg['icon'] }}"></i></div>
-                                        <h3 class="baslik-3white h-yazi-margin-kucuk">{{ __('home.package_' . $pkg['key'] . '_title') }}</h3>
-                                        <p class="services-kutu2--yazi wow fade">{{ __('home.package_' . $pkg['key'] . '_subtitle') }}</p>
+                                        <div class="iconw"><i class="{{ $pkg->icon }}"></i></div>
+                                        <h3 class="baslik-3white h-yazi-margin-kucuk">{{ $trans->title ?? '' }}</h3>
+                                        <p class="services-kutu2--yazi wow fade">{{ $trans->subtitle ?? '' }}</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="paketler2__on paketler2__on--arkayazi paketler2__on--arkayazi-1">
                                 <div class="paketler2__pr">
                                     <div class="paketler2__pr-kutu">
-                                        <h3 class="baslik-sol h-yazi-margin-kucuk">{{ __('home.package_' . $pkg['key'] . '_title') }}</h3>
-                                        <p class="services-kutu2--yazi wow fade">{{ __('home.package_' . $pkg['key'] . '_desc') }}</p>
-                                        <span class="package-card__price">{{ __('home.package_' . $pkg['key'] . '_price') }}</span>
+                                        <h3 class="baslik-sol h-yazi-margin-kucuk">{{ $trans->title ?? '' }}</h3>
+                                        <p class="services-kutu2--yazi wow fade">{{ $trans->description ?? '' }}</p>
+                                        <span class="package-card__price">{{ $trans->price ?? '' }}</span>
                                     </div>
-                                    <span class="custom-button">{{ __('home.btn_' . ($pkg['key'] == 'urgent' ? 'urgent_package' : 'order_' . $pkg['key'])) }} →</span>
+                                    <span class="custom-button">{{ $trans->btn_text ?? __('home.btn_order_package') }} →</span>
                                 </div>
                             </div>
                         </div>

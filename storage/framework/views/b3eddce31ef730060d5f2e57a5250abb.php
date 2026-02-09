@@ -402,32 +402,25 @@
             </div>
             <div class="bosluk3"></div>
             <div class="row">
-                <?php $serviceCards = [
-                    ['slug' => 'glass-cleaning', 'key' => 'glass', 'icon' => 'flaticon-clean-1'],
-                    ['slug' => 'garden-cleaning', 'key' => 'garden', 'icon' => 'flaticon-agriculture'],
-                    ['slug' => 'renovation-cleaning', 'key' => 'renovation', 'icon' => 'flaticon-brush'],
-                    ['slug' => 'office-cleaning', 'key' => 'office', 'icon' => 'flaticon-clean'],
-                    ['slug' => 'carpet-cleaning', 'key' => 'carpet', 'icon' => 'flaticon-vacuum'],
-                    ['slug' => 'home-cleaning', 'key' => 'home', 'icon' => 'flaticon-house'],
-                ]; ?>
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $serviceCards; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $svc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $svc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $trans = $svc->translations->first(); ?>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="<?php echo e(0.5 + $i * 0.1); ?>s">
-                    <a href="<?php echo e(url('/' . $locale . '/services/' . $svc['slug'])); ?>" class="service-card-link" style="text-decoration: none; color: inherit;">
+                    <a href="<?php echo e(url('/' . $locale . '/services/' . $svc->slug)); ?>" class="service-card-link" style="text-decoration: none; color: inherit;">
                         <div class="paketler2" data-tilt>
                             <div class="paketler2__on paketler2__on--onyazi">
                                 <div class="paketler2__gorsel paketler2__gorsel--1">
                                     <div class="paketler2__icerik">
-                                        <div class="iconw"><i class="<?php echo e($svc['icon']); ?>"></i></div>
-                                        <h3 class="baslik-3white h-yazi-margin-kucuk"><?php echo e(__('home.service_' . $svc['key'] . '_title')); ?></h3>
-                                        <p class="services-kutu2--yazi wow fade"><?php echo e(__('home.service_' . $svc['key'] . '_short')); ?></p>
+                                        <div class="iconw"><i class="<?php echo e($svc->icon); ?>"></i></div>
+                                        <h3 class="baslik-3white h-yazi-margin-kucuk"><?php echo e($trans->title ?? ''); ?></h3>
+                                        <p class="services-kutu2--yazi wow fade"><?php echo e($trans->short_desc ?? ''); ?></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="paketler2__on paketler2__on--arkayazi paketler2__on--arkayazi-1">
                                 <div class="paketler2__pr">
                                     <div class="paketler2__pr-kutu">
-                                        <h3 class="baslik-sol h-yazi-margin-kucuk"><?php echo e(__('home.service_' . $svc['key'] . '_title')); ?></h3>
-                                        <p class="services-kutu2--yazi wow fade"><?php echo e(__('home.service_' . $svc['key'] . '_desc')); ?></p>
+                                        <h3 class="baslik-sol h-yazi-margin-kucuk"><?php echo e($trans->title ?? ''); ?></h3>
+                                        <p class="services-kutu2--yazi wow fade"><?php echo e($trans->description ?? ''); ?></p>
                                     </div>
                                     <span class="custom-button"><?php echo e(__('home.btn_details')); ?></span>
                                 </div>
@@ -456,32 +449,29 @@
             <div class="bosluk3"></div>
 
             <div class="row">
-                <?php $packages = [
-                    ['key' => 'quick', 'icon' => 'flaticon-mop', 'image' => 'coralclean/packages/quick clean (1).png'],
-                    ['key' => 'deep', 'icon' => 'flaticon-vacuum', 'image' => 'coralclean/packages/DEEP CLEAN (1).png'],
-                    ['key' => 'movein', 'icon' => 'flaticon-clean-1', 'image' => 'coralclean/packages/MOVE-IN  MOVE-OUT.png'],
-                ]; ?>
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $pkg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="<?php echo e(0.5 + $i * 0.15); ?>s" id="<?php echo e($pkg['key']); ?>-clean">
-                    <a href="javascript:void(0)" onclick="openContactPanel('<?php echo e($pkg['key']); ?>-clean')" class="service-card-link" style="text-decoration: none; color: inherit;">
+                <?php $packagesRow1 = $packages->where('column_span', 4); ?>
+                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $packagesRow1; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $pkg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $trans = $pkg->translations->first(); ?>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="<?php echo e(0.5 + $i * 0.15); ?>s" id="<?php echo e($pkg->slug); ?>-clean">
+                    <a href="javascript:void(0)" onclick="openContactPanel('<?php echo e($pkg->slug); ?>-clean')" class="service-card-link" style="text-decoration: none; color: inherit;">
                         <div class="paketler2" data-tilt>
                             <div class="paketler2__on paketler2__on--onyazi">
-                                <div class="paketler2__gorsel paketler2__gorsel--1" style="background-image: url('<?php echo e(asset('img/' . $pkg['image'])); ?>'); background-size: cover; background-position: center;">
+                                <div class="paketler2__gorsel paketler2__gorsel--1" style="background-image: url('<?php echo e(asset('img/' . $pkg->image)); ?>'); background-size: cover; background-position: center;">
                                     <div class="paketler2__icerik">
-                                        <div class="iconw"><i class="<?php echo e($pkg['icon']); ?>"></i></div>
-                                        <h3 class="baslik-3white h-yazi-margin-kucuk"><?php echo e(__('home.package_' . $pkg['key'] . '_title')); ?></h3>
-                                        <p class="services-kutu2--yazi wow fade"><?php echo e(__('home.package_' . $pkg['key'] . '_subtitle')); ?></p>
+                                        <div class="iconw"><i class="<?php echo e($pkg->icon); ?>"></i></div>
+                                        <h3 class="baslik-3white h-yazi-margin-kucuk"><?php echo e($trans->title ?? ''); ?></h3>
+                                        <p class="services-kutu2--yazi wow fade"><?php echo e($trans->subtitle ?? ''); ?></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="paketler2__on paketler2__on--arkayazi paketler2__on--arkayazi-1">
                                 <div class="paketler2__pr">
                                     <div class="paketler2__pr-kutu">
-                                        <h3 class="baslik-sol h-yazi-margin-kucuk"><?php echo e(__('home.package_' . $pkg['key'] . '_title')); ?></h3>
-                                        <p class="services-kutu2--yazi wow fade"><?php echo e(__('home.package_' . $pkg['key'] . '_desc')); ?></p>
-                                        <span class="package-card__price"><?php echo e(__('home.package_' . $pkg['key'] . '_price')); ?></span>
+                                        <h3 class="baslik-sol h-yazi-margin-kucuk"><?php echo e($trans->title ?? ''); ?></h3>
+                                        <p class="services-kutu2--yazi wow fade"><?php echo e($trans->description ?? ''); ?></p>
+                                        <span class="package-card__price"><?php echo e($trans->price ?? ''); ?></span>
                                     </div>
-                                    <span class="custom-button"><?php echo e(__('home.btn_order_' . $pkg['key'])); ?> →</span>
+                                    <span class="custom-button"><?php echo e($trans->btn_text ?? __('home.btn_order_package')); ?> →</span>
                                 </div>
                             </div>
                         </div>
@@ -491,31 +481,29 @@
             </div>
 
             <div class="row mt-4">
-                <?php $packages2 = [
-                    ['key' => 'office', 'icon' => 'flaticon-clean', 'image' => 'coralclean/packages/OFFICE CARE (1).png'],
-                    ['key' => 'urgent', 'icon' => 'flaticon-stopwatch', 'image' => 'coralclean/packages/URGENT CLEAN (1).png'],
-                ]; ?>
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $packages2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $pkg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="<?php echo e(0.5 + $i * 0.15); ?>s" id="<?php echo e($pkg['key']); ?>-clean">
-                    <a href="javascript:void(0)" onclick="openContactPanel('<?php echo e($pkg['key']); ?>-clean')" class="service-card-link" style="text-decoration: none; color: inherit;">
+                <?php $packagesRow2 = $packages->where('column_span', 6); ?>
+                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $packagesRow2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $pkg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $trans = $pkg->translations->first(); ?>
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="<?php echo e(0.5 + $i * 0.15); ?>s" id="<?php echo e($pkg->slug); ?>-clean">
+                    <a href="javascript:void(0)" onclick="openContactPanel('<?php echo e($pkg->slug); ?>-clean')" class="service-card-link" style="text-decoration: none; color: inherit;">
                         <div class="paketler2" data-tilt>
                             <div class="paketler2__on paketler2__on--onyazi">
-                                <div class="paketler2__gorsel paketler2__gorsel--1" style="background-image: url('<?php echo e(asset('img/' . $pkg['image'])); ?>'); background-size: cover; background-position: center;">
+                                <div class="paketler2__gorsel paketler2__gorsel--1" style="background-image: url('<?php echo e(asset('img/' . $pkg->image)); ?>'); background-size: cover; background-position: center;">
                                     <div class="paketler2__icerik">
-                                        <div class="iconw"><i class="<?php echo e($pkg['icon']); ?>"></i></div>
-                                        <h3 class="baslik-3white h-yazi-margin-kucuk"><?php echo e(__('home.package_' . $pkg['key'] . '_title')); ?></h3>
-                                        <p class="services-kutu2--yazi wow fade"><?php echo e(__('home.package_' . $pkg['key'] . '_subtitle')); ?></p>
+                                        <div class="iconw"><i class="<?php echo e($pkg->icon); ?>"></i></div>
+                                        <h3 class="baslik-3white h-yazi-margin-kucuk"><?php echo e($trans->title ?? ''); ?></h3>
+                                        <p class="services-kutu2--yazi wow fade"><?php echo e($trans->subtitle ?? ''); ?></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="paketler2__on paketler2__on--arkayazi paketler2__on--arkayazi-1">
                                 <div class="paketler2__pr">
                                     <div class="paketler2__pr-kutu">
-                                        <h3 class="baslik-sol h-yazi-margin-kucuk"><?php echo e(__('home.package_' . $pkg['key'] . '_title')); ?></h3>
-                                        <p class="services-kutu2--yazi wow fade"><?php echo e(__('home.package_' . $pkg['key'] . '_desc')); ?></p>
-                                        <span class="package-card__price"><?php echo e(__('home.package_' . $pkg['key'] . '_price')); ?></span>
+                                        <h3 class="baslik-sol h-yazi-margin-kucuk"><?php echo e($trans->title ?? ''); ?></h3>
+                                        <p class="services-kutu2--yazi wow fade"><?php echo e($trans->description ?? ''); ?></p>
+                                        <span class="package-card__price"><?php echo e($trans->price ?? ''); ?></span>
                                     </div>
-                                    <span class="custom-button"><?php echo e(__('home.btn_' . ($pkg['key'] == 'urgent' ? 'urgent_package' : 'order_' . $pkg['key']))); ?> →</span>
+                                    <span class="custom-button"><?php echo e($trans->btn_text ?? __('home.btn_order_package')); ?> →</span>
                                 </div>
                             </div>
                         </div>

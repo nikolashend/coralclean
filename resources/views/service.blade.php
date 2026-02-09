@@ -3,24 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ __('home.service_' . $serviceKey . '_title') }} — CoralClean | Tallinn</title>
-    <meta name="description" content="{{ __('home.service_' . $serviceKey . '_desc') }}">
+    @php
+        $trans = $service->translations->first();
+        $svcTitle = $trans->title ?? __('home.service_' . $serviceKey . '_title');
+        $svcDesc = $trans->description ?? __('home.service_' . $serviceKey . '_desc');
+        $svcImage = $trans->image_path ?? __('home.service_' . $serviceKey . '_image');
+        $svcText1 = $trans->text1 ?? __('home.service_' . $serviceKey . '_text1');
+        $svcText2 = $trans->text2 ?? __('home.service_' . $serviceKey . '_text2');
+    @endphp
+
+    <title>{{ $svcTitle }} — CoralClean | Tallinn</title>
+    <meta name="description" content="{{ $svcDesc }}">
     <meta name="robots" content="index, follow, max-image-preview:large">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ __('home.service_' . $serviceKey . '_title') }} — CoralClean">
-    <meta property="og:description" content="{{ __('home.service_' . $serviceKey . '_desc') }}">
+    <meta property="og:title" content="{{ $svcTitle }} — CoralClean">
+    <meta property="og:description" content="{{ $svcDesc }}">
     <meta property="og:url" content="{{ url('/' . $locale . '/services/' . $slug) }}">
-    <meta property="og:image" content="{{ asset('img/' . __('home.service_' . $serviceKey . '_image')) }}">
+    <meta property="og:image" content="{{ asset('img/' . $svcImage) }}">
     <meta property="og:site_name" content="CoralClean">
     <meta property="og:locale" content="{{ $locale == 'et' ? 'et_EE' : ($locale == 'en' ? 'en_US' : 'ru_RU') }}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ __('home.service_' . $serviceKey . '_title') }} — CoralClean">
-    <meta name="twitter:description" content="{{ __('home.service_' . $serviceKey . '_desc') }}">
-    <meta name="twitter:image" content="{{ asset('img/' . __('home.service_' . $serviceKey . '_image')) }}">
+    <meta name="twitter:title" content="{{ $svcTitle }} — CoralClean">
+    <meta name="twitter:description" content="{{ $svcDesc }}">
+    <meta name="twitter:image" content="{{ asset('img/' . $svcImage) }}">
 
     <!-- hreflang -->
     <link rel="alternate" hreflang="ru" href="{{ url('/ru/services/' . $slug) }}" />
@@ -56,8 +65,8 @@
     $schemaService = json_encode([
         $ctx => 'https://schema.org',
         $typ => 'Service',
-        'name' => __('home.service_' . $serviceKey . '_title'),
-        'description' => __('home.service_' . $serviceKey . '_desc'),
+        'name' => $svcTitle,
+        'description' => $svcDesc,
         'provider' => [
             $typ => 'LocalBusiness',
             'name' => 'CoralClean',
@@ -72,7 +81,7 @@
             ],
         ],
         'areaServed' => [$typ => 'City', 'name' => 'Tallinn'],
-        'image' => asset('img/' . __('home.service_' . $serviceKey . '_image')),
+        'image' => asset('img/' . $svcImage),
         'url' => url('/' . $locale . '/services/' . $slug),
     ], $jsonFlags);
 
@@ -81,7 +90,7 @@
         $typ => 'BreadcrumbList',
         'itemListElement' => [
             [$typ => 'ListItem', 'position' => 1, 'name' => __('home.nav_home'), 'item' => url('/' . $locale)],
-            [$typ => 'ListItem', 'position' => 2, 'name' => __('home.service_' . $serviceKey . '_title'), 'item' => url('/' . $locale . '/services/' . $slug)],
+            [$typ => 'ListItem', 'position' => 2, 'name' => $svcTitle, 'item' => url('/' . $locale . '/services/' . $slug)],
         ],
     ], $jsonFlags);
     @endphp
@@ -122,9 +131,9 @@
                 <div class="site-menu">
                     <ul id="mobile-menu" style="list-style: none; padding: 0; margin: 20px 0;">
                         <li style="margin: 15px 0;"><a href="{{ url('/' . $locale) }}" style="color: #333; text-decoration: none; font-size: 18px;">{{ __('home.nav_home') }}</a></li>
-                        @foreach($services as $svc)
-                        @php $sKey = str_replace('-', '_', str_replace('-cleaning', '', $svc)); @endphp
-                        <li style="margin: 15px 0;"><a href="{{ url('/' . $locale . '/services/' . $svc) }}" style="color: {{ $slug === $svc ? '#2ec4c6' : '#333' }}; text-decoration: none; font-size: 18px;">{{ __('home.service_' . $sKey . '_title') }}</a></li>
+                        @foreach($allServices as $navSvc)
+                        @php $navTrans = $navSvc->translations->first(); @endphp
+                        <li style="margin: 15px 0;"><a href="{{ url('/' . $locale . '/services/' . $navSvc->slug) }}" style="color: {{ $slug === $navSvc->slug ? '#2ec4c6' : '#333' }}; text-decoration: none; font-size: 18px;">{{ $navTrans->title ?? $navSvc->slug }}</a></li>
                         @endforeach
                     </ul>
                     <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
@@ -166,9 +175,9 @@
                     <div class="form-popup__grup">
                         <select name="service_type" class="form-popup__input">
                             <option value="">{{ __('home.form_select_service') }}</option>
-                            @foreach($services as $svc)
-                            @php $sKey = str_replace('-', '_', str_replace('-cleaning', '', $svc)); @endphp
-                            <option value="{{ $svc }}" {{ $slug === $svc ? 'selected' : '' }}>{{ __('home.service_' . $sKey . '_title') }}</option>
+                            @foreach($allServices as $navSvc)
+                            @php $navTrans = $navSvc->translations->first(); @endphp
+                            <option value="{{ $navSvc->slug }}" {{ $slug === $navSvc->slug ? 'selected' : '' }}>{{ $navTrans->title ?? $navSvc->slug }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -190,14 +199,14 @@
     <div class="contact-panel-overlay" id="contactOverlay" onclick="closeContactPanel()"></div>
 
     <!-- PAGE HEADER / BREADCRUMBS -->
-    <header class="page-header wow fadeInUp" data-wow-delay="0.5s" style="background-image: url('{{ asset('img/' . __('home.service_' . $serviceKey . '_image')) }}'); background-size: cover; background-position: center;">
+    <header class="page-header wow fadeInUp" data-wow-delay="0.5s" style="background-image: url('{{ asset('img/' . $svcImage) }}'); background-size: cover; background-position: center;">
         <div class="container">
-            <h2>{{ __('home.service_' . $serviceKey . '_title') }}</h2>
+            <h2>{{ $svcTitle }}</h2>
             <div class="bosluk3"></div>
             <p>
                 <a href="{{ url('/' . $locale) }}" class="headerbreadcrumb">{{ __('home.nav_home') }}</a>
                 <i class="flaticon-right-chevron"></i>
-                {{ __('home.service_' . $serviceKey . '_title') }}
+                {{ $svcTitle }}
             </p>
         </div>
     </header>
@@ -212,11 +221,11 @@
                     <div class="col-lg-4">
                         <!-- Service Navigation Menu -->
                         <div class="sidebar-service wow fadeInLeft" data-wow-delay="0.8s">
-                            @foreach($services as $svc)
-                            @php $sKey = str_replace('-', '_', str_replace('-cleaning', '', $svc)); @endphp
-                            <span class="menu-service {{ $slug === $svc ? 'menuactive' : '' }}">
-                                <a href="{{ url('/' . $locale . '/services/' . $svc) }}">
-                                    <i class="flaticon-right-chevron"></i> {{ __('home.service_' . $sKey . '_title') }}
+                            @foreach($allServices as $navSvc)
+                            @php $navTrans = $navSvc->translations->first(); @endphp
+                            <span class="menu-service {{ $slug === $navSvc->slug ? 'menuactive' : '' }}">
+                                <a href="{{ url('/' . $locale . '/services/' . $navSvc->slug) }}">
+                                    <i class="flaticon-right-chevron"></i> {{ $navTrans->title ?? $navSvc->slug }}
                                 </a>
                             </span>
                             @endforeach
@@ -242,9 +251,9 @@
                                 <div class="form-popup__grup">
                                     <select name="service_type" class="form-popup__input">
                                         <option value="">{{ __('home.form_select_service') }}</option>
-                                        @foreach($services as $svc)
-                                        @php $sKey = str_replace('-', '_', str_replace('-cleaning', '', $svc)); @endphp
-                                        <option value="{{ $svc }}" {{ $slug === $svc ? 'selected' : '' }}>{{ __('home.service_' . $sKey . '_title') }}</option>
+                                        @foreach($allServices as $navSvc)
+                                        @php $navTrans = $navSvc->translations->first(); @endphp
+                                        <option value="{{ $navSvc->slug }}" {{ $slug === $navSvc->slug ? 'selected' : '' }}>{{ $navTrans->title ?? $navSvc->slug }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -277,17 +286,17 @@
                         <div class="bosluk3"></div>
 
                         <!-- Service Title -->
-                        <h2 class="h2-baslik-anasayfa-ozel wow fade">{{ __('home.service_' . $serviceKey . '_title') }}</h2>
+                        <h2 class="h2-baslik-anasayfa-ozel wow fade">{{ $svcTitle }}</h2>
                         <div class="bosluk333"></div>
 
                         <!-- Service Description Paragraphs -->
-                        <p class="paragraf wow fade" data-wow-delay="0.5s">{{ __('home.service_' . $serviceKey . '_text1') }}</p>
+                        <p class="paragraf wow fade" data-wow-delay="0.5s">{{ $svcText1 }}</p>
                         <div class="bosluk1"></div>
 
                         <img class="divider" src="{{ asset('img/divider.jpg') }}" alt="divider" loading="lazy">
                         <div class="bosluk1"></div>
 
-                        <p class="paragraf wow fade" data-wow-delay="0.6s">{{ __('home.service_' . $serviceKey . '_text2') }}</p>
+                        <p class="paragraf wow fade" data-wow-delay="0.6s">{{ $svcText2 }}</p>
                         <div class="bosluk3"></div>
 
                         <!-- Reliability / Loyalty Flip Cards -->
@@ -335,7 +344,7 @@
                         <!-- CTA to contact -->
                         <div class="text-center wow fadeInUp" data-wow-delay="0.9s">
                             <a href="javascript:void(0)" onclick="openContactPanel()" class="custom-button">{{ __('home.btn_order') }}</a>
-                            <a href="https://wa.me/37258301348?text={{ urlencode(__('home.service_' . $serviceKey . '_title')) }}" target="_blank" class="custom-button" style="background: #25D366; margin-left: 10px;">WhatsApp</a>
+                            <a href="https://wa.me/37258301348?text={{ urlencode($svcTitle) }}" target="_blank" class="custom-button" style="background: #25D366; margin-left: 10px;">WhatsApp</a>
                         </div>
                     </div>
                 </div>
