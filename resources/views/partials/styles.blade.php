@@ -302,6 +302,9 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
 
     /* === 9. About section — more bottom spacing so it doesn't press against How It Works === */
     #about { margin-bottom: 40px !important; }
+
+    /* === 10. How It Works section — push down so About contact button doesn't overlap === */
+    #how-it-works { margin-top: 40px !important; }
 }
 
 /* ============================================================
