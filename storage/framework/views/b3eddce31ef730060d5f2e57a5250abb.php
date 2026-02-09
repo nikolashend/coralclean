@@ -463,7 +463,7 @@
                 ]; ?>
                 <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $pkg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="<?php echo e(0.5 + $i * 0.15); ?>s" id="<?php echo e($pkg['key']); ?>-clean">
-                    <a href="javascript:void(0)" onclick="openContactPanel()" class="service-card-link" style="text-decoration: none; color: inherit;">
+                    <a href="javascript:void(0)" onclick="openContactPanel('<?php echo e($pkg['key']); ?>-clean')" class="service-card-link" style="text-decoration: none; color: inherit;">
                         <div class="paketler2" data-tilt>
                             <div class="paketler2__on paketler2__on--onyazi">
                                 <div class="paketler2__gorsel paketler2__gorsel--1" style="background-image: url('<?php echo e(asset('img/' . $pkg['image'])); ?>'); background-size: cover; background-position: center;">
@@ -497,7 +497,7 @@
                 ]; ?>
                 <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $packages2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $pkg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="<?php echo e(0.5 + $i * 0.15); ?>s" id="<?php echo e($pkg['key']); ?>-clean">
-                    <a href="javascript:void(0)" onclick="openContactPanel()" class="service-card-link" style="text-decoration: none; color: inherit;">
+                    <a href="javascript:void(0)" onclick="openContactPanel('<?php echo e($pkg['key']); ?>-clean')" class="service-card-link" style="text-decoration: none; color: inherit;">
                         <div class="paketler2" data-tilt>
                             <div class="paketler2__on paketler2__on--onyazi">
                                 <div class="paketler2__gorsel paketler2__gorsel--1" style="background-image: url('<?php echo e(asset('img/' . $pkg['image'])); ?>'); background-size: cover; background-position: center;">
@@ -793,10 +793,18 @@
         if (typeof init_pointer === 'function') { init_pointer({}); }
 
         // Contact Panel Functions
-        function openContactPanel() {
+        function openContactPanel(serviceType) {
             document.getElementById('contactPanel').classList.add('open');
             document.getElementById('contactOverlay').classList.add('open');
             document.body.style.overflow = 'hidden';
+            
+            // Pre-select service if provided
+            if (serviceType) {
+                const serviceSelect = document.querySelector('select[name="service_type"]');
+                if (serviceSelect) {
+                    serviceSelect.value = serviceType;
+                }
+            }
         }
         function closeContactPanel() {
             document.getElementById('contactPanel').classList.remove('open');

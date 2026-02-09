@@ -97,6 +97,9 @@ a.menucolor:hover { color: #ff6f61; }
 .footer .footer-social li a:hover { background: #ff6f61; border: 1px solid rgba(255, 255, 255, 0.3); }
 textarea#comment, input#author, input#email, input#url { border-bottom: 0.3rem solid #2ec4c6; }
 .paketler2__on--arkayazi-1 { background: linear-gradient(to right bottom, #2ec4c6, #ff6f61d7); }
+.paketler2__pr-kutu .baslik-sol { color: #fff !important; }
+.paketler2__pr-kutu .services-kutu2--yazi { color: rgba(255,255,255,0.9) !important; }
+.paketler2__pr-kutu .package-card__price { color: #fff !important; font-size: 24px; }
 .form__input { border-bottom: 0.3rem solid #2ec4c6; }
 .form__input:focus, .form__input:focus:invalid { border-bottom: 0.3rem solid #2ec4c6; }
 .form__radio-buton { border: 0.5rem solid #2ec4c6; }
@@ -121,7 +124,37 @@ textarea#comment, input#author, input#email, input#url { border-bottom: 0.3rem s
 .iconsocia { color: #2ec4c6; }
 .iconsocia:hover { color: #ff6f61; }
 .paketler3__gorsel--1, .paketler3__on--arkayazi-1 { background-image: linear-gradient(to right bottom, #2ec4c6, #ff6f61); }
-.paketler2__gorsel--1 { background: linear-gradient(#2ec4c6, #ff6f61), transparent center center/cover no-repeat scroll; }
+
+/* Services section: keep original gradient, no green */
+#services .paketler2__gorsel--1 {
+    background: linear-gradient(to right bottom, #2ec4c6, #ff6f61) !important;
+}
+
+/* Package cards: dark overlay + centered content on front side */
+#packages .paketler2__gorsel--1 {
+    position: relative;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 15px !important;
+}
+/* Dark overlay on package card background images for text readability */
+#packages .paketler2__gorsel--1::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+    border-radius: inherit;
+}
+#packages .paketler2__gorsel--1 .paketler2__icerik {
+    position: relative;
+    z-index: 2;
+    padding: 0 !important;
+    text-align: center;
+}
+
 p.countb { background: #2ec4c6; }
 .icontops { background: #2ec4c6; }
 input#submit { background: #2ec4c6; }
@@ -273,9 +306,30 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
     /* Hide phone number on mobile */
     .telh { display: none !important; }
     /* Task 4: Fix service card duplication on mobile ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â hide back face so only front shows */
-    .paketler2__on--arkayazi { display: none !important; }
+    /* Mobile: all cards — no flip, static layout */
     .paketler2 { height: auto !important; }
     .paketler2__on--onyazi { position: relative !important; transform: none !important; }
+
+    /* Services section: hide back side on mobile (cards link to service pages) */
+    #services .paketler2__on--arkayazi { display: none !important; }
+
+    /* Packages section: show both sides stacked on mobile */
+    #packages .paketler2__on--arkayazi {
+        display: block !important;
+        position: relative !important;
+        transform: none !important;
+        border-radius: 0 0 0.3rem 0.3rem;
+    }
+    #packages .paketler2__on--arkayazi .paketler2__pr {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        padding: 20px !important;
+    }
+    /* Hide duplicated title on back side (already shown on front) */
+    #packages .paketler2__on--arkayazi .paketler2__pr-kutu .baslik-sol { display: none !important; }
 
     /* === 1. Compact mobile hamburger menu === */
     .side-widget .logo { margin-bottom: 15px !important; }
