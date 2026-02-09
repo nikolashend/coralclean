@@ -15,11 +15,13 @@ class ContactRequest extends Model
         'phone',
         'service',
         'message',
+        'preferred_date',
         'locale',
         'status',
     ];
 
     protected $casts = [
+        'preferred_date' => 'date',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];

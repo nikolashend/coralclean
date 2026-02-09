@@ -1828,51 +1828,77 @@ function slick_client( wind ) {
 
 
 function contactValidator() {
-    var contact_form = $( "#contact-form" );
-    if ( contact_form < 1 ) {
+    // Handle all contact forms (both popup and page forms)
+    var contact_forms = $(".form-popup");
+    
+    if (contact_forms.length < 1) {
         return;
     }
-    contact_form.validator();
-    // when the form is submitted
-    contact_form.on( "submit", function ( e ) {
-        // if the validator does not prevent form submit
-        if ( !e.isDefaultPrevented() ) {
-            var url = "contact.php";
-
-            // POST values in the background the the script URL
-            $.ajax( {
-                type : "POST",
-                url : url,
-                data : $( this ).serialize(),
-                success : function ( data ) {
-                    // data = JSON object that contact.php returns
-
-                    // we recieve the type of the message: success x danger and apply it to the
-                    var messageAlert = "alert-" + data.type;
-                    var messageText = data.message;
-
-                    // let's compose Bootstrap alert box HTML
-                    var alertBox = "<div class=\"alert " + messageAlert + " alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>" + messageText + "</div>";
-
-                    // If we have messageAlert and messageText
-                    if ( messageAlert && messageText ) {
-                        // inject the alert to .messages div in our form
-                        contact_form.find( ".messages" ).html( alertBox );
-                        // empty the form
-                        contact_form[ 0 ].reset();
+    
+    contact_forms.each(function() {
+        var form = $(this);
+        
+        form.on("submit", function(e) {
+            e.preventDefault();
+            
+            var submitBtn = form.find('input[type="submit"]');
+            var originalValue = submitBtn.val();
+            submitBtn.prop('disabled', true).val('Отправка...');
+            
+            $.ajax({
+                type: "POST",
+                url: form.attr('action'),
+                data: form.serialize(),
+                dataType: 'json',
+                success: function(response) {
+                    if (response.success) {
+                        // Show success message
+                        var alertBox = '<div class="alert alert-success alert-dismissable" style="margin-top: 20px;"><button type="button" class="close" onclick="this.parentElement.remove()">&times;</button>' + response.message + '</div>';
+                        form.after(alertBox);
+                        
+                        // Reset form
+                        form[0].reset();
+                        
+                        // Remove message after 5 seconds
+                        setTimeout(function() {
+                            form.next('.alert').fadeOut(400, function() {
+                                $(this).remove();
+                            });
+                        }, 5000);
+                        
+                        // Close popup if exists
+                        setTimeout(function() {
+                            if (typeof closeContactPanel === 'function') {
+                                closeContactPanel();
+                            }
+                        }, 2000);
                     }
-                    setTimeout( function () {
-                        contact_form.find( ".messages" ).html( "" );
-                    }, 3000 );
-
                 },
-                error : function ( error ) {
-                    console.log( error );
+                error: function(xhr) {
+                    var errorMessage = 'Произошла ошибка. Попробуйте еще раз.';
+                    
+                    if (xhr.responseJSON && xhr.responseJSON.errors) {
+                        var errors = xhr.responseJSON.errors;
+                        errorMessage = Object.values(errors).flat().join('<br>');
+                    }
+                    
+                    var alertBox = '<div class="alert alert-danger alert-dismissable" style="margin-top: 20px;"><button type="button" class="close" onclick="this.parentElement.remove()">&times;</button>' + errorMessage + '</div>';
+                    form.after(alertBox);
+                    
+                    setTimeout(function() {
+                        form.next('.alert').fadeOut(400, function() {
+                            $(this).remove();
+                        });
+                    }, 5000);
                 },
-            } );
+                complete: function() {
+                    submitBtn.prop('disabled', false).val(originalValue);
+                }
+            });
+            
             return false;
-        }
-    } );
+        });
+    });
 }
 
 function initMap() {

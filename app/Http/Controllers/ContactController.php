@@ -15,13 +15,15 @@ class ContactController extends Controller
             'phone' => 'required|string|max:50',
             'email' => 'nullable|email|max:255',
             'service' => 'nullable|string|max:255',
+            'preferred_date' => 'nullable|date',
             'message' => 'nullable|string|max:2000',
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors()
+            ], 422);
         }
 
         $contactRequest = ContactRequest::create([
@@ -29,6 +31,7 @@ class ContactController extends Controller
             'phone' => $request->phone,
             'email' => $request->email,
             'service' => $request->service,
+            'preferred_date' => $request->preferred_date,
             'message' => $request->message,
             'locale' => $locale,
             'status' => 'new',
@@ -41,6 +44,9 @@ class ContactController extends Controller
             'et' => 'Aitäh! Me võtame teiega peagi ühendust.',
         ];
 
-        return redirect()->back()->with('success', $successMessages[$locale] ?? $successMessages['ru']);
+        return response()->json([
+            'success' => true,
+            'message' => $successMessages[$locale] ?? $successMessages['ru']
+        ]);
     }
 }

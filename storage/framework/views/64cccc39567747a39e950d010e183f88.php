@@ -26,8 +26,8 @@
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link" style="text-transform: uppercase;"><span><?php echo e(strtoupper($locale ?? 'ru')); ?></span></a>
                             <ul class="dropdown-menu">
                                 <li class="menu-item nav-item"><a href="<?php echo e(url('/ru' . (isset($slug) ? '/services/' . $slug : ''))); ?>" class="dropdown-item"><span>Русский</span></a></li>
-                                <li class="menu-item nav-item"><a href="<?php echo e(url('/en' . (isset($slug) ? '/services/' . $slug : ''))); ?>" class="dropdown-item"><span>English</span></a></li>
                                 <li class="menu-item nav-item"><a href="<?php echo e(url('/et' . (isset($slug) ? '/services/' . $slug : ''))); ?>" class="dropdown-item"><span>Eesti</span></a></li>
+                                <li class="menu-item nav-item"><a href="<?php echo e(url('/en' . (isset($slug) ? '/services/' . $slug : ''))); ?>" class="dropdown-item"><span>English</span></a></li>
                             </ul>
                         </li>
                     </ul>

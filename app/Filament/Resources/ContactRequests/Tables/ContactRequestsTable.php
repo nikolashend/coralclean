@@ -15,26 +15,44 @@ class ContactRequestsTable
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->searchable(),
-                TextColumn::make('email')
-                    ->label('Email address')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable(),
                 TextColumn::make('phone')
                     ->searchable(),
                 TextColumn::make('service')
-                    ->searchable(),
+                    ->label('Service Type')
+                    ->searchable()
+                    ->badge()
+                    ->color('info'),
+                TextColumn::make('preferred_date')
+                    ->label('Preferred Date')
+                    ->date('d.m.Y')
+                    ->sortable(),
+                TextColumn::make('email')
+                    ->label('Email')
+                    ->searchable()
+                    ->toggleable(),
+                TextColumn::make('status')
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'new' => 'success',
+                        'processing' => 'warning',
+                        'completed' => 'gray',
+                        'cancelled' => 'danger',
+                    }),
                 TextColumn::make('locale')
-                    ->searchable(),
-                TextColumn::make('status'),
-                TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
+                    ->badge()
                     ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('created_at')
+                    ->label('Created')
+                    ->dateTime('d.m.Y H:i')
+                    ->sortable(),
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->defaultSort('created_at', 'desc')
             ->filters([
                 //
             ])
@@ -43,7 +61,8 @@ class ContactRequestsTable
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                    DeleteBulkAction::make()
+                        ->requiresConfirmation(),
                 ]),
             ]);
     }

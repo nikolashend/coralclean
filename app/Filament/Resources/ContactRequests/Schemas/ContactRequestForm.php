@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\ContactRequests\Schemas;
 
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
@@ -21,7 +22,12 @@ class ContactRequestForm
                 TextInput::make('phone')
                     ->tel()
                     ->required(),
-                TextInput::make('service'),
+                TextInput::make('service')
+                    ->label('Service Type'),
+                DatePicker::make('preferred_date')
+                    ->label('Preferred Date')
+                    ->displayFormat('d.m.Y')
+                    ->native(false),
                 Textarea::make('message')
                     ->columnSpanFull(),
                 TextInput::make('locale')

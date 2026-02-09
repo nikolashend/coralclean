@@ -769,6 +769,7 @@
     <script src="<?php echo e(asset('js/pointer.js')); ?>"></script>
     <script src="<?php echo e(asset('js/yukari-cik.js')); ?>"></script>
     <script src="<?php echo e(asset('js/tabs.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/contact-form.js')); ?>"></script>
 
     <script>
         // FAQ Toggle
