@@ -8154,6 +8154,17 @@ input[type="email"] {
   height: 70px;
   padding: 0 30px; }
 
+input[type="tel"] {
+  max-width: 100%;
+  height: 70px;
+  padding: 0 30px; }
+
+  input[type="date"] {
+  max-width: 100%;
+  height: 70px;
+  padding: 0 30px; }
+
+
 input[type="search"] {
   max-width: 100%;
   height: 70px;
@@ -10616,6 +10627,21 @@ input[type="email"] {
   padding: 0 30px;
   background: #fff;
   border-radius: 0.3rem; }
+
+input[type="tel"] {
+  max-width: 100%;
+  height: 70px;
+  padding: 0 30px;
+  background: #fff;
+  border-radius: 0.3rem; }
+
+input[type="date"] {
+  max-width: 100%;
+  height: 70px;
+  padding: 0 30px;
+  background: #fff;
+  border-radius: 0.3rem; }
+
 
 input[type="search"] {
   max-width: 100%;

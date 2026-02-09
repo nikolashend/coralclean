@@ -223,15 +223,15 @@
             </div>
             <div class="show-mobile">
                 <div class="site-menu">
-                    <ul id="mobile-menu" style="list-style: none; padding: 0; margin: 20px 0;">
-                        <li style="margin: 15px 0;"><a href="<?php echo e(url('/' . $locale)); ?>" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_home')); ?></a></li>
-                        <li style="margin: 15px 0;"><a href="#about" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_about')); ?></a></li>
-                        <li style="margin: 15px 0;"><a href="#services" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_services')); ?></a></li>
-                        <li style="margin: 15px 0;"><a href="#packages" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_packages')); ?></a></li>
-                        <li style="margin: 15px 0;"><a href="#faq" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_faq')); ?></a></li>
-                        <li style="margin: 15px 0;"><a href="#contact" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_contacts')); ?></a></li>
+                    <ul id="mobile-menu" style="list-style: none; padding: 0; margin: 10px 0;">
+                        <li style="margin: 8px 0;"><a href="<?php echo e(url('/' . $locale)); ?>" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_home')); ?></a></li>
+                        <li style="margin: 8px 0;"><a href="#about" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_about')); ?></a></li>
+                        <li style="margin: 8px 0;"><a href="#services" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_services')); ?></a></li>
+                        <li style="margin: 8px 0;"><a href="#packages" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_packages')); ?></a></li>
+                        <li style="margin: 8px 0;"><a href="#faq" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_faq')); ?></a></li>
+                        <li style="margin: 8px 0;"><a href="#contact" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_contacts')); ?></a></li>
                     </ul>
-                    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd;">
                         <p style="text-align: center; color: #666; font-size: 14px; margin-bottom: 10px;"><?php echo e(__('home.language')); ?></p>
                         <div style="display: flex; gap: 15px; justify-content: center; align-items: center;">
                             <a href="<?php echo e(url('/ru')); ?>" style="color: <?php echo e($locale == 'ru' ? '#2ec4c6' : '#666'); ?>; font-weight: <?php echo e($locale == 'ru' ? 'bold' : 'normal'); ?>; text-decoration: none; font-size: 16px;">🇷🇺 RU</a>

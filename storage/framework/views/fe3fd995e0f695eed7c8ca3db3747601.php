@@ -168,7 +168,7 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
 .h2-baslik-hizmetler-21, .h2-baslik-hizmetler-2111 { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 30px; }
 .baslik-3-service, .paketler3__pr-yazi { font-family: 'Inter', sans-serif; font-weight: 900; }
 .paketler3__pr-degeri { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 30px; }
-.footer .widget-title, .page-header .container h2 { font-family: 'Inter', sans-serif; font-weight: 900; }
+.footer .widget-title, .page-header .container h2 { font-family: 'Inter', sans-serif; font-weight: 700; }
 /* Dark overlay on page-header for text readability over service images */
 .page-header:after {
     background: rgba(0, 0, 0, 0.45);
@@ -276,6 +276,26 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
     .paketler2__on--arkayazi { display: none !important; }
     .paketler2 { height: auto !important; }
     .paketler2__on--onyazi { position: relative !important; transform: none !important; }
+
+    /* === 1. Compact mobile hamburger menu === */
+    .side-widget .logo { margin-bottom: 15px !important; }
+    .side-widget { padding: 15px 25px !important; }
+
+    /* === 2. Services section — push down so icon isn't hidden under previous block === */
+    #services { margin-top: 40px !important; }
+
+    /* === 3+4. Card icons — add top padding so icons aren't flush with card top === */
+    .paketler2__icerik { padding-top: 2.5rem !important; }
+    .paketler2__icerik .iconw { margin-top: 10px; }
+
+    /* === 5. Reviews section — push down so icon isn't hidden === */
+    #reviews { margin-top: 40px !important; }
+
+    /* === 6. We Work With section — push down so icon isn't hidden === */
+    #we-work-with { margin-top: 40px !important; }
+
+    /* === 7. Service page WhatsApp button — remove margin-left on mobile === */
+    .custom-button[href*="wa.me"] { margin-left: 0 !important; margin-top: 10px; }
 }
 
 /* ============================================================
@@ -473,7 +493,7 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
     overflow-y: auto; box-shadow: -5px 0 30px rgba(0,0,0,0.15);
 }
 .contact-panel.open { right: 0; }
-.contact-panel-inner { padding: 40px 30px; }
+.contact-panel-inner { padding: 50px 20px 40px 20px; }
 .contact-panel-close {
     position: absolute; top: 15px; right: 20px; font-size: 32px; cursor: pointer;
     color: #333; line-height: 1; transition: color 0.3s;
@@ -484,15 +504,16 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
     background: rgba(0,0,0,0.5); z-index: 9999; display: none;
 }
 .contact-panel-overlay.open { display: block; }
-.contact-panel .callbackform { padding: 0; }
+.contact-panel .callbackform { padding: 10px 10px;}
 .contact-panel .h2-baslik-popup { font-size: 26px; margin-bottom: 8px; }
-.contact-panel .paragraf-popup { margin-bottom: 20px; }
+.contact-panel .paragraf-popup { margin-bottom: 40px; }
+.contact-panel .form-popup { padding: 0px 15px;}
 .contact-panel .form-popup__grup { margin-bottom: 15px; }
 .contact-panel .form-popup__input { width: 100%; }
 .contact-panel .custom-button12 { width: 100%; }
 .contact-panel select.form-popup__input {
     appearance: none; -webkit-appearance: none;
-    padding: 8px 0; color: #1f2933;
+    padding: 8px 20px; color: #1f2933;
 }
 
 /* ============================================================
