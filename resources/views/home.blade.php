@@ -457,7 +457,7 @@
             <div class="row">
                 @php $packages = [
                     ['key' => 'quick', 'icon' => 'flaticon-mop', 'image' => 'coralclean/packages/quick clean (1).png'],
-                    ['key' => 'deep', 'icon' => 'flaticon-cleaning', 'image' => 'coralclean/packages/DEEP CLEAN (1).png'],
+                    ['key' => 'deep', 'icon' => 'flaticon-vacuum', 'image' => 'coralclean/packages/DEEP CLEAN (1).png'],
                     ['key' => 'movein', 'icon' => 'flaticon-clean-1', 'image' => 'coralclean/packages/MOVE-IN  MOVE-OUT.png'],
                 ]; @endphp
                 @foreach($packages as $i => $pkg)

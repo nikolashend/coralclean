@@ -226,8 +226,8 @@
                     <ul id="mobile-menu" style="list-style: none; padding: 0; margin: 20px 0;">
                         <li style="margin: 15px 0;"><a href="<?php echo e(url('/' . $locale)); ?>" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_home')); ?></a></li>
                         <li style="margin: 15px 0;"><a href="#about" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_about')); ?></a></li>
+                        <li style="margin: 15px 0;"><a href="#services" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_services')); ?></a></li>
                         <li style="margin: 15px 0;"><a href="#packages" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_packages')); ?></a></li>
-                        <li style="margin: 15px 0;"><a href="#reviews" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_reviews')); ?></a></li>
                         <li style="margin: 15px 0;"><a href="#faq" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_faq')); ?></a></li>
                         <li style="margin: 15px 0;"><a href="#contact" style="color: #333; text-decoration: none; font-size: 18px;"><?php echo e(__('home.nav_contacts')); ?></a></li>
                     </ul>
@@ -458,7 +458,7 @@
             <div class="row">
                 <?php $packages = [
                     ['key' => 'quick', 'icon' => 'flaticon-mop', 'image' => 'coralclean/packages/quick clean (1).png'],
-                    ['key' => 'deep', 'icon' => 'flaticon-cleaning', 'image' => 'coralclean/packages/DEEP CLEAN (1).png'],
+                    ['key' => 'deep', 'icon' => 'flaticon-vacuum', 'image' => 'coralclean/packages/DEEP CLEAN (1).png'],
                     ['key' => 'movein', 'icon' => 'flaticon-clean-1', 'image' => 'coralclean/packages/MOVE-IN  MOVE-OUT.png'],
                 ]; ?>
                 <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $pkg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

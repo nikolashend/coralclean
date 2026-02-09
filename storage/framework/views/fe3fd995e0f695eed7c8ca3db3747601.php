@@ -12,6 +12,12 @@
     padding-right: 15px !important;
 }
 
+/* === Navbar height fix === */
+.navbar {
+    top: -20px !important;
+    padding-top: 20px !important;
+}
+
 /* === Base brand color overrides === */
 .iconsociaf { font-size: 32px !important; }
 .member-box figcaption ul li a { color: #fff; float: left; font-size: 23px !important; margin-top: -15px; }
@@ -212,17 +218,17 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
 }
 .slider .main-slider .swiper-slide .container h1 {
     color: #ffffff !important;
-    font-family: 'Inter', sans-serif; font-weight: 900;
+    font-family: 'Inter', sans-serif; font-weight: 700;
     text-shadow: 0 2px 12px rgba(0,0,0,0.5);
     margin-left: 0 !important;
-    max-width: 640px;
+    max-width: 800px;
 }
 .slider .main-slider .swiper-slide .container p {
     color: rgba(255,255,255,0.85) !important;
     font-family: 'Inter', sans-serif; font-weight: 400;
     text-shadow: 0 1px 6px rgba(0,0,0,0.4);
     margin-left: 0 !important;
-    max-width: 640px;
+    max-width: 800px;
     font-size: 18px;
     line-height: 1.5;
 }
