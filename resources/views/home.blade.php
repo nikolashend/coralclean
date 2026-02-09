@@ -581,7 +581,7 @@
                 <div class="col-12 text-center">
                     <div class="wow fadeInUp" data-wow-delay="0.3s">
                         <div class="boslukalt"></div>
-                        <div class="icon"><i class="flaticon-process"></i></div>
+                        <div class="icon"><i class="flaticon-clipboard"></i></div>
                         <h2 class="h2-baslik-hizmetler-2 wow fadeInRight" data-wow-delay="0.4s">{{ __('home.how_title') }}</h2>
                         <p class="h2-baslik-hizmetler-2__paragraf wow fadeInUp" data-wow-delay="0.5s">{{ __('home.how_subtitle') }}</p>
                     </div>

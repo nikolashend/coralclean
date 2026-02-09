@@ -296,6 +296,15 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
 
     /* === 7. Service page WhatsApp button — remove margin-left on mobile === */
     .custom-button[href*="wa.me"] { margin-left: 0 !important; margin-top: 10px; }
+
+    /* === 8. Trust section — push down so subtitle isn't clipped by trust cards === */
+    #trust { margin-top: 40px !important; }
+
+    /* === 9. About section — more bottom spacing so it doesn't press against How It Works === */
+    #about { margin-bottom: 40px !important; }
+
+    /* === 10. How It Works section — push down so About contact button doesn't overlap === */
+    #how-it-works { margin-top: 40px !important; }
 }
 
 /* ============================================================

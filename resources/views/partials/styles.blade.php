@@ -305,9 +305,6 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
 
     /* === 10. How It Works section — push down so About contact button doesn't overlap === */
     #how-it-works { margin-top: 40px !important; }
-
-    /* === 11. How It Works section — reduce padding on mobile for tighter spacing === */
-    #how-it-works .container { padding-top: 20px !important; padding-bottom: 20px !important; }
 }
 
 /* ============================================================
