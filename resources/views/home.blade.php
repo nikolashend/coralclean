@@ -225,8 +225,8 @@
                     <ul id="mobile-menu" style="list-style: none; padding: 0; margin: 20px 0;">
                         <li style="margin: 15px 0;"><a href="{{ url('/' . $locale) }}" style="color: #333; text-decoration: none; font-size: 18px;">{{ __('home.nav_home') }}</a></li>
                         <li style="margin: 15px 0;"><a href="#about" style="color: #333; text-decoration: none; font-size: 18px;">{{ __('home.nav_about') }}</a></li>
+                        <li style="margin: 15px 0;"><a href="#services" style="color: #333; text-decoration: none; font-size: 18px;">{{ __('home.nav_services') }}</a></li>
                         <li style="margin: 15px 0;"><a href="#packages" style="color: #333; text-decoration: none; font-size: 18px;">{{ __('home.nav_packages') }}</a></li>
-                        <li style="margin: 15px 0;"><a href="#reviews" style="color: #333; text-decoration: none; font-size: 18px;">{{ __('home.nav_reviews') }}</a></li>
                         <li style="margin: 15px 0;"><a href="#faq" style="color: #333; text-decoration: none; font-size: 18px;">{{ __('home.nav_faq') }}</a></li>
                         <li style="margin: 15px 0;"><a href="#contact" style="color: #333; text-decoration: none; font-size: 18px;">{{ __('home.nav_contacts') }}</a></li>
                     </ul>
