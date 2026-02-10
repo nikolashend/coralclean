@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Package;
 use App\Models\Service;
 use App\Models\SiteSetting;
@@ -29,11 +30,14 @@ class HomeController extends Controller
             $q->where('locale', $locale);
         }])->get();
 
+        $contact = Contact::forLocale($locale);
+
         return view('home', [
             'locale' => $locale,
             'services' => $homeServices,
             'allServices' => $allServices,
             'packages' => $packages,
+            'contact' => $contact,
         ]);
     }
 }

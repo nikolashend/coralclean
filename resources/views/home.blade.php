@@ -64,7 +64,7 @@
         'logo' => 'https://coralclean.ee/img/coralclean/logo.png',
         'image' => 'https://coralclean.ee/img/coralclean/services/home clean.png',
         'description' => __('home.meta_description'),
-        'telephone' => '+37258301348',
+        'telephone' => $contact->phone_clean ?? '+37258301348',
         'email' => 'info@coralclean.ee',
         'priceRange' => '€€',
         'address' => [
@@ -199,7 +199,7 @@
                 <div class="bosluksv"></div>
                 <div class="iconsv"><i class="flaticon-call"></i></div>
                 <address class="address">
-                    +372 5830 1348
+                    {{ $contact->phone ?? '+372 5830 1348' }}
                     <div class="bosluksv"></div>
                     <div class="iconsv"><i class="flaticon-email"></i></div>
                     info@coralclean.ee
@@ -773,7 +773,7 @@
             <p class="wow fadeInUp text-center" data-wow-delay="0.4s">{{ __('home.cta_subtitle') }}</p>
             <div class="wow fadeInUp" data-wow-delay="0.5s">
                 <a href="javascript:void(0)" onclick="openContactPanel()" class="cta-btn">{{ __('home.btn_leave_request') }} →</a>
-                <a href="https://wa.me/37258301348" class="cta-btn secondary">WhatsApp →</a>
+                <a href="{{ $contact->whatsapp ?? 'https://wa.me/37258301348' }}" class="cta-btn secondary" target="_blank">WhatsApp →</a>
             </div>
         </div>
     </section>

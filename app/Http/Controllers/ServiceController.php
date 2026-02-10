@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -19,10 +20,13 @@ class ServiceController extends Controller
             $q->where('locale', $locale);
         }])->get();
 
+        $contact = Contact::forLocale($locale);
+
         return view('services-hub', [
             'locale' => $locale,
             'services' => $services,
             'allServices' => $services,
+            'contact' => $contact,
         ]);
     }
 
@@ -54,6 +58,8 @@ class ServiceController extends Controller
         // Keep backward compatibility
         $serviceKey = str_replace('-', '_', str_replace('-cleaning', '', $slug));
 
+        $contact = Contact::forLocale($locale);
+
         return view('service', [
             'locale' => $locale,
             'slug' => $slug,
@@ -61,6 +67,7 @@ class ServiceController extends Controller
             'service' => $service,
             'allServices' => $allServices,
             'services' => $allServices->pluck('slug')->toArray(),
+            'contact' => $contact,
         ]);
     }
 }

@@ -39,7 +39,7 @@
             <div class="navbar-contact-btn">
                 <a href="javascript:void(0)" onclick="openContactPanel()" class="btn-contact-header"><?php echo e(__('home.btn_contact_us')); ?></a>
             </div>
-            <div class="telh"><i class="flaticon-call iconp"></i>&nbsp;&nbsp;&nbsp;+372 5830 1348</div>
+            <div class="telh"><i class="flaticon-call iconp"></i>&nbsp;&nbsp;&nbsp;<?php echo e($contact->phone ?? '+372 5830 1348'); ?></div>
         </div>
     </div>
 </nav>

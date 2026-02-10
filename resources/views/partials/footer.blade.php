@@ -12,13 +12,13 @@
                     <br>
                     <p><i class="flaticon-pin iconpfooter1"></i>&nbsp;&nbsp;{{ __('home.footer_location') }}</p>
                     <p style="font-size: 14px; opacity: 0.8; margin-left: 28px;">{{ __('home.footer_no_walkin') }}</p>
-                    <p class="fic"><i class="flaticon-call iconpfooter2"></i>&nbsp;&nbsp;&nbsp;<a href="tel:+37258301348">+372 5830 1348</a></p><br>
+                    <p class="fic"><i class="flaticon-call iconpfooter2"></i>&nbsp;&nbsp;&nbsp;<a href="tel:{{ $contact->phone_clean ?? '37258301348' }}">{{ $contact->phone ?? '+372 5830 1348' }}</a></p><br>
                     <p><i class="flaticon-email iconpfooter3"></i>&nbsp;&nbsp;&nbsp;<a href="mailto:info@coralclean.ee">info@coralclean.ee</a></p><br>
                     <p><i class="flaticon-time iconpfooter3"></i>&nbsp;&nbsp;&nbsp;{{ __('home.footer_hours') }}</p>
                 </div>
                 <ul class="footer-social wow animated fadeInUp" data-wow-delay="0.5s">
-                    <li><a href="#"><i class="icon-social-facebook iconsociaf"></i></a></li>
-                    <li><a href="#"><i class="icon-social-instagram iconsociaf"></i></a></li>
+                    <li><a href="{{ $contact->facebook ?? 'https://www.facebook.com/coralclean' }}" target="_blank"><i class="icon-social-facebook iconsociaf"></i></a></li>
+                    <li><a href="{{ $contact->instagram ?? 'https://www.instagram.com/coralclean.ee/' }}" target="_blank"><i class="icon-social-instagram iconsociaf"></i></a></li>
                 </ul>
             </div>
 
