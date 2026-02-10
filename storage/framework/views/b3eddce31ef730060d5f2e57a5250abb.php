@@ -395,7 +395,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="icon"><i class="flaticon-mop"></i></div>
+                        <div class="icon"><i class="flaticon-clean"></i></div>
                         <h2 class="h2-baslik-hizmetler-2 wow fadeInRight" data-wow-delay="0.4s"><?php echo e(__('home.services_title')); ?></h2>
                         <p class="h2-baslik-hizmetler-2__paragraf wow fadeInUp" data-wow-delay="0.5s"><?php echo e(__('home.services_subtitle')); ?></p>
                     </div>
@@ -444,7 +444,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="icon"><i class="flaticon-clipboards"></i></div>
+                        <div class="icon"><i class="flaticon-badge"></i></div>
                         <h2 class="h2-baslik-hizmetler-2 wow fadeInRight" data-wow-delay="0.4s"><?php echo e(__('home.packages_title')); ?></h2>
                         <p class="h2-baslik-hizmetler-2__paragraf wow fadeInUp" data-wow-delay="0.5s"><?php echo e(__('home.packages_subtitle')); ?></p>
                     </div>
@@ -688,10 +688,10 @@
                 <?php
                 $whyCards = [
                     ['icon' => 'flaticon-clipboard', 'key' => 'why_card1'],
-                    ['icon' => 'flaticon-badge', 'key' => 'why_card2'],
+                    ['icon' => 'flaticon-money', 'key' => 'why_card2'],
                     ['icon' => 'flaticon-team-1', 'key' => 'why_card3'],
                     ['icon' => 'flaticon-shield', 'key' => 'why_card4'],
-                    ['icon' => 'flaticon-badge', 'key' => 'why_card5'],
+                    ['icon' => 'flaticon-medal', 'key' => 'why_card5'],
                     ['icon' => 'flaticon-stopwatch', 'key' => 'why_card6'],
                 ];
                 ?>
