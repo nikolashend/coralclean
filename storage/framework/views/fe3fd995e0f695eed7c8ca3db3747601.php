@@ -114,6 +114,10 @@ textarea#comment, input#author, input#email, input#url { border-bottom: 0.3rem s
 .paketler-alani { background-color: #2ec4c6; }
 .form-alani { background-image: linear-gradient(to right bottom, #2ec4c6, #ff6f61); }
 .markalar { background: #2ec4c6; }
+/* Partners section mobile fix: reduce excessive padding from theme */
+@media only screen and (max-width: 900px) {
+    .markalar { padding: 3rem 0 3rem !important; }
+}
 .h2-baslik-hizmetler { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); }
 .h2-baslik-hizmetler__paragraf { color: #2ec4c6; }
 .h2-baslik-hizmetler-2 { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); font-family: 'Inter', sans-serif; font-weight: 900; font-size: 30px; }

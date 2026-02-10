@@ -231,7 +231,10 @@ return [
     'btn_whatsapp' => 'WhatsApp',
 
     // Stats
-    'stat1' => 'Tehtud koristusi',
+    'partners_title' => 'Meie kliendid, kes meid inspireerivad',
+    'partners_subtitle' => 'Töötame päeval ja öösel oma klientide heaks ning loome puhta ruumi.',
+
+    'stat1' => 'Tehtud koristust',
     'stat2' => 'Rahulolevaid kliente',
     'stat3' => 'Lõpetatud projekte',
     'stat4' => 'Aastat kogemust',

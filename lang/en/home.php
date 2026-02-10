@@ -231,6 +231,9 @@ return [
     'btn_whatsapp' => 'WhatsApp',
 
     // Stats
+    'partners_title' => 'Our Customers Who Inspire Us',
+    'partners_subtitle' => 'We work day and night for our customers and create a clean space.',
+
     'stat1' => 'Cleanings Completed',
     'stat2' => 'Happy Clients',
     'stat3' => 'Completed Projects',

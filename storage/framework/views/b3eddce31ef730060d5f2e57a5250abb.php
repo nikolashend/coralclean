@@ -485,6 +485,83 @@
         </div>
     </section>
 
+    <!-- PARTNERS SECTION -->
+    <section class="markalar">
+        <div class="h-yazi-ortalama h-yazi-margin-orta-3 wow animated fadeInUp animated" data-wow-delay="0.5s">
+            <div class="iconw wow fadeInUp" data-wow-delay="0.6s"><i class="flaticon-badge"></i></div>
+            <h2 class="h2-baslik-hizmetler-21 wow fadeInUp" data-wow-delay="0.6s"> <?php echo e(__('home.partners_title')); ?> </h2>
+        </div>
+        <p class="h2-baslik-hizmetler-21__paragraf wow fadeInUp" data-wow-delay="0.6s">
+            <?php echo e(__('home.partners_subtitle')); ?>
+
+        </p>
+        <div class="bosluk3"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow animated fadeInUp animated" data-wow-delay="0.5s">
+                        <img src="<?php echo e(asset('img/coralclean/partners/bolt.png')); ?>" alt="Bolt" class="marka">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow animated fadeInUp animated" data-wow-delay="0.5s">
+                        <img src="<?php echo e(asset('img/coralclean/partners/swedbank.png')); ?>" alt="Swedbank" class="marka">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow animated fadeInUp animated" data-wow-delay="0.5s">
+                        <img src="<?php echo e(asset('img/coralclean/partners/telia.png')); ?>" alt="Telia" class="marka">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow animated fadeInUp animated" data-wow-delay="0.5s">
+                        <img src="<?php echo e(asset('img/coralclean/partners/wise.png')); ?>" alt="Wise" class="marka">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow animated fadeInUp animated" data-wow-delay="0.5s">
+                        <img src="<?php echo e(asset('img/coralclean/partners/lhv.png')); ?>" alt="LHV" class="marka">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow animated fadeInUp animated" data-wow-delay="0.5s">
+                        <img src="<?php echo e(asset('img/coralclean/partners/pipedrive.png')); ?>" alt="Pipedrive" class="marka">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow animated fadeInUp animated" data-wow-delay="0.5s">
+                        <img src="<?php echo e(asset('img/coralclean/partners/Veriff.png')); ?>" alt="Veriff" class="marka">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow animated fadeInUp animated" data-wow-delay="0.5s">
+                        <img src="<?php echo e(asset('img/coralclean/partners/omniva.png')); ?>" alt="Omniva" class="marka">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow animated fadeInUp animated" data-wow-delay="0.5s">
+                        <img src="<?php echo e(asset('img/coralclean/partners/coop.png')); ?>" alt="Coop" class="marka">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow animated fadeInUp animated" data-wow-delay="0.5s">
+                        <img src="<?php echo e(asset('img/coralclean/partners/seb.png')); ?>" alt="SEB" class="marka">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow animated fadeInUp animated" data-wow-delay="0.5s">
+                        <img src="<?php echo e(asset('img/coralclean/partners/nordea.png')); ?>" alt="Nordea" class="marka">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow animated fadeInUp animated" data-wow-delay="0.5s">
+                        <img src="<?php echo e(asset('img/coralclean/partners/enefit.png')); ?>" alt="Enefit" class="marka">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ABOUT SECTION -->
     <div class="bosluk4"></div>
     <section class="hakkimizda-bolumu-anasayfa mt-4" id="about">
