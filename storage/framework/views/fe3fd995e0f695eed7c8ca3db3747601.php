@@ -1096,7 +1096,10 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
     .svc-detail-guarantee h4 { font-size: 16px; margin-bottom: 10px; }
     .svc-detail-included li,
     .svc-detail-not-included li,
-    .svc-detail-addons li { font-size: 14px; padding: 4px 0; }
+    .svc-detail-addons li { font-size: 14px; padding: 5px 0 5px 28px; }
+    .svc-detail-included li::before,
+    .svc-detail-not-included li::before,
+    .svc-detail-addons li::before { width: 16px; height: 16px; top: 7px; }
     .svc-detail-process p,
     .svc-detail-guarantee p { font-size: 14px; line-height: 1.6; }
     .svc-detail-guarantee { padding: 12px 16px; }
