@@ -118,6 +118,22 @@ textarea#comment, input#author, input#email, input#url { border-bottom: 0.3rem s
 @media only screen and (max-width: 900px) {
     .markalar { padding: 3rem 0 3rem !important; }
 }
+/* Partners logo alignment - equal height boxes with vertical centering */
+.markalar .row > div > .h-yazi-ortalama {
+    min-height: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.markalar .marka {
+    max-height: 80px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+}
 .h2-baslik-hizmetler { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); }
 .h2-baslik-hizmetler__paragraf { color: #2ec4c6; }
 .h2-baslik-hizmetler-2 { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); font-family: 'Inter', sans-serif; font-weight: 900; font-size: 30px; }
