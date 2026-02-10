@@ -9,14 +9,14 @@
                         <li class="menu-item nav-item {{ Request::is($locale) || Request::is('/') ? 'active' : '' }}"><a href="{{ url('/' . $locale) }}" class="nav-link"><span>{{ __('home.nav_home') }}</span></a></li>
                         <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/#about') }}" class="nav-link"><span>{{ __('home.nav_about') }}</span></a></li>
                         <li class="menu-item menu-item-has-children dropdown nav-item">
-                            <a href="{{ url('/' . $locale . '/#services') }}" data-toggle="dropdown" class="dropdown-toggle nav-link"><span>{{ __('home.nav_services') }}</span></a>
+                            <a href="{{ url('/' . $locale . '/services') }}" data-toggle="dropdown" class="dropdown-toggle nav-link"><span>{{ __('home.nav_services') }}</span></a>
                             <ul class="dropdown-menu">
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/home-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_home_title') }}</span></a></li>
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/renovation-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_renovation_title') }}</span></a></li>
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/office-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_office_title') }}</span></a></li>
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/glass-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_glass_title') }}</span></a></li>
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/carpet-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_carpet_title') }}</span></a></li>
-                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/garden-cleaning') }}" class="dropdown-item"><span>{{ __('home.service_garden_title') }}</span></a></li>
+                                @if(isset($allServices))
+                                @foreach($allServices as $navSvc)
+                                @php $navTrans = $navSvc->translations->first(); @endphp
+                                <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/services/' . $navSvc->slug) }}" class="dropdown-item"><span>{{ $navTrans->title ?? $navSvc->slug }}</span></a></li>
+                                @endforeach
+                                @endif
                             </ul>
                         </li>
                         <li class="menu-item nav-item"><a href="{{ url('/' . $locale . '/#packages') }}" class="nav-link"><span>{{ __('home.nav_packages') }}</span></a></li>

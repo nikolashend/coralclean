@@ -59,12 +59,12 @@
                 <h6 class="widget-title">{{ __('home.footer_services_title') }}</h6>
                 <div class="footer-menu">
                     <ul class="menu">
-                        <li><a href="{{ url('/' . ($locale ?? 'ru') . '/services/home-cleaning') }}">{{ __('home.service_home_title') }}</a></li>
-                        <li><a href="{{ url('/' . ($locale ?? 'ru') . '/services/glass-cleaning') }}">{{ __('home.service_glass_title') }}</a></li>
-                        <li><a href="{{ url('/' . ($locale ?? 'ru') . '/services/garden-cleaning') }}">{{ __('home.service_garden_title') }}</a></li>
-                        <li><a href="{{ url('/' . ($locale ?? 'ru') . '/services/office-cleaning') }}">{{ __('home.service_office_title') }}</a></li>
-                        <li><a href="{{ url('/' . ($locale ?? 'ru') . '/services/carpet-cleaning') }}">{{ __('home.service_carpet_title') }}</a></li>
-                        <li><a href="{{ url('/' . ($locale ?? 'ru') . '/services/renovation-cleaning') }}">{{ __('home.service_renovation_title') }}</a></li>
+                        @if(isset($allServices))
+                        @foreach($allServices as $navSvc)
+                        @php $navTrans = $navSvc->translations->first(); @endphp
+                        <li><a href="{{ url('/' . ($locale ?? 'ru') . '/services/' . $navSvc->slug) }}">{{ $navTrans->title ?? $navSvc->slug }}</a></li>
+                        @endforeach
+                        @endif
                     </ul>
                 </div>
             </div>

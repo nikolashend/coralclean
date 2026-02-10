@@ -7,6 +7,25 @@ use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
+    public function index($locale = 'ru')
+    {
+        if (!in_array($locale, ['ru', 'en', 'et'])) {
+            $locale = 'ru';
+        }
+
+        app()->setLocale($locale);
+
+        $services = Service::active()->ordered()->with(['translations' => function ($q) use ($locale) {
+            $q->where('locale', $locale);
+        }])->get();
+
+        return view('services-hub', [
+            'locale' => $locale,
+            'services' => $services,
+            'allServices' => $services,
+        ]);
+    }
+
     public function show($locale = 'ru', $slug = '')
     {
         if (!in_array($locale, ['ru', 'en', 'et'])) {

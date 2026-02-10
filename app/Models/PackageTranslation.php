@@ -11,6 +11,8 @@ class PackageTranslation extends Model
         'locale',
         'title',
         'subtitle',
+        'front_body',
+        'back_body',
         'description',
         'price',
         'btn_text',

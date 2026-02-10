@@ -11,10 +11,12 @@ class Service extends Model
         'icon',
         'sort_order',
         'is_active',
+        'show_on_home',
     ];
 
     protected $casts = [
         'is_active' => 'boolean',
+        'show_on_home' => 'boolean',
         'sort_order' => 'integer',
     ];
 
@@ -38,25 +40,24 @@ class Service extends Model
     /**
      * Get translated attribute value.
      */
-    public function t(string $attribute, ?string $locale = null): ?string
+    public function t(string $attribute, ?string $locale = null): mixed
     {
         $translation = $this->translation($locale);
         return $translation ? $translation->$attribute : null;
     }
 
-    /**
-     * Scope to active services.
-     */
     public function scopeActive($query)
     {
         return $query->where('is_active', true);
     }
 
-    /**
-     * Scope to ordered services.
-     */
     public function scopeOrdered($query)
     {
         return $query->orderBy('sort_order');
+    }
+
+    public function scopeHomeOnly($query)
+    {
+        return $query->where('show_on_home', true);
     }
 }

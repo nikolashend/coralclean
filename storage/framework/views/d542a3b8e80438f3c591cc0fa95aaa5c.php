@@ -59,12 +59,12 @@
                 <h6 class="widget-title"><?php echo e(__('home.footer_services_title')); ?></h6>
                 <div class="footer-menu">
                     <ul class="menu">
-                        <li><a href="<?php echo e(url('/' . ($locale ?? 'ru') . '/services/home-cleaning')); ?>"><?php echo e(__('home.service_home_title')); ?></a></li>
-                        <li><a href="<?php echo e(url('/' . ($locale ?? 'ru') . '/services/glass-cleaning')); ?>"><?php echo e(__('home.service_glass_title')); ?></a></li>
-                        <li><a href="<?php echo e(url('/' . ($locale ?? 'ru') . '/services/garden-cleaning')); ?>"><?php echo e(__('home.service_garden_title')); ?></a></li>
-                        <li><a href="<?php echo e(url('/' . ($locale ?? 'ru') . '/services/office-cleaning')); ?>"><?php echo e(__('home.service_office_title')); ?></a></li>
-                        <li><a href="<?php echo e(url('/' . ($locale ?? 'ru') . '/services/carpet-cleaning')); ?>"><?php echo e(__('home.service_carpet_title')); ?></a></li>
-                        <li><a href="<?php echo e(url('/' . ($locale ?? 'ru') . '/services/renovation-cleaning')); ?>"><?php echo e(__('home.service_renovation_title')); ?></a></li>
+                        <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(isset($allServices)): ?>
+                        <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $allServices; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $navSvc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php $navTrans = $navSvc->translations->first(); ?>
+                        <li><a href="<?php echo e(url('/' . ($locale ?? 'ru') . '/services/' . $navSvc->slug)); ?>"><?php echo e($navTrans->title ?? $navSvc->slug); ?></a></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+                        <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
                     </ul>
                 </div>
             </div>

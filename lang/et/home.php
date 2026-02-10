@@ -124,6 +124,15 @@ return [
     'btn_urgent_package' => 'Vajan kiiresti',
     'btn_all_services' => 'Kõik teenused →',
 
+    // Service detail page labels
+    'svc_included' => '✓ Sisaldub teenuses',
+    'svc_not_included' => '✗ Ei sisaldu',
+    'svc_addons' => '+ Lisateenused',
+    'svc_process' => 'Kuidas me töötame',
+    'svc_guarantee' => 'Kvaliteedigarantii',
+    'services_hub_title' => 'Meie teenused',
+    'services_hub_subtitle' => 'Täielik valik koristusteenuseid Tallinnas ja Harjumaal',
+
     // About
     'about_title' => 'Pakume professionaalset koristust Tallinnas ja Harjumaal',
     'about_text' => 'CoralClean on professionaalsete koristajate meeskond, kes igapäevaselt koristavad kortereid, maju ja kontoreid Tallinnas ja Harjumaal. Töötame hoolikalt, rahulikult ja selge kontrollnimekirja järgi — ilma kiirustamata ja üllatusteta.',
@@ -182,15 +191,22 @@ return [
     'review5_text' => 'Vajasime kiiresti koristust enne korteri üleandmist. Helistasime CoralCleani — tulid samal päeval. Suurepärane teenus!',
     'review5_service' => 'Urgent Clean',
 
-    // We work with
-    'we_work_title' => 'Kellega me töötame',
-    'we_work_subtitle' => 'Kogemus erinevate kliendi- ja kinnisvaratüüpidega',
-    'we_work_1' => 'Erakorterid ja majad',
-    'we_work_2' => 'Kontorid ja koostööruumid',
-    'we_work_3' => 'Airbnb ja lühiajaline üür',
-    'we_work_4' => 'Uusehitised ja renoveerimine',
-    'we_work_5' => 'Väikesed ja keskmised ettevõtted',
-    'we_work_6' => 'Haldusfirmad',
+    // Why CoralClean
+    'why_title' => 'Miks CoralClean?',
+    'why_subtitle' => '6 põhjust, miks usaldada koristust meile',
+    'why_card1_title' => 'Töötame kontrollnimekirja alusel',
+    'why_card1_desc' => 'Iga koristus selge kontrollnimekirja järgi — midagi ei jää tegemata.',
+    'why_card2_title' => 'Läbipaistev hind',
+    'why_card2_desc' => 'Pole peidetud lisatasusid. Hind lepitakse eelnevalt kokku.',
+    'why_card3_title' => 'Usaldusväärne tiim',
+    'why_card3_desc' => 'Hoolikas valik ja iga koristaja koolitamine.',
+    'why_card4_title' => 'Ohutud vahendid',
+    'why_card4_desc' => 'Professionaalsed, kuid lastele ja lemmikloomadele ohutud.',
+    'why_card5_title' => 'Kvaliteedigarantii',
+    'why_card5_desc' => 'Kui on märkusi — parandame kiiresti ja tasuta.',
+    'why_card6_title' => 'Vastame samal päeval',
+    'why_card6_desc' => 'Kiire tagasiside ja operatiivne kooskõlastamine.',
+    'all_services_btn' => 'Kõik teenused',
 
     // FAQ
     'faq_title' => 'Korduma kippuvad küsimused',

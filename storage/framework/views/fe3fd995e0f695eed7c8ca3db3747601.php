@@ -604,6 +604,440 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
 .service-card-link .paketler2 { margin-bottom: 30px; }
 
 /* ============================================================
+   PREMIUM SERVICE CARDS (home page)
+   ============================================================ */
+.premium-service-card {
+    display: flex;
+    text-decoration: none !important;
+    color: inherit !important;
+    margin-bottom: 30px;
+}
+.premium-service-card__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 24px 28px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+}
+.premium-service-card:hover .premium-service-card__inner {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(46,196,198,0.15);
+    border-color: #2ec4c6;
+}
+.premium-service-card__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2ec4c6, #26a8aa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    flex-shrink: 0;
+}
+.premium-service-card__icon i {
+    font-size: 28px;
+    color: #fff;
+}
+.premium-service-card__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2933;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+.premium-service-card__subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7c8d;
+    margin-bottom: 14px;
+    line-height: 1.5;
+    min-height: 42px;
+}
+.premium-service-card__bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+    text-align: left;
+    width: 100%;
+}
+.premium-service-card__bullets li {
+    font-size: 13px;
+    color: #3e4c59;
+    padding: 3px 0;
+    line-height: 1.5;
+}
+.premium-service-card__price {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2ec4c6;
+    margin-bottom: 16px;
+    margin-top: auto;
+}
+.premium-service-card__cta {
+    display: inline-block;
+    background: #2ec4c6;
+    color: #fff !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-transform: none;
+    transition: all 0.3s ease;
+    min-height: 44px;
+    line-height: 20px;
+}
+.premium-service-card:hover .premium-service-card__cta {
+    background: #ff6f61;
+}
+
+/* ============================================================
+   PREMIUM FLIP CARDS (packages)
+   ============================================================ */
+.premium-flip-card {
+    perspective: 1000px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    height: 420px;
+}
+.premium-flip-card__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+.premium-flip-card:hover .premium-flip-card__inner {
+    transform: rotateY(180deg);
+}
+.premium-flip-card__front,
+.premium-flip-card__back {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 28px 24px;
+    overflow: hidden;
+}
+.premium-flip-card__front {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+.premium-flip-card__back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #1f2933, #2a3b4c);
+    color: #fff;
+    justify-content: flex-start;
+    padding-top: 32px;
+}
+.premium-flip-card__icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+}
+.premium-flip-card__icon i {
+    font-size: 24px;
+    color: #fff;
+}
+.premium-flip-card__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+}
+.premium-flip-card__title--back {
+    margin-bottom: 10px;
+    color: #2ec4c6;
+}
+.premium-flip-card__subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 12px;
+}
+.premium-flip-card__body {
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 12px;
+}
+.premium-flip-card__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px;
+    text-align: left;
+    width: 100%;
+}
+.premium-flip-card__features li {
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    padding: 2px 0;
+}
+.premium-flip-card__price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2ec4c6;
+    margin-bottom: 14px;
+    margin-top: auto;
+}
+.premium-flip-card__cta {
+    display: inline-block;
+    background: #ff6f61;
+    color: #fff !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+.premium-flip-card:hover .premium-flip-card__cta {
+    background: #2ec4c6;
+}
+
+/* ============================================================
+   WHY CORALCLEAN CARDS
+   ============================================================ */
+.why-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 28px 24px;
+    text-align: center;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(46,196,198,0.12);
+    border-color: #2ec4c6;
+}
+.why-card__icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2ec4c6, #26a8aa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+.why-card__icon i {
+    font-size: 22px;
+    color: #fff;
+}
+.why-card__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1f2933;
+    margin-bottom: 8px;
+}
+.why-card__text {
+    font-size: 14px;
+    color: #6b7c8d;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* ============================================================
+   PREMIUM SERVICE DETAIL PAGE STYLES
+   ============================================================ */
+.svc-detail-price {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2ec4c6;
+    background: linear-gradient(135deg, #f0fafa 0%, #e6f9f9 100%);
+    border: 2px solid #2ec4c6;
+    border-radius: 30px;
+    padding: 8px 24px;
+    margin-bottom: 24px;
+    letter-spacing: 0.3px;
+}
+.svc-detail-included,
+.svc-detail-not-included,
+.svc-detail-addons {
+    margin-bottom: 24px;
+    clear: both;
+    overflow: hidden;
+}
+.svc-detail-included h4,
+.svc-detail-not-included h4,
+.svc-detail-addons h4,
+.svc-detail-process h4,
+.svc-detail-guarantee h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f2933;
+    margin-bottom: 12px;
+    float: none;
+}
+.svc-detail-included ul,
+.svc-detail-not-included ul,
+.svc-detail-addons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.svc-detail-included li,
+.svc-detail-not-included li,
+.svc-detail-addons li {
+    padding: 7px 0 7px 30px;
+    font-size: 15px;
+    display: block;
+    float: none;
+    clear: both;
+    width: 100%;
+    word-wrap: break-word;
+    position: relative;
+    line-height: 1.5;
+}
+.svc-detail-included li { color: #3e4c59; }
+.svc-detail-not-included li { color: #999; }
+.svc-detail-addons li { color: #3e4c59; }
+/* ✓ Included — circle-check icon (aqua) */
+.svc-detail-included li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 18px;
+    height: 18px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232ec4c6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 11.08V12a10 10 0 1 1-5.93-9.14'/%3E%3Cpath d='M22 4 12 14.01l-3-3'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+/* ✗ Not included — circle-x icon (coral) */
+.svc-detail-not-included li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 18px;
+    height: 18px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff6f61' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m15 9-6 6'/%3E%3Cpath d='m9 9 6 6'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+/* + Addons — circle-plus icon (aqua) */
+.svc-detail-addons li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 18px;
+    height: 18px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232ec4c6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M8 12h8'/%3E%3Cpath d='M12 8v8'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+.svc-detail-process,
+.svc-detail-guarantee {
+    margin-top: 28px;
+    margin-bottom: 24px;
+    clear: both;
+    display: block;
+    float: none;
+    width: 100%;
+}
+.svc-detail-process p,
+.svc-detail-guarantee p {
+    font-size: 15px;
+    color: #3e4c59;
+    line-height: 1.7;
+    word-wrap: break-word;
+    float: none;
+}
+.svc-detail-guarantee {
+    background: #f0fafa;
+    border-left: 4px solid #2ec4c6;
+    padding: 16px 20px;
+    border-radius: 8px;
+}
+.svc-faq-section {
+    margin-top: 40px;
+}
+.svc-faq-section h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2933;
+    margin-bottom: 20px;
+}
+.svc-faq-item {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+.svc-faq-item.active {
+    border-color: #2ec4c6;
+}
+.svc-faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: #1f2933;
+    background: #fafafa;
+    transition: background 0.3s;
+}
+.svc-faq-question:hover {
+    background: #f0f0f0;
+}
+.svc-faq-icon {
+    font-size: 12px;
+    transition: transform 0.3s;
+    color: #2ec4c6;
+}
+.svc-faq-item.active .svc-faq-icon {
+    transform: rotate(180deg);
+}
+.svc-faq-answer {
+    display: none;
+    padding: 0 20px 16px;
+    font-size: 14px;
+    color: #6b7c8d;
+    line-height: 1.7;
+}
+.svc-faq-item.active .svc-faq-answer {
+    display: block;
+}
+
+/* ============================================================
    Responsive ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â custom 1300px navbar breakpoint
    ============================================================ */
 
@@ -638,6 +1072,37 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
 @media (max-width: 576px) {
     .cta-section h2 { font-size: 26px; }
     .cta-btn { display: block; margin: 10px auto; width: 80%; text-align: center; }
+    /* Premium service cards mobile */
+    .premium-service-card__title { font-size: 18px; }
+    .premium-service-card__subtitle { font-size: 14px; min-height: auto; }
+    .premium-service-card__cta { width: 100%; text-align: center; min-height: 48px; line-height: 24px; font-size: 15px; }
+    .premium-service-card__inner { padding: 24px 18px 22px; min-height: auto; }
+    /* Flip cards mobile */
+    .premium-flip-card { height: auto; min-height: 360px; }
+    .premium-flip-card__front, .premium-flip-card__back { position: relative; height: auto; min-height: 360px; }
+    .premium-flip-card__back { display: none; }
+    .premium-flip-card:active .premium-flip-card__front { display: none; }
+    .premium-flip-card:active .premium-flip-card__back { display: flex; }
+    .premium-flip-card__inner { transform-style: flat; }
+    .premium-flip-card:hover .premium-flip-card__inner { transform: none; }
+    /* Why cards mobile */
+    .why-card { min-height: auto; padding: 22px 18px; }
+    /* Service detail blocks mobile */
+    .svc-detail-price { font-size: 16px; padding: 6px 18px; }
+    .svc-detail-included h4,
+    .svc-detail-not-included h4,
+    .svc-detail-addons h4,
+    .svc-detail-process h4,
+    .svc-detail-guarantee h4 { font-size: 16px; margin-bottom: 10px; }
+    .svc-detail-included li,
+    .svc-detail-not-included li,
+    .svc-detail-addons li { font-size: 14px; padding: 4px 0; }
+    .svc-detail-process p,
+    .svc-detail-guarantee p { font-size: 14px; line-height: 1.6; }
+    .svc-detail-guarantee { padding: 12px 16px; }
+    .svc-faq-section h3 { font-size: 18px; margin-bottom: 16px; }
+    .svc-faq-question { padding: 12px 16px; font-size: 14px; }
+    .svc-faq-answer p { font-size: 14px; padding: 12px 16px; }
 }
 </style>
 <?php /**PATH C:\Users\nikol\coralclean-laravel\resources\views/partials/styles.blade.php ENDPATH**/ ?>

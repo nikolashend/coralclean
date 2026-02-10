@@ -112,19 +112,15 @@
     ], $jsonFlags);
 
     // Service + OfferCatalog
-    $offerItems = [
-        ['name' => 'Quick Clean — Regular Cleaning', 'description' => 'Regular apartment and house cleaning from €45'],
-        ['name' => 'Deep Clean — Thorough Cleaning', 'description' => 'Deep cleaning of all surfaces from €2/m²'],
-        ['name' => 'Move-In/Move-Out — Moving Cleaning', 'description' => 'Cleaning for rental handover from €60'],
-        ['name' => 'Office Care — Office Cleaning', 'description' => 'Regular office cleaning from €0.07/m²'],
-        ['name' => 'Urgent Clean — Same-Day Cleaning', 'description' => 'Urgent cleaning service, today or tomorrow'],
-    ];
     $itemListElement = [];
-    foreach ($offerItems as $item) {
-        $itemListElement[] = [
-            $typ => 'Offer',
-            'itemOffered' => [$typ => 'Service', 'name' => $item['name'], 'description' => $item['description']],
-        ];
+    foreach ($services as $svc) {
+        $sTrans = $svc->translations->first();
+        if ($sTrans) {
+            $itemListElement[] = [
+                $typ => 'Offer',
+                'itemOffered' => [$typ => 'Service', 'name' => $sTrans->title, 'description' => $sTrans->short_desc ?? $sTrans->description],
+            ];
+        }
     }
     $schemaService = json_encode([
         $ctx => 'https://schema.org',
@@ -270,11 +266,16 @@
                     <div class="form-popup__grup">
                         <select name="service_type" class="form-popup__input" style="background: transparent; cursor: pointer;">
                             <option value="">{{ __('home.form_select_service') }}</option>
-                            <option value="quick-clean">Quick Clean</option>
-                            <option value="deep-clean">Deep Clean</option>
-                            <option value="move-in-out">Move-In / Move-Out</option>
-                            <option value="office-care">Office Care</option>
-                            <option value="urgent-clean">Urgent Clean</option>
+                            @if(isset($allServices))
+                            @foreach($allServices as $navSvc)
+                            @php $navTrans = $navSvc->translations->first(); @endphp
+                            <option value="{{ $navSvc->slug }}">{{ $navTrans->title ?? $navSvc->slug }}</option>
+                            @endforeach
+                            @endif
+                            @foreach($packages as $pkg)
+                            @php $pkgTrans = $pkg->translations->first(); @endphp
+                            <option value="{{ $pkg->slug }}">📦 {{ $pkgTrans->title ?? $pkg->slug }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-popup__grup">
@@ -429,6 +430,9 @@
                 </div>
                 @endforeach
             </div>
+            <div class="text-center mt-4 wow fadeInUp" data-wow-delay="0.7s">
+                <a href="{{ url('/' . $locale . '/services') }}" class="custom-button">{{ __('home.all_services_btn') ?? __('home.btn_details') }} →</a>
+            </div>
         </div>
     </section>
 
@@ -439,7 +443,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="icon"><i class="flaticon-checked"></i></div>
+                        <div class="icon"><i class="flaticon-clipboards"></i></div>
                         <h2 class="h2-baslik-hizmetler-2 wow fadeInRight" data-wow-delay="0.4s">{{ __('home.packages_title') }}</h2>
                         <p class="h2-baslik-hizmetler-2__paragraf wow fadeInUp" data-wow-delay="0.5s">{{ __('home.packages_subtitle') }}</p>
                     </div>
@@ -448,42 +452,9 @@
             <div class="bosluk3"></div>
 
             <div class="row">
-                @php $packagesRow1 = $packages->where('column_span', 4); @endphp
-                @foreach($packagesRow1 as $i => $pkg)
+                @foreach($packages as $i => $pkg)
                 @php $trans = $pkg->translations->first(); @endphp
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.5 + $i * 0.15 }}s" id="{{ $pkg->slug }}-clean">
-                    <a href="javascript:void(0)" onclick="openContactPanel('{{ $pkg->slug }}-clean')" class="service-card-link" style="text-decoration: none; color: inherit;">
-                        <div class="paketler2" data-tilt>
-                            <div class="paketler2__on paketler2__on--onyazi">
-                                <div class="paketler2__gorsel paketler2__gorsel--1" style="background-image: url('{{ asset('img/' . $pkg->image) }}'); background-size: cover; background-position: center;">
-                                    <div class="paketler2__icerik">
-                                        <div class="iconw"><i class="{{ $pkg->icon }}"></i></div>
-                                        <h3 class="baslik-3white h-yazi-margin-kucuk">{{ $trans->title ?? '' }}</h3>
-                                        <p class="services-kutu2--yazi wow fade">{{ $trans->subtitle ?? '' }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="paketler2__on paketler2__on--arkayazi paketler2__on--arkayazi-1">
-                                <div class="paketler2__pr">
-                                    <div class="paketler2__pr-kutu">
-                                        <h3 class="baslik-sol h-yazi-margin-kucuk">{{ $trans->title ?? '' }}</h3>
-                                        <p class="services-kutu2--yazi wow fade">{{ $trans->description ?? '' }}</p>
-                                        <span class="package-card__price">{{ $trans->price ?? '' }}</span>
-                                    </div>
-                                    <span class="custom-button">{{ $trans->btn_text ?? __('home.btn_order_package') }} →</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                @endforeach
-            </div>
-
-            <div class="row mt-4">
-                @php $packagesRow2 = $packages->where('column_span', 6); @endphp
-                @foreach($packagesRow2 as $i => $pkg)
-                @php $trans = $pkg->translations->first(); @endphp
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.5 + $i * 0.15 }}s" id="{{ $pkg->slug }}-clean">
                     <a href="javascript:void(0)" onclick="openContactPanel('{{ $pkg->slug }}-clean')" class="service-card-link" style="text-decoration: none; color: inherit;">
                         <div class="paketler2" data-tilt>
                             <div class="paketler2__on paketler2__on--onyazi">
@@ -532,7 +503,7 @@
                 <img class="divider" width="120" height="15" title="divider" alt="divider" src="{{ asset('img/divider.jpg') }}">
                 <div class="bosluk333"></div>
                 <div class="row">
-                    <div class="col-sm-2 wow fadeInRight" data-wow-delay="0.7s"><div class="iconleft"><i class="flaticon-checked"></i></div></div>
+                    <div class="col-sm-2 wow fadeInRight" data-wow-delay="0.7s"><div class="iconleft"><i class="flaticon-shield"></i></div></div>
                     <div class="col-sm-10 wow fadeInRight" data-wow-delay="0.8s">
                         <h3 class="baslik-3s h-yazi-margin-kucuk1">{{ __('home.about_feature1_title') }}</h3><br>
                         <p class="paragraf-info">{{ __('home.about_feature1_desc') }}</p><br>
@@ -620,31 +591,41 @@
         </div>
     </section>
 
-    <!-- WE WORK WITH (replaces fake logos) -->
+    <!-- WHY CORALCLEAN SECTION -->
     <div class="bosluk4"></div>
-    <section class="ozellika" data-background="#f6f7f8" style="background: #f6f7f8;" id="we-work-with">
+    <section class="ozellika" data-background="#f6f7f8" style="background: #f6f7f8;" id="why-coralclean">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="wow fadeInUp" data-wow-delay="0.3s">
                         <div class="boslukalt"></div>
                         <div class="icon"><i class="flaticon-handshake"></i></div>
-                        <h2 class="h2-baslik-hizmetler-2 wow fadeInRight" data-wow-delay="0.4s">{{ __('home.we_work_title') }}</h2>
-                        <p class="h2-baslik-hizmetler-2__paragraf wow fadeInUp" data-wow-delay="0.5s">{{ __('home.we_work_subtitle') }}</p>
+                        <h2 class="h2-baslik-hizmetler-2 wow fadeInRight" data-wow-delay="0.4s">{{ __('home.why_title') }}</h2>
+                        <p class="h2-baslik-hizmetler-2__paragraf wow fadeInUp" data-wow-delay="0.5s">{{ __('home.why_subtitle') }}</p>
                     </div>
                 </div>
             </div>
             <div class="bosluk3"></div>
             <div class="row">
-                @php $workIcons = ['flaticon-house', 'flaticon-clean', 'flaticon-calendar', 'flaticon-brush', 'flaticon-team-1', 'flaticon-shield']; @endphp
-                @for($i = 1; $i <= 6; $i++)
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.4 + $i * 0.1 }}s">
-                    <div class="we-work-card">
-                        <div class="icon"><i class="{{ $workIcons[$i-1] }}"></i></div>
-                        <p>{{ __('home.we_work_' . $i) }}</p>
+                @php
+                $whyCards = [
+                    ['icon' => 'flaticon-clipboard', 'key' => 'why_card1'],
+                    ['icon' => 'flaticon-badge', 'key' => 'why_card2'],
+                    ['icon' => 'flaticon-team-1', 'key' => 'why_card3'],
+                    ['icon' => 'flaticon-shield', 'key' => 'why_card4'],
+                    ['icon' => 'flaticon-badge', 'key' => 'why_card5'],
+                    ['icon' => 'flaticon-stopwatch', 'key' => 'why_card6'],
+                ];
+                @endphp
+                @foreach($whyCards as $i => $card)
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.3 + $i * 0.08 }}s">
+                    <div class="why-card">
+                        <div class="why-card__icon"><i class="{{ $card['icon'] }}"></i></div>
+                        <h4 class="why-card__title">{{ __('home.' . $card['key'] . '_title') }}</h4>
+                        <p class="why-card__text">{{ __('home.' . $card['key'] . '_desc') }}</p>
                     </div>
                 </div>
-                @endfor
+                @endforeach
             </div>
         </div>
         <div class="boslukalt"></div>

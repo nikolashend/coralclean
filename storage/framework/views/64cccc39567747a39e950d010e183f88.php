@@ -9,14 +9,14 @@
                         <li class="menu-item nav-item <?php echo e(Request::is($locale) || Request::is('/') ? 'active' : ''); ?>"><a href="<?php echo e(url('/' . $locale)); ?>" class="nav-link"><span><?php echo e(__('home.nav_home')); ?></span></a></li>
                         <li class="menu-item nav-item"><a href="<?php echo e(url('/' . $locale . '/#about')); ?>" class="nav-link"><span><?php echo e(__('home.nav_about')); ?></span></a></li>
                         <li class="menu-item menu-item-has-children dropdown nav-item">
-                            <a href="<?php echo e(url('/' . $locale . '/#services')); ?>" data-toggle="dropdown" class="dropdown-toggle nav-link"><span><?php echo e(__('home.nav_services')); ?></span></a>
+                            <a href="<?php echo e(url('/' . $locale . '/services')); ?>" data-toggle="dropdown" class="dropdown-toggle nav-link"><span><?php echo e(__('home.nav_services')); ?></span></a>
                             <ul class="dropdown-menu">
-                                <li class="menu-item nav-item"><a href="<?php echo e(url('/' . $locale . '/services/home-cleaning')); ?>" class="dropdown-item"><span><?php echo e(__('home.service_home_title')); ?></span></a></li>
-                                <li class="menu-item nav-item"><a href="<?php echo e(url('/' . $locale . '/services/renovation-cleaning')); ?>" class="dropdown-item"><span><?php echo e(__('home.service_renovation_title')); ?></span></a></li>
-                                <li class="menu-item nav-item"><a href="<?php echo e(url('/' . $locale . '/services/office-cleaning')); ?>" class="dropdown-item"><span><?php echo e(__('home.service_office_title')); ?></span></a></li>
-                                <li class="menu-item nav-item"><a href="<?php echo e(url('/' . $locale . '/services/glass-cleaning')); ?>" class="dropdown-item"><span><?php echo e(__('home.service_glass_title')); ?></span></a></li>
-                                <li class="menu-item nav-item"><a href="<?php echo e(url('/' . $locale . '/services/carpet-cleaning')); ?>" class="dropdown-item"><span><?php echo e(__('home.service_carpet_title')); ?></span></a></li>
-                                <li class="menu-item nav-item"><a href="<?php echo e(url('/' . $locale . '/services/garden-cleaning')); ?>" class="dropdown-item"><span><?php echo e(__('home.service_garden_title')); ?></span></a></li>
+                                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(isset($allServices)): ?>
+                                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $allServices; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $navSvc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php $navTrans = $navSvc->translations->first(); ?>
+                                <li class="menu-item nav-item"><a href="<?php echo e(url('/' . $locale . '/services/' . $navSvc->slug)); ?>" class="dropdown-item"><span><?php echo e($navTrans->title ?? $navSvc->slug); ?></span></a></li>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+                                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
                             </ul>
                         </li>
                         <li class="menu-item nav-item"><a href="<?php echo e(url('/' . $locale . '/#packages')); ?>" class="nav-link"><span><?php echo e(__('home.nav_packages')); ?></span></a></li>

@@ -17,7 +17,11 @@ class HomeController extends Controller
 
         app()->setLocale($locale);
 
-        $services = Service::active()->ordered()->with(['translations' => function ($q) use ($locale) {
+        $homeServices = Service::active()->homeOnly()->ordered()->with(['translations' => function ($q) use ($locale) {
+            $q->where('locale', $locale);
+        }])->get();
+
+        $allServices = Service::active()->ordered()->with(['translations' => function ($q) use ($locale) {
             $q->where('locale', $locale);
         }])->get();
 
@@ -27,7 +31,8 @@ class HomeController extends Controller
 
         return view('home', [
             'locale' => $locale,
-            'services' => $services,
+            'services' => $homeServices,
+            'allServices' => $allServices,
             'packages' => $packages,
         ]);
     }

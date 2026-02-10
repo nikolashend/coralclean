@@ -124,6 +124,15 @@ return [
     'btn_urgent_package' => 'Need It Now',
     'btn_all_services' => 'All services →',
 
+    // Service detail page labels
+    'svc_included' => '✓ Included',
+    'svc_not_included' => '✗ Not included',
+    'svc_addons' => '+ Add-ons',
+    'svc_process' => 'How we work',
+    'svc_guarantee' => 'Quality guarantee',
+    'services_hub_title' => 'Our Services',
+    'services_hub_subtitle' => 'Full range of cleaning services in Tallinn and Harjumaa',
+
     // About
     'about_title' => 'We provide professional cleaning in Tallinn and Harjumaa',
     'about_text' => 'CoralClean is a team of professional cleaners who daily perform cleaning of apartments, houses and offices in Tallinn and Harjumaa. We work carefully, calmly and according to a clear checklist — without rush and surprises for the client.',
@@ -182,15 +191,22 @@ return [
     'review5_text' => 'We urgently needed cleaning before the apartment handover. Called CoralClean — they came the same day. Excellent service!',
     'review5_service' => 'Urgent Clean',
 
-    // We work with
-    'we_work_title' => 'Who We Work With',
-    'we_work_subtitle' => 'Experience with various types of clients and properties',
-    'we_work_1' => 'Private apartments and houses',
-    'we_work_2' => 'Offices and coworking spaces',
-    'we_work_3' => 'Airbnb and short-term rentals',
-    'we_work_4' => 'New builds and renovations',
-    'we_work_5' => 'Small and medium businesses',
-    'we_work_6' => 'Property management companies',
+    // Why CoralClean
+    'why_title' => 'Why CoralClean?',
+    'why_subtitle' => '6 reasons to trust us with your cleaning',
+    'why_card1_title' => 'Checklist-based cleaning',
+    'why_card1_desc' => 'Every cleaning follows a clear checklist — nothing gets missed.',
+    'why_card2_title' => 'Transparent pricing',
+    'why_card2_desc' => 'No hidden fees. The cost is agreed upfront.',
+    'why_card3_title' => 'Trusted team',
+    'why_card3_desc' => 'Careful selection and training of every cleaner.',
+    'why_card4_title' => 'Safe products',
+    'why_card4_desc' => 'Professional yet safe for children and pets.',
+    'why_card5_title' => 'Quality guarantee',
+    'why_card5_desc' => 'If something isn\'t right — we fix it promptly and for free.',
+    'why_card6_title' => 'Same-day response',
+    'why_card6_desc' => 'Fast feedback and quick coordination.',
+    'all_services_btn' => 'All services',
 
     // FAQ
     'faq_title' => 'Frequently Asked Questions',

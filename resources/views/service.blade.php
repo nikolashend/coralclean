@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @php
         $trans = $service->translations->first();
-        $svcTitle = $trans->title ?? __('home.service_' . $serviceKey . '_title');
-        $svcDesc = $trans->description ?? __('home.service_' . $serviceKey . '_desc');
-        $svcImage = $trans->image_path ?? __('home.service_' . $serviceKey . '_image');
-        $svcText1 = $trans->text1 ?? __('home.service_' . $serviceKey . '_text1');
-        $svcText2 = $trans->text2 ?? __('home.service_' . $serviceKey . '_text2');
+        $svcTitle = $trans->title ?? $slug;
+        $svcDesc = $trans->description ?? '';
+        $svcImage = $trans->image_path ?? 'coralclean/services/home clean.png';
+        $svcText1 = $trans->text1 ?? '';
+        $svcText2 = $trans->text2 ?? '';
+        $svcSubtitle = $trans->subtitle ?? '';
+        $svcPriceAnchor = $trans->price_anchor ?? '';
+        $svcCtaText = $trans->cta_text ?? __('home.btn_order');
+        $svcIncluded = is_array($trans->included ?? null) ? $trans->included : [];
+        $svcNotIncluded = is_array($trans->not_included ?? null) ? $trans->not_included : [];
+        $svcAddons = is_array($trans->addons ?? null) ? $trans->addons : [];
+        $svcProcess = $trans->process ?? '';
+        $svcGuarantee = $trans->guarantee ?? '';
+        $svcFaq = is_array($trans->faq ?? null) ? $trans->faq : [];
     @endphp
 
     <title>{{ $svcTitle }} — CoralClean | Tallinn</title>
@@ -90,8 +99,24 @@
         $typ => 'BreadcrumbList',
         'itemListElement' => [
             [$typ => 'ListItem', 'position' => 1, 'name' => __('home.nav_home'), 'item' => url('/' . $locale)],
-            [$typ => 'ListItem', 'position' => 2, 'name' => $svcTitle, 'item' => url('/' . $locale . '/services/' . $slug)],
+            [$typ => 'ListItem', 'position' => 2, 'name' => __('home.nav_services'), 'item' => url('/' . $locale . '/services')],
+            [$typ => 'ListItem', 'position' => 3, 'name' => $svcTitle, 'item' => url('/' . $locale . '/services/' . $slug)],
         ],
+    ], $jsonFlags);
+
+    // FAQPage schema
+    $faqEntities = [];
+    foreach ($svcFaq as $faqItem) {
+        $faqEntities[] = [
+            $typ => 'Question',
+            'name' => $faqItem['q'] ?? '',
+            'acceptedAnswer' => [$typ => 'Answer', 'text' => $faqItem['a'] ?? ''],
+        ];
+    }
+    $schemaFAQ = json_encode([
+        $ctx => 'https://schema.org',
+        $typ => 'FAQPage',
+        'mainEntity' => $faqEntities,
     ], $jsonFlags);
     @endphp
 
@@ -100,6 +125,11 @@
 
     <!-- BreadcrumbList Schema -->
     <script type="application/ld+json">{!! $schemaBreadcrumb !!}</script>
+
+    @if(count($faqEntities))
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">{!! $schemaFAQ !!}</script>
+    @endif
 </head>
 <body>
 
@@ -282,70 +312,116 @@
                     <!-- RIGHT CONTENT -->
                     <div class="col-lg-8">
                         <div class="bosluk333"></div>
+                        <!-- <div class="bosluk3"></div> -->
 
-                        <div class="bosluk3"></div>
-
-                        <!-- Service Title -->
+                        <!-- Service Title & Price -->
                         <h2 class="h2-baslik-anasayfa-ozel wow fade">{{ $svcTitle }}</h2>
+                        @if($svcSubtitle)
+                        <p class="paragraf" style="color: #6b7c8d; font-size: 16px; margin-bottom: 12px;">{{ $svcSubtitle }}</p>
+                        @endif
+                        @if($svcPriceAnchor)
+                        <div class="svc-detail-price wow fadeInUp">{{ $svcPriceAnchor }}</div>
+                        @endif
                         <div class="bosluk333"></div>
 
-                        <!-- Service Description Paragraphs -->
+                        <!-- Description -->
                         <p class="paragraf wow fade" data-wow-delay="0.5s">{{ $svcText1 }}</p>
                         <div class="bosluk1"></div>
-
                         <img class="divider" src="{{ asset('img/divider.jpg') }}" alt="divider" loading="lazy">
                         <div class="bosluk1"></div>
-
                         <p class="paragraf wow fade" data-wow-delay="0.6s">{{ $svcText2 }}</p>
                         <div class="bosluk3"></div>
 
-                        <!-- Reliability / Loyalty Flip Cards -->
-                        <div class="tabloozellik">
-                            <div class="tablo--1-ve-2">
-                                <div class="paketler4 wow fadeInLeft" data-wow-delay="0.7s">
-                                    <div class="paketler4__on paketler4__on--onyazi">
-                                        <div class="paketler4__icerik">
-                                            <div class="icon"><i class="flaticon-medal"></i></div>
-                                            <h3 class="baslik-3">{{ __('home.reliability_title') }}</h3>
-                                        </div>
-                                    </div>
-                                    <div class="paketler4__on paketler4__on--arkayazi paketler4__on--arkayazi-1">
-                                        <div class="paketler4__pr">
-                                            <div class="paketler4__pr-kutu">
-                                                <h3 class="baslik-orta">{{ __('home.reliability_title') }}</h3>
-                                                <p class="services-kutu2--yazi1">{{ __('home.reliability_desc') }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <!-- Included / Not Included -->
+                        <div class="row">
+                            @if(count($svcIncluded))
+                            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="svc-detail-included">
+                                    <h4>{{ __('home.svc_included') ?? '✓ Входит' }}</h4>
+                                    <ul>
+                                        @foreach($svcIncluded as $item)
+                                        <li>{{ $item }}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="tablo--1-ve-2">
-                                <div class="paketler4 wow fadeInRight" data-wow-delay="0.8s">
-                                    <div class="paketler4__on paketler4__on--onyazi">
-                                        <div class="paketler4__icerik">
-                                            <div class="icon"><i class="flaticon-badge"></i></div>
-                                            <h3 class="baslik-3">{{ __('home.loyalty_title') }}</h3>
-                                        </div>
-                                    </div>
-                                    <div class="paketler4__on paketler4__on--arkayazi paketler4__on--arkayazi-1">
-                                        <div class="paketler4__pr">
-                                            <div class="paketler4__pr-kutu">
-                                                <h3 class="baslik-orta">{{ __('home.loyalty_title') }}</h3>
-                                                <p class="services-kutu2--yazi1">{{ __('home.loyalty_desc') }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                            @endif
+                            @if(count($svcNotIncluded))
+                            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="svc-detail-not-included">
+                                    <h4>{{ __('home.svc_not_included') ?? '✗ Не входит' }}</h4>
+                                    <ul>
+                                        @foreach($svcNotIncluded as $item)
+                                        <li>{{ $item }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                            @endif
+                        </div>
+
+                        @if(count($svcAddons))
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="svc-detail-addons wow fadeInUp" data-wow-delay="0.5s">
+                                    <h4>{{ __('home.svc_addons') ?? '+ Дополнительно' }}</h4>
+                                    <ul>
+                                        @foreach($svcAddons as $addon)
+                                        <li>{{ $addon }}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
+                        @endif
+
+                        @if($svcProcess)
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="svc-detail-process wow fadeInUp" data-wow-delay="0.5s">
+                                    <h4>{{ __('home.svc_process') ?? 'Как мы работаем' }}</h4>
+                                    <p>{{ $svcProcess }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+
+                        @if($svcGuarantee)
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="svc-detail-guarantee wow fadeInUp" data-wow-delay="0.5s">
+                                    <h4>{{ __('home.svc_guarantee') ?? 'Гарантия' }}</h4>
+                                    <p>{{ $svcGuarantee }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
 
                         <div class="bosluk3"></div>
 
-                        <!-- CTA to contact -->
-                        <div class="text-center wow fadeInUp" data-wow-delay="0.9s">
-                            <a href="javascript:void(0)" onclick="openContactPanel()" class="custom-button">{{ __('home.btn_order') }}</a>
-                            <a href="https://wa.me/37258301348?text={{ urlencode($svcTitle) }}" target="_blank" class="custom-button" style="background: #25D366; margin-left: 10px;">WhatsApp</a>
+                        <!-- CTA -->
+                        <div class="text-center wow fadeInUp" data-wow-delay="0.6s">
+                            <a href="javascript:void(0)" onclick="openContactPanel()" class="custom-button">{{ $svcCtaText }} →</a>
+                            <a href="https://wa.me/37258301348?text={{ urlencode($svcTitle) }}" target="_blank" class="custom-button" style="background: #25D366; margin-left: 10px;">WhatsApp →</a>
                         </div>
+
+                        <!-- FAQ Section -->
+                        @if(count($svcFaq))
+                        <div class="svc-faq-section wow fadeInUp" data-wow-delay="0.5s">
+                            <h3>{{ __('home.faq_title') }}</h3>
+                            @foreach($svcFaq as $idx => $faq)
+                            <div class="svc-faq-item">
+                                <div class="svc-faq-question" onclick="this.parentElement.classList.toggle('active')">
+                                    <span>{{ $faq['q'] ?? '' }}</span>
+                                    <span class="svc-faq-icon">▼</span>
+                                </div>
+                                <div class="svc-faq-answer">
+                                    <p>{{ $faq['a'] ?? '' }}</p>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>

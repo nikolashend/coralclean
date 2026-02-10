@@ -12,5 +12,6 @@ Route::get('/', function () {
 Route::prefix('{locale}')->where(['locale' => 'ru|en|et'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+    Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
     Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('service.show');
 });

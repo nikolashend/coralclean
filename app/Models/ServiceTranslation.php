@@ -10,11 +10,29 @@ class ServiceTranslation extends Model
         'service_id',
         'locale',
         'title',
+        'subtitle',
         'short_desc',
+        'bullets',
+        'price_anchor',
+        'cta_text',
         'description',
         'image_path',
         'text1',
         'text2',
+        'faq',
+        'included',
+        'not_included',
+        'addons',
+        'process',
+        'guarantee',
+    ];
+
+    protected $casts = [
+        'bullets' => 'array',
+        'faq' => 'array',
+        'included' => 'array',
+        'not_included' => 'array',
+        'addons' => 'array',
     ];
 
     public function service()
