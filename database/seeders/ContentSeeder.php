@@ -431,7 +431,7 @@ class ContentSeeder extends Seeder
             // ── 4. MOVE-OUT CLEANING ─────────────────────────────────────
             [
                 'slug' => 'move-out-cleaning',
-                'icon' => 'flaticon-clean-1',
+                'icon' => 'flaticon-mop',
                 'sort_order' => 4,
                 'show_on_home' => true,
                 'translations' => [
@@ -522,7 +522,7 @@ class ContentSeeder extends Seeder
             // ── 5. WINDOW CLEANING ───────────────────────────────────────
             [
                 'slug' => 'window-cleaning',
-                'icon' => 'flaticon-clean-1',
+                'icon' => 'flaticon-shower',
                 'sort_order' => 5,
                 'show_on_home' => true,
                 'translations' => [
@@ -613,7 +613,7 @@ class ContentSeeder extends Seeder
             // ── 6. UPHOLSTERY & CARPET CLEANING ─────────────────────────
             [
                 'slug' => 'upholstery-cleaning',
-                'icon' => 'flaticon-vacuum',
+                'icon' => 'flaticon-clean-2',
                 'sort_order' => 6,
                 'show_on_home' => true,
                 'translations' => [
@@ -893,7 +893,7 @@ class ContentSeeder extends Seeder
         return [
             [
                 'slug' => 'clean-maintenance',
-                'icon' => 'flaticon-house',
+                'icon' => 'flaticon-clean-3',
                 'image' => 'coralclean/packages/quick clean (1).png',
                 'sort_order' => 1,
                 'column_span' => 4,
@@ -932,7 +932,7 @@ class ContentSeeder extends Seeder
             ],
             [
                 'slug' => 'deep-clean',
-                'icon' => 'flaticon-vacuum',
+                'icon' => 'flaticon-dishwasher',
                 'image' => 'coralclean/packages/DEEP CLEAN (1).png',
                 'sort_order' => 2,
                 'column_span' => 4,
@@ -971,7 +971,7 @@ class ContentSeeder extends Seeder
             ],
             [
                 'slug' => 'post-renovation',
-                'icon' => 'flaticon-brush',
+                'icon' => 'flaticon-tower',
                 'image' => 'coralclean/packages/quick clean (1).png',
                 'sort_order' => 3,
                 'column_span' => 4,
@@ -1010,7 +1010,7 @@ class ContentSeeder extends Seeder
             ],
             [
                 'slug' => 'move-out-ready',
-                'icon' => 'flaticon-clean-1',
+                'icon' => 'flaticon-suitcase',
                 'image' => 'coralclean/packages/MOVE-IN  MOVE-OUT.png',
                 'sort_order' => 4,
                 'column_span' => 4,
@@ -1049,7 +1049,7 @@ class ContentSeeder extends Seeder
             ],
             [
                 'slug' => 'business-care',
-                'icon' => 'flaticon-clean',
+                'icon' => 'flaticon-enterprise',
                 'image' => 'coralclean/packages/OFFICE CARE (1).png',
                 'sort_order' => 5,
                 'column_span' => 6,
