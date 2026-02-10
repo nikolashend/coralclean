@@ -16,7 +16,7 @@
                     <p><i class="flaticon-email iconpfooter3"></i>&nbsp;&nbsp;&nbsp;<a href="mailto:info@coralclean.ee">info@coralclean.ee</a></p><br>
                     <p><i class="flaticon-time iconpfooter3"></i>&nbsp;&nbsp;&nbsp;<?php echo e(__('home.footer_hours')); ?></p>
                 </div>
-                <ul class="footer-social wow animated fadeInUp" data-wow-delay="0.5s">
+                <ul class="footer-social mt-3 wow animated fadeInUp" data-wow-delay="0.5s">
                     <li><a href="<?php echo e($contact->facebook ?? 'https://www.facebook.com/coralclean'); ?>" target="_blank"><i class="icon-social-facebook iconsociaf"></i></a></li>
                     <li><a href="<?php echo e($contact->instagram ?? 'https://www.instagram.com/coralclean.ee/'); ?>" target="_blank"><i class="icon-social-instagram iconsociaf"></i></a></li>
                 </ul>
