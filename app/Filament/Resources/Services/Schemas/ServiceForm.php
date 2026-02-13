@@ -81,48 +81,47 @@ class ServiceForm
                                         Repeater::make('items')
                                             ->schema([
                                                 TextInput::make('name')
-                                                    ->label('Service Name')
-                                                    ->required(),
+                                                    ->label('Service Name'),
                                                 TextInput::make('price')
                                                     ->label('Price')
-                                                    ->required()
                                                     ->helperText('e.g. "55€" or "2.5€/м²"'),
                                             ])
                                             ->columns(2)
-                                            ->defaultItems(1)
+                                            ->defaultItems(0)
                                             ->addActionLabel('Add Price Item')
                                             ->collapsible()
                                     ])
                                     ->columns(1)
                                     ->collapsible()
+                                    ->defaultItems(0)
                                     ->addActionLabel('Add Price Group'),
                                 Repeater::make('included')
                                     ->label('What\'s Included')
-                                    ->simple(
+                                    ->schema([
                                         TextInput::make('item')
                                             ->label('Item')
-                                            ->required()
-                                    )
+                                    ])
                                     ->addActionLabel('Add Item')
-                                    ->collapsible(),
+                                    ->collapsible()
+                                    ->defaultItems(0),
                                 Repeater::make('not_included')
                                     ->label('What\'s NOT Included')
-                                    ->simple(
+                                    ->schema([
                                         TextInput::make('item')
                                             ->label('Item')
-                                            ->required()
-                                    )
+                                    ])
                                     ->addActionLabel('Add Item')
-                                    ->collapsible(),
+                                    ->collapsible()
+                                    ->defaultItems(0),
                                 Repeater::make('addons')
                                     ->label('Available Add-ons (extra services)')
-                                    ->simple(
+                                    ->schema([
                                         TextInput::make('item')
                                             ->label('Add-on')
-                                            ->required()
-                                    )
+                                    ])
                                     ->addActionLabel('Add Add-on')
-                                    ->collapsible(),
+                                    ->collapsible()
+                                    ->defaultItems(0),
                                 Textarea::make('description')
                                     ->rows(3),
                                 FileUpload::make('image_path')
@@ -147,10 +146,8 @@ class ServiceForm
                                     ->label('FAQ (Frequently Asked Questions)')
                                     ->schema([
                                         TextInput::make('question')
-                                            ->required()
                                             ->columnSpanFull(),
                                         Textarea::make('answer')
-                                            ->required()
                                             ->rows(2)
                                             ->columnSpanFull(),
                                     ])
