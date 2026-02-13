@@ -8,6 +8,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\KeyValue;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -67,6 +68,61 @@ class ServiceForm
                                     ->required(),
                                 TextInput::make('short_desc')
                                     ->label('Short Description'),
+                                TextInput::make('price_anchor')
+                                    ->label('Price Badge (shown on homepage)')
+                                    ->helperText('e.g. "от 55€" or "2.5€/м²"')
+                                    ->maxLength(50),
+                                Repeater::make('pricing_table')
+                                    ->label('Pricing Table (for service detail page)')
+                                    ->schema([
+                                        TextInput::make('group_name')
+                                            ->label('Group Name (optional)')
+                                            ->helperText('e.g. "Квартиры" or leave empty for no grouping'),
+                                        Repeater::make('items')
+                                            ->schema([
+                                                TextInput::make('name')
+                                                    ->label('Service Name')
+                                                    ->required(),
+                                                TextInput::make('price')
+                                                    ->label('Price')
+                                                    ->required()
+                                                    ->helperText('e.g. "55€" or "2.5€/м²"'),
+                                            ])
+                                            ->columns(2)
+                                            ->defaultItems(1)
+                                            ->addActionLabel('Add Price Item')
+                                            ->collapsible()
+                                    ])
+                                    ->columns(1)
+                                    ->collapsible()
+                                    ->addActionLabel('Add Price Group'),
+                                Repeater::make('included')
+                                    ->label('What\'s Included')
+                                    ->simple(
+                                        TextInput::make('item')
+                                            ->label('Item')
+                                            ->required()
+                                    )
+                                    ->addActionLabel('Add Item')
+                                    ->collapsible(),
+                                Repeater::make('not_included')
+                                    ->label('What\'s NOT Included')
+                                    ->simple(
+                                        TextInput::make('item')
+                                            ->label('Item')
+                                            ->required()
+                                    )
+                                    ->addActionLabel('Add Item')
+                                    ->collapsible(),
+                                Repeater::make('addons')
+                                    ->label('Available Add-ons (extra services)')
+                                    ->simple(
+                                        TextInput::make('item')
+                                            ->label('Add-on')
+                                            ->required()
+                                    )
+                                    ->addActionLabel('Add Add-on')
+                                    ->collapsible(),
                                 Textarea::make('description')
                                     ->rows(3),
                                 FileUpload::make('image_path')
@@ -87,6 +143,29 @@ class ServiceForm
                                 Textarea::make('text2')
                                     ->label('Text Block 2')
                                     ->rows(4),
+                                Repeater::make('faq')
+                                    ->label('FAQ (Frequently Asked Questions)')
+                                    ->schema([
+                                        TextInput::make('question')
+                                            ->required()
+                                            ->columnSpanFull(),
+                                        Textarea::make('answer')
+                                            ->required()
+                                            ->rows(2)
+                                            ->columnSpanFull(),
+                                    ])
+                                    ->columns(1)
+                                    ->collapsible()
+                                    ->addActionLabel('Add FAQ'),
+                                Textarea::make('process')
+                                    ->label('How We Work / Process')
+                                    ->rows(3),
+                                Textarea::make('guarantee')
+                                    ->label('Guarantee / Quality Assurance')
+                                    ->rows(2),
+                                TextInput::make('cta_text')
+                                    ->label('CTA Button Text')
+                                    ->helperText('e.g. "Заказать услугу"'),
                             ])
                             ->columns(1)
                             ->defaultItems(3)
