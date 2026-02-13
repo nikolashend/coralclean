@@ -11,7 +11,7 @@ class ContactSeeder extends Seeder
      * Seed contact information for CoralClean
      * 
      * Phone numbers by locale:
-     * - RU: +372 5830 1348
+     * - RU: +372 893 720 1025
      * - ET/EN: +372 8127 1375
      * 
      * Social media:
@@ -25,9 +25,9 @@ class ContactSeeder extends Seeder
         $contacts = [
             [
                 'locale' => 'ru',
-                'phone' => '+372 5830 1348',
-                'phone_clean' => '37258301348',
-                'whatsapp' => 'https://wa.me/37258301348',
+                'phone' => '+372 893 720 1025',
+                'phone_clean' => '3728937201025',
+                'whatsapp' => 'https://wa.me/3728937201025',
                 'email' => 'info@coralclean.ee',
                 'instagram' => 'https://www.instagram.com/coralclean.ee/',
                 'facebook' => 'https://www.facebook.com/coralclean',
