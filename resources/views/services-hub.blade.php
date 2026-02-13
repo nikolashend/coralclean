@@ -177,7 +177,11 @@
                                     <div class="paketler2__icerik">
                                         <div class="iconw"><i class="{{ $svc->icon }}"></i></div>
                                         <h3 class="baslik-3white h-yazi-margin-kucuk">{{ $trans->title ?? '' }}</h3>
+                                        @if($trans->price_anchor)
+                                        <div class="service-card-price">{{ $trans->price_anchor }}</div>
+                                        @else
                                         <p class="services-kutu2--yazi wow fade">{{ $trans->short_desc ?? '' }}</p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

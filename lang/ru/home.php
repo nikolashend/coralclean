@@ -130,6 +130,7 @@ return [
     'svc_addons' => '+ Дополнительно',
     'svc_process' => 'Как мы работаем',
     'svc_guarantee' => 'Гарантия качества',
+    'svc_pricing' => 'Стоимость услуг',
     'services_hub_title' => 'Наши услуги',
     'services_hub_subtitle' => 'Полный спектр клининговых услуг в Таллине и Харьюмаа',
 
