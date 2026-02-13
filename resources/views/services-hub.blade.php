@@ -81,11 +81,11 @@
                     </ul>
                     <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd;">
                         <div style="display: flex; gap: 15px; justify-content: center; align-items: center;">
-                            <a href="{{ url('/ru/services') }}" style="color: {{ $locale == 'ru' ? '#2ec4c6' : '#666' }}; font-weight: {{ $locale == 'ru' ? 'bold' : 'normal' }}; text-decoration: none; font-size: 16px;">🇷🇺 RU</a>
+                            <a href="{{ url('/ru/services') }}" style="color: {{ $locale == 'ru' ? '#2ec4c6' : '#666' }}; font-weight: {{ $locale == 'ru' ? 'bold' : 'normal' }}; text-decoration: none; font-size: 16px;">RU</a>
                             <span style="color: #ccc;">|</span>
-                            <a href="{{ url('/en/services') }}" style="color: {{ $locale == 'en' ? '#2ec4c6' : '#666' }}; font-weight: {{ $locale == 'en' ? 'bold' : 'normal' }}; text-decoration: none; font-size: 16px;">🇬🇧 EN</a>
+                            <a href="{{ url('/en/services') }}" style="color: {{ $locale == 'en' ? '#2ec4c6' : '#666' }}; font-weight: {{ $locale == 'en' ? 'bold' : 'normal' }}; text-decoration: none; font-size: 16px;">EN</a>
                             <span style="color: #ccc;">|</span>
-                            <a href="{{ url('/et/services') }}" style="color: {{ $locale == 'et' ? '#2ec4c6' : '#666' }}; font-weight: {{ $locale == 'et' ? 'bold' : 'normal' }}; text-decoration: none; font-size: 16px;">🇪🇪 ET</a>
+                            <a href="{{ url('/et/services') }}" style="color: {{ $locale == 'et' ? '#2ec4c6' : '#666' }}; font-weight: {{ $locale == 'et' ? 'bold' : 'normal' }}; text-decoration: none; font-size: 16px;">ET</a>
                         </div>
                     </div>
                 </div>
