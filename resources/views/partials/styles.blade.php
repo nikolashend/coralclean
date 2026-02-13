@@ -219,7 +219,7 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
 .h2-baslik-anasayfa { border-bottom: .1rem solid #2ec4c6; }
 .baslik-3-h, .baslik-33, .baslik-star { color: #1f2933; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 30px; }
 .h2-baslik-hizmetler-yorum { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); font-family: 'Inter', sans-serif; font-weight: 900; font-size: 30px; }
-.baslik-3s, .baslik-3white { font-family: 'Inter', sans-serif; font-weight: 900; }
+.baslik-3s, .baslik-3white { font-family: 'Inter', sans-serif; font-weight: 700; }
 .baslik-3s { color: #1f2933; }
 .counter-box .odometer, .baslik-orta, .baslik-4, .counter-box h6 { color: #1f2933; font-family: 'Inter', sans-serif; font-weight: 900; }
 .baslik-orta, .baslik-3 { font-size: 23px; font-weight: 700; }
@@ -1125,19 +1125,24 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
 /* ============================================================
    HOMEPAGE SERVICE CARD — PRICE BADGE
    ============================================================ */
+.paketler2__icerik .baslik-3white {
+    font-size: 24px;
+}
 .service-card-price {
-    display: inline-block;
+    display: block;
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     color: #fff;
     background: rgba(46, 196, 198, 0.25);
     border: 2px solid rgba(255,255,255,.5);
     border-radius: 30px;
-    padding: 6px 20px;
-    margin-top: 12px;
+    padding: 8px 24px;
+    margin: 28px auto 0;
     letter-spacing: 0.3px;
     backdrop-filter: blur(4px);
+    text-align: center;
+    max-width: 200px;
 }
 
 /* ============================================================
@@ -1214,6 +1219,11 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
     .svc-pricing-name { font-size: 14px; padding: 10px 14px; }
     .svc-pricing-price { font-size: 14px; padding: 10px 14px; }
     .svc-pricing-title { font-size: 18px; }
-    .service-card-price { font-size: 14px; padding: 5px 16px; }
+    .service-card-price { font-size: 18px; padding: 5px 16px; }
+    /* Service cards mobile - remove fixed height and add bottom padding */
+    #services .paketler2__gorsel--1 { 
+        height: auto !important; 
+        padding-bottom: 20px !important; 
+    }
 }
 </style>
