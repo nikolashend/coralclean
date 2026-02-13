@@ -14,6 +14,7 @@ class ServiceTranslation extends Model
         'short_desc',
         'bullets',
         'price_anchor',
+        'pricing_table',
         'cta_text',
         'description',
         'image_path',
@@ -33,6 +34,7 @@ class ServiceTranslation extends Model
         'included' => 'array',
         'not_included' => 'array',
         'addons' => 'array',
+        'pricing_table' => 'array',
     ];
 
     public function service()

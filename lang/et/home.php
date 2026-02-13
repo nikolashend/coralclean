@@ -130,6 +130,7 @@ return [
     'svc_addons' => '+ Lisateenused',
     'svc_process' => 'Kuidas me töötame',
     'svc_guarantee' => 'Kvaliteedigarantii',
+    'svc_pricing' => 'Teenuse hind',
     'services_hub_title' => 'Meie teenused',
     'services_hub_subtitle' => 'Täielik valik koristusteenuseid Tallinnas ja Harjumaal',
 

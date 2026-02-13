@@ -12,6 +12,7 @@
         $svcText2 = $trans->text2 ?? '';
         $svcSubtitle = $trans->subtitle ?? '';
         $svcPriceAnchor = $trans->price_anchor ?? '';
+        $svcPricingTable = is_array($trans->pricing_table ?? null) ? $trans->pricing_table : [];
         $svcCtaText = $trans->cta_text ?? __('home.btn_order');
         $svcIncluded = is_array($trans->included ?? null) ? $trans->included : [];
         $svcNotIncluded = is_array($trans->not_included ?? null) ? $trans->not_included : [];
@@ -324,6 +325,29 @@
                         <div class="svc-detail-price wow fadeInUp">{{ $svcPriceAnchor }}</div>
                         @endif
                         <div class="bosluk333"></div>
+
+                        <!-- Pricing Table -->
+                        @if(count($svcPricingTable))
+                        <div class="svc-pricing-section wow fadeInUp" data-wow-delay="0.3s">
+                            <h3 class="svc-pricing-title">{{ __('home.svc_pricing') }}</h3>
+                            @foreach($svcPricingTable as $group)
+                            <div class="svc-pricing-group">
+                                <div class="svc-pricing-group-header">{{ $group['group'] ?? '' }}</div>
+                                <table class="svc-pricing-table">
+                                    <tbody>
+                                        @foreach(($group['items'] ?? []) as $row)
+                                        <tr>
+                                            <td class="svc-pricing-name">{{ $row['name'] ?? '' }}</td>
+                                            <td class="svc-pricing-price">{{ $row['price'] ?? '' }}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            @endforeach
+                        </div>
+                        <div class="bosluk3"></div>
+                        @endif
 
                         <!-- Description -->
                         <p class="paragraf wow fade" data-wow-delay="0.5s">{{ $svcText1 }}</p>

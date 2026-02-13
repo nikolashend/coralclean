@@ -130,6 +130,7 @@ return [
     'svc_addons' => '+ Add-ons',
     'svc_process' => 'How we work',
     'svc_guarantee' => 'Quality guarantee',
+    'svc_pricing' => 'Pricing',
     'services_hub_title' => 'Our Services',
     'services_hub_subtitle' => 'Full range of cleaning services in Tallinn and Harjumaa',
 

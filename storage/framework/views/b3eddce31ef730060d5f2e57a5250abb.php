@@ -414,7 +414,11 @@
                                     <div class="paketler2__icerik">
                                         <div class="iconw"><i class="<?php echo e($svc->icon); ?>"></i></div>
                                         <h3 class="baslik-3white h-yazi-margin-kucuk"><?php echo e($trans->title ?? ''); ?></h3>
+                                        <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($trans->price_anchor): ?>
+                                        <div class="service-card-price"><?php echo e($trans->price_anchor); ?></div>
+                                        <?php else: ?>
                                         <p class="services-kutu2--yazi wow fade"><?php echo e($trans->short_desc ?? ''); ?></p>
+                                        <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
                                     </div>
                                 </div>
                             </div>
