@@ -519,6 +519,7 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
     box-shadow: 0 6px 24px rgba(0,0,0,0.3);
 }
 .floating-btn--whatsapp { background: #25D366; }
+.floating-btn--messenger { background: #0084FF; }
 .floating-btn--call { background: #ff6f61; }
 
 /* ============================================================
@@ -1224,6 +1225,21 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
     #services .paketler2__gorsel--1 { 
         height: auto !important; 
         padding-bottom: 20px !important; 
+    }
+    /* Service page mobile - move sidebar form to bottom (after FAQ) */
+    .hizmetlerr-bolumu .row {
+        display: flex;
+        flex-direction: column;
+    }
+    .hizmetlerr-bolumu .col-lg-4 {
+        order: 2; /* sidebar goes to bottom */
+    }
+    .hizmetlerr-bolumu .col-lg-8 {
+        order: 1; /* content goes to top */
+    }
+    /* Service page mobile - remove top margin from title */
+    .h2-baslik-anasayfa-ozel {
+        margin-top: 0px !important;
     }
 }
 </style>
