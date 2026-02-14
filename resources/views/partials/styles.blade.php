@@ -376,7 +376,7 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
     #we-work-with { margin-top: 40px !important; }
 
     /* === 7. Service page WhatsApp button — remove margin-left on mobile === */
-    .custom-button[href*="wa.me"] { margin-left: 0 !important; margin-top: 10px; }
+    .custom-button[href*="wa.me"], .custom-button[href*="m.me"] { margin-left: 0 !important; margin-top: 10px; }
 
     /* === 8. Trust section — push down so subtitle isn't clipped by trust cards === */
     #trust { margin-top: 40px !important; }
