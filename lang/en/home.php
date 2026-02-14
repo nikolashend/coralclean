@@ -331,6 +331,11 @@ return [
     'float_whatsapp' => 'Message on WhatsApp',
     'float_call' => 'Call Us',
 
+    // Portfolio
+    'portfolio_title' => 'Our Work',
+    'portfolio_subtitle' => 'Results that speak for themselves — before and after professional cleaning',
+    'portfolio_alt' => 'CoralClean cleaning result',
+
     // Language
     'language' => 'Language',
 ];

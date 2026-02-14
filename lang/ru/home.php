@@ -331,6 +331,11 @@ return [
     'float_whatsapp' => 'Написать в WhatsApp',
     'float_call' => 'Позвонить',
 
+    // Portfolio
+    'portfolio_title' => 'Наши работы',
+    'portfolio_subtitle' => 'Результаты, которые говорят сами за себя — до и после профессиональной уборки',
+    'portfolio_alt' => 'Результат уборки CoralClean',
+
     // Language
     'language' => 'Язык',
 ];

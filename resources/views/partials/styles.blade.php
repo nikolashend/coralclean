@@ -542,6 +542,97 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
 .trust-card p { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; color: #666; }
 
 /* ============================================================
+   Portfolio / Gallery Section
+   ============================================================ */
+.portfolio-section {
+    padding: 40px 0 60px;
+    background: #f6f7f8;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    display: block;
+    height: 280px;
+    background: #e0e0e0;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.08);
+}
+
+.portfolio-item__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(46,196,198,0.75) 0%, rgba(255,111,97,0.6) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-item__overlay {
+    opacity: 1;
+}
+
+.portfolio-item__icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.7);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.portfolio-item:hover .portfolio-item__icon {
+    transform: scale(1);
+}
+
+/* Portfolio responsive */
+@media (max-width: 991px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 12px;
+    }
+    .portfolio-item {
+        height: 240px;
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .portfolio-item {
+        height: 180px;
+        border-radius: 8px;
+    }
+}
+
+/* ============================================================
    How it works
    ============================================================ */
 .step-box { text-align: center; padding: 20px; }

@@ -331,6 +331,11 @@ return [
     'float_whatsapp' => 'Kirjuta WhatsAppis',
     'float_call' => 'Helista',
 
+    // Portfolio
+    'portfolio_title' => 'Meie tööd',
+    'portfolio_subtitle' => 'Tulemused, mis räägivad enda eest — enne ja pärast professionaalset koristust',
+    'portfolio_alt' => 'CoralClean koristustulemus',
+
     // Language
     'language' => 'Keel',
 ];
