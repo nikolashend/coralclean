@@ -623,7 +623,7 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
 
 @media (max-width: 576px) {
     .portfolio-section {
-        padding: 40px 0 80px;
+        padding: 40px 0 120px;
     }
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
