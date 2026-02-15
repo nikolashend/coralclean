@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Package;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -22,11 +23,16 @@ class ServiceController extends Controller
 
         $contact = Contact::forLocale($locale);
 
+        $packages = Package::active()->ordered()->with(['translations' => function ($q) use ($locale) {
+            $q->where('locale', $locale);
+        }])->get();
+
         return view('services-hub', [
             'locale' => $locale,
             'services' => $services,
             'allServices' => $services,
             'contact' => $contact,
+            'packages' => $packages,
         ]);
     }
 
@@ -60,6 +66,10 @@ class ServiceController extends Controller
 
         $contact = Contact::forLocale($locale);
 
+        $packages = Package::active()->ordered()->with(['translations' => function ($q) use ($locale) {
+            $q->where('locale', $locale);
+        }])->get();
+
         return view('service', [
             'locale' => $locale,
             'slug' => $slug,
@@ -68,6 +78,7 @@ class ServiceController extends Controller
             'allServices' => $allServices,
             'services' => $allServices->pluck('slug')->toArray(),
             'contact' => $contact,
+            'packages' => $packages,
         ]);
     }
 }

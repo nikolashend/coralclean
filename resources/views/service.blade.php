@@ -204,16 +204,26 @@
                         <input type="email" name="email" class="form-popup__input" placeholder="{{ __('home.form_email') }}">
                     </div>
                     <div class="form-popup__grup">
-                        <select name="service_type" class="form-popup__input">
+                        <select name="service" class="form-popup__input" style="background: transparent; cursor: pointer;">
                             <option value="">{{ __('home.form_select_service') }}</option>
                             @foreach($allServices as $navSvc)
                             @php $navTrans = $navSvc->translations->first(); @endphp
                             <option value="{{ $navSvc->slug }}" {{ $slug === $navSvc->slug ? 'selected' : '' }}>{{ $navTrans->title ?? $navSvc->slug }}</option>
                             @endforeach
+                            @if(isset($packages) && $packages->count())
+                            <option disabled>──────────</option>
+                            @foreach($packages as $pkg)
+                            @php $pkgTrans = $pkg->translations->first(); @endphp
+                            <option value="{{ $pkg->slug }}">📦 {{ $pkgTrans->title ?? $pkg->slug }}</option>
+                            @endforeach
+                            @endif
                         </select>
                     </div>
                     <div class="form-popup__grup">
                         <input type="date" name="preferred_date" class="form-popup__input" placeholder="{{ __('home.form_preferred_date') }}">
+                    </div>
+                    <div class="form-popup__grup">
+                        <textarea name="message" class="form-popup__input" placeholder="{{ __('home.form_message') }}" rows="3" style="resize: vertical; min-height: 80px;"></textarea>
                     </div>
                     <div class="form-popup__grup">
                         <div class="or">
