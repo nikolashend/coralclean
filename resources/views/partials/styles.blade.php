@@ -135,10 +135,13 @@ textarea#comment, input#author, input#email, input#url { border-bottom: 0.3rem s
 }
 @media (max-width: 900px) {
     .markalar .marka {
-        max-height: 80px;
+        height: 80px;
+        width: 100%;
+        object-fit: contain;
+        /* max-height: 80px;
         max-width: 100%;
         width: auto;
-        height: auto;
+        height: auto; */
     }
 }
 .h2-baslik-hizmetler { background-image: linear-gradient(to right, #2ec4c6, #ff6f61); }
