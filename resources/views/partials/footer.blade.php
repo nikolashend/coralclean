@@ -27,7 +27,7 @@
                 <h6 class="widget-title">{{ __('home.footer_contact_title') }}</h6>
                 <p class="footerp">{{ __('home.footer_contact_text') }}</p>
                 <div class="bosluk333"></div>
-                <form action="{{ url('/' . ($locale ?? 'ru') . '/contact') }}" method="POST">
+                <form id="footer-contact-form" action="{{ url('/' . ($locale ?? 'ru') . '/contact') }}" method="POST">
                     @csrf
                     <div class="form__grup wow fadeInLeft" data-wow-delay="0.7s">
                         <input type="text" name="name" class="form-popup__input" placeholder="{{ __('home.form_name') }}" required>
@@ -41,17 +41,8 @@
                     <div class="form__grup wow fadeInUp" data-wow-delay="0.9s">
                         <input type="submit" class="custom-buttonw1" value="{{ __('home.form_submit') }}">
                     </div>
+                    <div id="footer-form-message" style="margin-top: 15px;"></div>
                 </form>
-                @if(session('success'))
-                    <div class="alert alert-success mt-3">{{ session('success') }}</div>
-                @endif
-                @if($errors->any())
-                    <div class="alert alert-danger mt-3">
-                        @foreach($errors->all() as $error)
-                            <p>{{ $error }}</p>
-                        @endforeach
-                    </div>
-                @endif
             </div>
 
             <!-- Services Links -->
