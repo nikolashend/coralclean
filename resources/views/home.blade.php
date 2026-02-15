@@ -283,6 +283,9 @@
                         <input type="date" name="preferred_date" class="form-popup__input" placeholder="{{ __('home.form_preferred_date') }}">
                     </div>
                     <div class="form-popup__grup">
+                        <textarea name="message" class="form-popup__input" placeholder="{{ __('home.form_message') }}" rows="3" style="resize: vertical; min-height: 80px;"></textarea>
+                    </div>
+                    <div class="form-popup__grup">
                         <div class="or">
                             <input type="submit" class="custom-button12" value="{{ __('home.form_submit') }}">
                         </div>

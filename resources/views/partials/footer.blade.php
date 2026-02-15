@@ -38,6 +38,9 @@
                     <div class="form__grup wow fadeInLeft" data-wow-delay="0.85s">
                         <input type="email" name="email" class="form-popup__input" placeholder="{{ __('home.form_email') }}">
                     </div>
+                    <div class="form__grup wow fadeInLeft" data-wow-delay="0.87s">
+                        <textarea name="message" class="form-popup__input" placeholder="{{ __('home.form_message') }}" rows="3" style="resize: vertical; min-height: 80px;"></textarea>
+                    </div>
                     <div class="form__grup wow fadeInUp" data-wow-delay="0.9s">
                         <input type="submit" class="custom-buttonw1" value="{{ __('home.form_submit') }}">
                     </div>
