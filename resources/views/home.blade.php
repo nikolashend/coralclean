@@ -266,12 +266,13 @@
                     <div class="form-popup__grup">
                         <select name="service" class="form-popup__input" style="background: transparent; cursor: pointer;">
                             <option value="">{{ __('home.form_select_service') }}</option>
-                            @if(isset($allServices))
-                            @foreach($allServices as $navSvc)
+                            @if(isset($services))
+                            @foreach($services as $navSvc)
                             @php $navTrans = $navSvc->translations->first(); @endphp
                             <option value="{{ $navSvc->slug }}">{{ $navTrans->title ?? $navSvc->slug }}</option>
                             @endforeach
                             @endif
+                            <option disabled>──────────</option>
                             @foreach($packages as $pkg)
                             @php $pkgTrans = $pkg->translations->first(); @endphp
                             <option value="{{ $pkg->slug }}">📦 {{ $pkgTrans->title ?? $pkg->slug }}</option>
