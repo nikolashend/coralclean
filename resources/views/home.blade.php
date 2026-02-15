@@ -460,7 +460,7 @@
                 @foreach($packages as $i => $pkg)
                 @php $trans = $pkg->translations->first(); @endphp
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.5 + $i * 0.15 }}s" id="{{ $pkg->slug }}-clean">
-                    <a href="javascript:void(0)" onclick="openContactPanel('{{ $pkg->slug }}-clean')" class="service-card-link" style="text-decoration: none; color: inherit;">
+                    <a href="javascript:void(0)" onclick="openContactPanel('{{ $pkg->slug }}')" class="service-card-link" style="text-decoration: none; color: inherit;">
                         <div class="paketler2" data-tilt>
                             <div class="paketler2__on paketler2__on--onyazi">
                                 <div class="paketler2__gorsel paketler2__gorsel--1" style="background-image: url('{{ asset('img/' . $pkg->image) }}'); background-size: cover; background-position: center;">
@@ -926,7 +926,7 @@
             
             // Pre-select service if provided
             if (serviceType) {
-                const serviceSelect = document.querySelector('select[name="service_type"]');
+                const serviceSelect = document.querySelector('select[name="service"]');
                 if (serviceSelect) {
                     serviceSelect.value = serviceType;
                 }
