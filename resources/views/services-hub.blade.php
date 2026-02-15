@@ -261,7 +261,7 @@
             document.getElementById('contactOverlay').classList.add('open');
             document.body.style.overflow = 'hidden';
             if (serviceType) {
-                const sel = document.querySelector('select[name="service_type"]');
+                const sel = document.querySelector('select[name="service"]');
                 if (sel) sel.value = serviceType;
             }
         }
