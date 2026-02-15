@@ -116,18 +116,22 @@
             
             @if($contactRequest->service)
             @php
-                // Try to find readable name for service/package
-                $serviceName = $contactRequest->service;
-                $service = \App\Models\Service::where('slug', $contactRequest->service)->first();
-                if ($service) {
-                    $trans = $service->translations->where('locale', $contactRequest->locale)->first();
-                    $serviceName = $trans ? $trans->title : $service->slug;
-                } else {
-                    $package = \App\Models\Package::where('slug', $contactRequest->service)->first();
-                    if ($package) {
-                        $trans = $package->translations->where('locale', $contactRequest->locale)->first();
-                        $serviceName = $trans ? ('📦 ' . $trans->title) : $package->slug;
+                try {
+                    // Try to find readable name for service/package
+                    $serviceName = $contactRequest->service;
+                    $service = \App\Models\Service::where('slug', $contactRequest->service)->first();
+                    if ($service) {
+                        $trans = $service->translations->where('locale', $contactRequest->locale)->first();
+                        $serviceName = $trans ? $trans->title : $service->slug;
+                    } else {
+                        $package = \App\Models\Package::where('slug', $contactRequest->service)->first();
+                        if ($package) {
+                            $trans = $package->translations->where('locale', $contactRequest->locale)->first();
+                            $serviceName = $trans ? ('📦 ' . $trans->title) : $package->slug;
+                        }
                     }
+                } catch (\Exception $e) {
+                    $serviceName = $contactRequest->service;
                 }
             @endphp
             <p><strong>
