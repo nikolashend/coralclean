@@ -8164,6 +8164,10 @@ input[type="tel"] {
   height: 70px;
   padding: 0 30px; }
 
+textarea {
+  max-width: 100%;
+  height: 140px;
+  padding: 0 30px; }
 
 input[type="search"] {
   max-width: 100%;
@@ -10638,6 +10642,13 @@ input[type="tel"] {
 input[type="date"] {
   max-width: 100%;
   height: 70px;
+  padding: 0 30px;
+  background: #fff;
+  border-radius: 0.3rem; }
+
+textarea {
+  max-width: 100%;
+  height: 140px;
   padding: 0 30px;
   background: #fff;
   border-radius: 0.3rem; }
