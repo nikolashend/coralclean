@@ -166,6 +166,31 @@
                     Telefon:
                 @endif
             </strong> {{ $contactRequest->phone }}</p>
+
+            @if($contactRequest->email)
+            <p><strong>
+                @if($contactRequest->locale === 'ru')
+                    Email:
+                @elseif($contactRequest->locale === 'en')
+                    Email:
+                @else
+                    E-post:
+                @endif
+            </strong> {{ $contactRequest->email }}</p>
+            @endif
+
+            @if($contactRequest->message)
+            <p><strong>
+                @if($contactRequest->locale === 'ru')
+                    Сообщение:
+                @elseif($contactRequest->locale === 'en')
+                    Message:
+                @else
+                    Sõnum:
+                @endif
+            </strong><br>
+            <span style="white-space: pre-wrap;">{{ $contactRequest->message }}</span></p>
+            @endif
         </div>
 
         <div style="text-align: center;">
