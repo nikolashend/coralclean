@@ -8204,11 +8204,6 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked {
   border: 6px solid #0d0d0d; }
 
-textarea {
-  max-width: 100%;
-  height: 140px;
-  padding: 30px; }
-
 select {
   width: 420px;
   max-width: 100%;
@@ -10688,13 +10683,6 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked {
   border: 6px solid #043577; }
-
-textarea {
-  max-width: 100%;
-  height: 140px;
-  padding: 30px;
-  background: #fff;
-  border-radius: 0.3rem; }
 
 select {
   max-width: 100%;
