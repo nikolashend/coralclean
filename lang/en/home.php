@@ -335,6 +335,9 @@ return [
     'portfolio_title' => 'Our Work',
     'portfolio_subtitle' => 'Results that speak for themselves — before and after professional cleaning',
     'portfolio_alt' => 'CoralClean cleaning result',
+    'portfolio_before' => 'Before',
+    'portfolio_after' => 'After',
+    'reviews_google_btn' => 'See reviews on Google',
 
     // Language
     'language' => 'Language',

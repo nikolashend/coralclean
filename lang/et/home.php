@@ -335,6 +335,9 @@ return [
     'portfolio_title' => 'Meie tööd',
     'portfolio_subtitle' => 'Tulemused, mis räägivad enda eest — enne ja pärast professionaalset koristust',
     'portfolio_alt' => 'CoralClean koristustulemus',
+    'portfolio_before' => 'Enne',
+    'portfolio_after' => 'Pärast',
+    'reviews_google_btn' => 'Vaata arvustusi Google\'is',
 
     // Language
     'language' => 'Keel',

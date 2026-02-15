@@ -481,6 +481,27 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
     padding: 4px 12px; border-radius: 12px;
 }
 
+.google-review-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background: #ff6f61;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(255, 111, 97, 0.35);
+}
+.google-review-btn:hover {
+    background: #e85d50;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(255, 111, 97, 0.45);
+    color: #fff;
+    text-decoration: none;
+}
+
 /* ============================================================
    NEW: We Work With cards
    ============================================================ */
@@ -542,82 +563,83 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
 .trust-card p { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; color: #666; }
 
 /* ============================================================
-   Portfolio / Gallery Section
+   Portfolio / Gallery Section — flip cards (Before / After)
    ============================================================ */
 .portfolio-section {
     padding: 40px 0 60px;
     background: #f6f7f8;
 }
 
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 16px;
-}
-
-.portfolio-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
+.portfolio-flip {
+    perspective: 1000px;
+    height: 300px;
+    margin-bottom: 30px;
     cursor: pointer;
-    display: block;
-    height: 280px;
-    background: #e0e0e0;
 }
 
-.portfolio-item img {
+.portfolio-flip__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.portfolio-flip:hover .portfolio-flip__inner {
+    transform: rotateY(180deg);
+}
+
+.portfolio-flip__front,
+.portfolio-flip__back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+
+.portfolio-flip__back {
+    transform: rotateY(180deg);
+}
+
+.portfolio-flip__front img,
+.portfolio-flip__back img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     display: block;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.portfolio-item:hover img {
-    transform: scale(1.08);
-}
-
-.portfolio-item__overlay {
+.portfolio-flip__badge {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(46,196,198,0.75) 0%, rgba(255,111,97,0.6) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.4s ease;
+    top: 12px;
+    left: 12px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #fff;
+    backdrop-filter: blur(4px);
 }
 
-.portfolio-item:hover .portfolio-item__overlay {
-    opacity: 1;
+.portfolio-flip__badge--after {
+    background: rgba(46, 196, 198, 0.85);
 }
 
-.portfolio-item__icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.3);
-    backdrop-filter: blur(6px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: scale(0.7);
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.portfolio-item:hover .portfolio-item__icon {
-    transform: scale(1);
+.portfolio-flip__badge--before {
+    background: rgba(255, 111, 97, 0.85);
 }
 
 /* Portfolio responsive */
 @media (max-width: 991px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 12px;
-    }
-    .portfolio-item {
-        height: 240px;
+    .portfolio-flip {
+        height: 260px;
+        margin-bottom: 24px;
     }
 }
 
@@ -625,13 +647,19 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
     .portfolio-section {
         padding: 40px 0 120px;
     }
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+    .portfolio-flip {
+        height: 220px;
+        margin-bottom: 16px;
     }
-    .portfolio-item {
-        height: 180px;
+    .portfolio-flip__front,
+    .portfolio-flip__back {
         border-radius: 8px;
+    }
+    .portfolio-flip__badge {
+        font-size: 11px;
+        padding: 4px 10px;
+        top: 8px;
+        left: 8px;
     }
 }
 
@@ -649,10 +677,11 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
 .cta-section { background: linear-gradient(to right, #2ec4c6, #ff6f61); padding: 60px 0; text-align: center; }
 .cta-section h2 { color: #fff; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 36px; margin-bottom: 15px; }
 .cta-section p { color: rgba(255,255,255,0.9); font-family: 'Inter', sans-serif; font-weight: 400; font-size: 18px; margin-bottom: 30px; }
-.cta-btn { display: inline-block; padding: 15px 40px; background: #fff; color: #2ec4c6; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 18px; border-radius: 5px; margin: 0 10px; text-decoration: none; transition: all 0.3s; }
-.cta-btn:hover { background: #1f2933; color: #fff; }
+.cta-btn { display: inline-block; padding: 15px 40px; background: #fff; color: #2ec4c6; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 18px; border-radius: 5px; margin: 0 10px; text-decoration: none !important; transition: all 0.3s; }
+.cta-btn:hover { background: #1f2933; color: #fff; text-decoration: none !important; }
 .cta-btn.secondary { background: transparent; border: 2px solid #fff; color: #fff; }
-.cta-btn.secondary:hover { background: #fff; color: #2ec4c6; }
+.cta-btn.secondary:hover { background: #fff; color: #2ec4c6; text-decoration: none !important; }
+.cta-btn[style*="0084FF"]:hover { background: #0073e6 !important; color: #fff !important; }
 
 /* ============================================================
    Alerts

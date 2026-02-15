@@ -335,6 +335,9 @@ return [
     'portfolio_title' => 'Наши работы',
     'portfolio_subtitle' => 'Результаты, которые говорят сами за себя — до и после профессиональной уборки',
     'portfolio_alt' => 'Результат уборки CoralClean',
+    'portfolio_before' => 'До',
+    'portfolio_after' => 'После',
+    'reviews_google_btn' => 'Смотреть отзывы в Google',
 
     // Language
     'language' => 'Язык',

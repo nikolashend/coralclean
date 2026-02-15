@@ -668,6 +668,19 @@
                 </div>
                 @endfor
             </div>
+            <div class="row">
+                <div class="col-12 text-center mt-4 wow fadeInUp" data-wow-delay="0.9s">
+                    <a href="https://www.google.com/search?sca_esv=8507e84e939e1a00&authuser=0&hl=ru&gl=ee&sxsrf=ANbL-n60u1wP_3NoOXrAhrsS9HUx78PZZQ:1771162270158&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOYsjGpLq_LQ6lWlPWQ4uJy5xghM61rI3NtV4BfLYGd18O7BpLARczwPDzLY3xuQ4dxC21MrZnn_Bdcbh90FkyUrxE3yQjL46OREAQhWf7lfWpIf8tg%3D%3D&q=Coral+Clean+%D0%9E%D1%82%D0%B7%D1%8B%D0%B2%D1%8B&sa=X&ved=2ahUKEwiO787PzduSAxXOORAIHZptF-cQ0bkNegQIMRAH&cshid=1771162304560494&biw=1600&bih=689&dpr=1.2" target="_blank" class="google-review-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px; vertical-align: middle;">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                        </svg>
+                        {{ __('home.reviews_google_btn') }}
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -683,30 +696,38 @@
                     <div class="bosluk3"></div>
                 </div>
             </div>
-            <div class="portfolio-grid">
+            <div class="row">
                 @php
-                $portfolioImages = [
-                    'img/coralclean/portfolio/1000000726.png',
-                    'img/coralclean/portfolio/1000000727.png',
-                    'img/coralclean/portfolio/1000000728.png',
-                    'img/coralclean/portfolio/1000000729.png',
-                    'img/coralclean/portfolio/1000000730.png',
-                    'img/coralclean/portfolio/1000000731.png',
-                    'img/coralclean/portfolio/1000000732.png',
-                    'img/coralclean/portfolio/1000000733.png',
-                    'img/coralclean/portfolio/1000000734.png',
-                    'img/coralclean/portfolio/1000000736.jpg',
+                $portfolioItems = [
+                    ['before' => '1.holodolnik_do.png', 'after' => '1.holodolnik_posle.png'],
+                    ['before' => '2.duhovka_do.png',    'after' => '2.duhovka_posle.png'],
+                    ['before' => '3.rakovina_do.png',   'after' => '3.rakovina_posle.png'],
+                    ['before' => '4.kuhnja_do.png',     'after' => '4.kuhnja_posle.png'],
+                    ['before' => '5.plita_do.png',      'after' => '5.plita_posle.png'],
+                    ['before' => '6.tualet_do.png',     'after' => '6.tualet_posle.png'],
+                    ['before' => '7.dush_do.png',       'after' => '7.dush_posle.png'],
+                    ['before' => '8.duhovka_do.png',    'after' => '8.duhovka_posle.png'],
+                    ['before' => '9.vytjazka_do.png',   'after' => '9.vytjazka_posle.png'],
                 ];
                 @endphp
-                @foreach($portfolioImages as $i => $imgSrc)
-                    <a href="{{ asset($imgSrc) }}" class="portfolio-item wow fadeInUp" data-fancybox="portfolio" data-wow-delay="{{ 0.2 + $i * 0.05 }}s">
-                        <img src="{{ asset($imgSrc) }}" alt="{{ __('home.portfolio_alt') }} {{ $i + 1 }}" loading="lazy">
-                        <div class="portfolio-item__overlay">
-                            <div class="portfolio-item__icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/></svg>
+                @foreach($portfolioItems as $i => $item)
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.3 + $i * 0.08 }}s">
+                    <a href="{{ asset('img/coralclean/portfolio/' . $item['after']) }}" data-fancybox="portfolio" data-caption="{{ __('home.portfolio_after') }} {{ $i + 1 }}" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="portfolio-flip">
+                            <div class="portfolio-flip__inner">
+                                <div class="portfolio-flip__front">
+                                    <img src="{{ asset('img/coralclean/portfolio/' . $item['after']) }}" alt="{{ __('home.portfolio_after') }} {{ $i + 1 }}" loading="lazy">
+                                    <div class="portfolio-flip__badge portfolio-flip__badge--after">{{ __('home.portfolio_after') }}</div>
+                                </div>
+                                <div class="portfolio-flip__back">
+                                    <img src="{{ asset('img/coralclean/portfolio/' . $item['before']) }}" alt="{{ __('home.portfolio_before') }} {{ $i + 1 }}" loading="lazy">
+                                    <div class="portfolio-flip__badge portfolio-flip__badge--before">{{ __('home.portfolio_before') }}</div>
+                                </div>
                             </div>
                         </div>
                     </a>
+                    <a href="{{ asset('img/coralclean/portfolio/' . $item['before']) }}" data-fancybox="portfolio" data-caption="{{ __('home.portfolio_before') }} {{ $i + 1 }}" style="display: none;"></a>
+                </div>
                 @endforeach
             </div>
         </div>
