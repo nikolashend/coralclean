@@ -252,7 +252,7 @@ return [
     'footer_about_title' => 'Meist',
     'footer_company_title' => 'Ettevõte',
     'footer_legal' => 'PUHASTUS KORAL OÜ',
-    'footer_reg' => 'Reg. nr: 16989116',
+    'footer_reg' => 'Reg. nr: 17277094',
     'footer_copyright' => 'CoralClean. Kõik õigused kaitstud.',
     'footer_quick_links' => 'Kiirlingid',
 

@@ -252,7 +252,7 @@ return [
     'footer_about_title' => 'About',
     'footer_company_title' => 'Company',
     'footer_legal' => 'PUHASTUS KORAL OÜ',
-    'footer_reg' => 'Reg. No: 16989116',
+    'footer_reg' => 'Reg. No: 17277094',
     'footer_copyright' => 'CoralClean. All rights reserved.',
     'footer_quick_links' => 'Quick Links',
 
