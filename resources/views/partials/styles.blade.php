@@ -366,7 +366,7 @@ ul.post-categories { color: #2ec4c6; font-family: 'Inter', sans-serif; font-weig
     .side-widget { padding: 15px 25px !important; }
 
     /* === 2. Services section — push down so icon isn't hidden under previous block === */
-    #services { margin-top: 40px !important; }
+    #services { margin-top: 40px !important; margin-bottom: 80px !important;}
 
     /* === 3+4. Card icons — add top padding so icons aren't flush with card top === */
     .paketler2__icerik { padding-top: 2.5rem !important; }
