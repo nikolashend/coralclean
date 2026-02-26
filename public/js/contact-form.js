@@ -24,6 +24,13 @@
                 dataType: 'json',
                 success: function(response) {
                     if (response.success) {
+                        // GTM: push lead_submit_success event
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({
+                            event: 'lead_submit_success',
+                            lead_source: 'contact_panel'
+                        });
+
                         // Show success message
                         var alertBox = '<div class="alert alert-success" style="margin-top: 20px; padding: 15px; background: #d4edda; border: 1px solid #c3e6cb; color: #155724; border-radius: 4px; position: relative;">' +
                             '<button type="button" class="close" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 20px; cursor: pointer; color: #155724;">&times;</button>' +
@@ -125,6 +132,13 @@
                 dataType: 'json',
                 success: function(response) {
                     if (response.success) {
+                        // GTM: push lead_submit_success event
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({
+                            event: 'lead_submit_success',
+                            lead_source: 'footer_form'
+                        });
+
                         // Show success message
                         messageDiv.html('<div class="alert alert-success" style="padding: 15px; background: #d4edda; border: 1px solid #c3e6cb; color: #155724; border-radius: 4px;">' +
                             response.message +

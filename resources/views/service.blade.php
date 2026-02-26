@@ -512,7 +512,7 @@
     <script src="{{ asset('js/pointer.js') }}"></script>
     <script src="{{ asset('js/yukari-cik.js') }}"></script>
     <script src="{{ asset('js/tabs.js') }}"></script>
-    <script src="{{ asset('js/contact-form.js?v=1.2') }}"></script>
+    <script src="{{ asset('js/contact-form.js?v=1.3') }}"></script>
 
     <script>
         // Contact Panel Functions
